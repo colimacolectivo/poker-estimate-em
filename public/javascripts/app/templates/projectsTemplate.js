@@ -1,1 +1,1 @@
-TXE.Templates.projectsTemplate = "<ul> <% _.each(context, function(project){ %> <li><%= project.name %></li> <% }) %> </ul> ";
+TXE.Templates.projectsTemplate = "<ul> <% _.each(context, function(project){ %> <li id='project-<%= project.id %>' classs='.project' data-attributes='<%= project.id %>'><%= project.name %></li> <% }) %> </ul> ";

@@ -8,6 +8,7 @@ TXE.Views.indexView = Backbone.View.extend({
   collection: new TXE.Collections.projectsCollection(),
 
   events: {
+    "doubleclick .project" : "displayForm",
     "click .fn-createGame" : "creatingGame"
   },
 
