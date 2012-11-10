@@ -5,5 +5,7 @@ TXE.Views.indexView = Backbone.View.extend({
   },
 
   initialize: function(){
+    this.template = JST['appindexTemplate'];
+    this.$el.html(this.template);
   }
 });
