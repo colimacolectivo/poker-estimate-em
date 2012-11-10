@@ -1,18 +1,18 @@
 {
   "name": "TexasEstimateEm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "TangoSource",
   "main": "app.js",
   "private": true,
   "scripts": {
-    "start": "node app"
+    "start": "app.js"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:nko3/tangosource.git"
   },
   "engines": {
-     "node": "0.8.x"
+    "node": "0.8.x"
   },
   "dependencies": {
     "express": "3.0.0rc5",
