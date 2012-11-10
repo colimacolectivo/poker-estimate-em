@@ -37,8 +37,13 @@ TXE.Views.indexView = Backbone.View.extend({
   displayForm: function(e){
     $(".fn-project").removeClass("selected");
     this.projectId = $(e.currentTarget).addClass("selected").attr("data-id");
+    var games = new TXE.Collections.gamesCollection(this.projectId);
+    games.fetch().done(function(data){
+      console.log(data);
+    });
     $('.action-panel').attr('hidden', false)
     $('.fn-game-name').focus();
+    
   }
 
 });
