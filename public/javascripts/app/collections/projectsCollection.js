@@ -5,6 +5,7 @@ TXE.Collections.projectsCollection = Backbone.Collection.extend({
   model: TXE.Models.Project,
 
   all: function(){
+    this.fetch();
     return this.models[0].get('projects');
   },
 
@@ -13,6 +14,5 @@ TXE.Collections.projectsCollection = Backbone.Collection.extend({
     this.url = old + '/' + projectId;
     this.fetch();
     this.url = old;
-    return this.models[0].get('projects').shift();
   }
 });
