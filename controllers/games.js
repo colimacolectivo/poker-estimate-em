@@ -4,17 +4,25 @@ module.exports = function(app, db){
 
   app.post('/api/v1/projects/:proId/games/new', function(req, res){
     if(req.user){
-      var proId = req.params.proId;
+      var proId = parseInt(req.params.proId, 10);
       var name  = req.body.name;
 
-      if(proId && name){
+      if(typeof proId === "number" && name){
         var data = {
-          proyect_id: proId,
+          project_id: proId,
           name: name
         };
 
-        db.games.save(data, { safe: true }, function(err, game){
-          res.send(game);
+        db.games.find({project_id: proId, name: name}, function(err, games){
+          games.toArray(function(err, results){
+            if(results.length === 0){
+              db.games.save(data, { safe: true }, function(err, game){
+                res.send(game);
+              });
+            }else{
+              res.send({message: "Game all ready exists."});
+            }
+          });
         });
 
       }
