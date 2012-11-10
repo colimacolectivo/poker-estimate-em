@@ -45,7 +45,7 @@ module.exports = function(app){
             account: result.project.account[0]
           };
 
-        res.send({ project: project });
+        res.send(project);
       });
     }else{
       res.send({ error: "Not logged in" });
