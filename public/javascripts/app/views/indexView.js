@@ -28,8 +28,8 @@ TXE.Views.indexView = Backbone.View.extend({
   },
 
   createGame: function(e){
-    var game = new TXE.Model.Game(this.projectId);
-    var name = $('.fn-game-name').val();
+    var game = new TXE.Models.Game(this.projectId),
+        name = $('.fn-game-name').val();
     game.save({name: name});
     $('.fn-game-name').val('');
   },
