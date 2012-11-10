@@ -23,7 +23,8 @@
     "passport-local": "0.1.6",
     "connect-flash": "0.1.0",
     "mongodb": "1.1.11",
-    "jade": "*"
+    "jade": "*",
+    "haml-coffee": "1.7.0"
   },
   "subdomain": "tangosource.nko3"
 }

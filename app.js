@@ -75,6 +75,7 @@ database.init(function(db){
     app.set('port', process.env.PORT || 3000);
     app.set('views', __dirname + '/views');
     app.set('view engine', 'jade');
+    app.engine('hamlc', require('haml-coffee').__express);
     app.use(express.favicon());
     app.use(express.logger('dev'));
     app.use(express.cookieParser());
