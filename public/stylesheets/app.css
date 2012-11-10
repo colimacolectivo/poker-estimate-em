@@ -5884,23 +5884,46 @@ table.hide-for-medium {
     margin: 0;
   }
 }
-/* line 2, ../sass/main.scss */
+/* line 4, ../sass/main.scss */
 body {
   background-color: #fff;
 }
-
+/* line 6, ../sass/main.scss */
+body h1, body h2, body h3, body h4, body li, body p {
+  font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
+}
 /* line 13, ../sass/main.scss */
+body .top-bar .row ul li.name > * {
+  float: left;
+}
+/* line 17, ../sass/main.scss */
+body .top-bar .row ul li.name h1 a {
+  font-size: 30px;
+  color: #f00;
+  font-weight: 800;
+}
+/* line 21, ../sass/main.scss */
+body .top-bar .row ul li.name h1 a span {
+  color: #fff;
+}
+/* line 25, ../sass/main.scss */
+body .top-bar .row ul li.name .logo a {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 36, ../sass/main.scss */
 .footer {
   background: #3F3F3F;
   color: #fff;
 }
 
-/* line 17, ../sass/main.scss */
+/* line 40, ../sass/main.scss */
 .hide {
   display: none;
 }
 
-/* line 21, ../sass/main.scss */
+/* line 44, ../sass/main.scss */
 .item {
   color: #fff;
   text-align: center;
@@ -5909,17 +5932,17 @@ body {
   border-bottom: 1px solid black;
 }
 
-/* line 30, ../sass/main.scss */
+/* line 53, ../sass/main.scss */
 .login-form-content p {
   padding: 14px;
   color: #F18D05;
   padding-top: 0;
 }
-/* line 34, ../sass/main.scss */
+/* line 57, ../sass/main.scss */
 .login-form-content p i {
   color: #2284A1;
 }
-/* line 38, ../sass/main.scss */
+/* line 61, ../sass/main.scss */
 .login-form-content #login-form {
   width: 300px;
   padding: 10 20px;
