@@ -1,9 +1,18 @@
 TXE.Collections.projectsCollection = Backbone.Collection.extend({
-  url: window.location.pathname + '/api/v1/projects',
+  initialize: function(){ this.fetch(); },
+  url: '/api/v1/projects',
 
   model: TXE.Models.Project,
 
-  show: function(projectId){
+  all: function(){
+    return this.models[0].get('projects');
+  },
+
+  find: function(projectId){
+    var old = this.url;
+    this.url = old + '/' + projectId;
     this.fetch();
+    this.url = old;
+    return this.models[0].get('projects').shift();
   }
 });

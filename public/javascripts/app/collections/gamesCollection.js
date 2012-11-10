@@ -2,10 +2,10 @@ TXE.Collections.gamesCollection = Backbone.Collection.extend({
 
   initialize: function(projectId){
     this.project_id = projectId;
-    this.url = window.location.pathname + 'api/v1/projects/' + projectId + '/games';
+    this.url = '/api/v1/projects/' + projectId + '/games';
   },
 
-  show: function(gameId){
+  find: function(gameId){
     var old = this.url;
     this.url = old + '/' + gameId;
     this.fetch();
