@@ -7,10 +7,6 @@ TXE.Collections.gamesCollection = Backbone.Collection.extend({
     return window.location.pathname + 'api/v1/projects/' + this.project_id + '/games';
   },
 
-  model: function(){
-    return new TXE.Models.Game(this.project_id);
-  },
-
   show: function(gameId){
     $.getJSON(this.url() + '/' + gameId, function(data){
       return data;
@@ -19,7 +15,12 @@ TXE.Collections.gamesCollection = Backbone.Collection.extend({
 
   // TODO add the create action
   create: function(name){
-    var game = this.model();
-    game.save({name: name})
+    var game = new TXE.Models.Game(this.project_id);
+    game.save({name: name});
+  },
+
+  addTasks: function(name){
+    var taskGame = new TXE.Models.taskGame(this.project_id);
+    taskGame.save({name: name});
   }
 });
