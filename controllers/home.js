@@ -1,22 +1,16 @@
-var inspect = require('eyes').inspector({ stream: null });
-var pivotal = require("./pivotal");
-
-// Simple example to access pivotal
-var data = {
-  username: "edu.arbo@gmail.com",
-  password: "123456"
-};
-
-pivotal.access(data, function(result){
-  console.log(inspect(result));
-});
-
-
-// Export Home controller
-module.exports = function(app) {
+module.exports = function(app, db) {
  
   app.get('/', function(req, res) {
-    res.render('index');
+    res.render('index', { user: req.user, message: req.flash('info') });
+  });
+
+  app.get('/login', function(req, res){
+    res.render('login', { message: req.flash('error') });
+  });
+
+  app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/');
   });
 
 };
