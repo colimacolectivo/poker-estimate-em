@@ -2,24 +2,22 @@
 body {
   background-color: #fff;
 }
-/* line 4, ../sass/main.scss */
-body #someid {
-  -webkit-border-radius: 1px 2px;
-  -moz-border-radius: 1px 3px 5px 7px / 2px 4px 6px 8px;
-  border-radius: 1px 3px 5px 7px / 2px 4px 6px 8px;
-  height: 100px;
-  width: 100px;
-  display: block;
-  color: #f00;
-  border: 1px solid #000;
-}
 
-/* line 13, ../sass/main.scss */
+/* line 5, ../sass/main.scss */
 .head {
   background-color: #2BA6CB;
 }
+/* line 7, ../sass/main.scss */
+.head a {
+  color: #fff;
+}
 
-/* line 17, ../sass/main.scss */
+/* line 12, ../sass/main.scss */
 .footer {
   background: #3F3F3F;
+}
+
+/* line 15, ../sass/main.scss */
+.hide {
+  display: none;
 }
