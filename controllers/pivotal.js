@@ -49,30 +49,29 @@ module.exports.access = function(data, callback){
 };
 
 // get Proyects
-module.exports.getProyects = function(token){
+module.exports.getProyects = function(token, callback){
 
   var options = {
     host: 'www.pivotaltracker.com',
-    port: 443,
+    port: 80,
     path: '/services/v3/projects',
     method: 'GET',
     headers: {  
-      'Content-Type': 'application/x-www-form-urlencoded',  
-      'Content-Length': token.length  
+      'X-TrackerToken': token
     }  
   };
 
+  parser.addListener('end', function(result) {
+    return callback.call(this, result);
+  });
+
   var req = http.request(options, function(res) {
     res.on('data', function(d) {
-      parser.parseString(d, function (err, result) {
-        console.log(result);
-        // return callback.call(this, result);
-      });
+      parser.parseString(d);
     });
 
   });
 
-  req.write(token);
   req.end();
 
   req.on('error', function(e) {

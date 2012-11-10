@@ -24,7 +24,7 @@ database.init(function(db){
   };
 
   var findByUsername = function(username, fn) {
-    db.users.findOne({username: username}, function(err, user){
+    db.users.findOne({email: username}, function(err, user){
       return fn(null, user);
     });
   };
@@ -94,7 +94,8 @@ database.init(function(db){
   });
 
   require("./controllers/home")(app);
-  require("./controllers/pivotalMothods")(app);
+  require("./controllers/pivotalMethods")(app);
+
 
   app.post('/login', 
           passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }),

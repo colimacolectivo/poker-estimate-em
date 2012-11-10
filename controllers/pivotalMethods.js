@@ -1,4 +1,4 @@
-var  pivotal  = require("./controllers/pivotal");
+var  pivotal  = require("./pivotal");
 
 // GET /api/v1/projects
 //   [{
@@ -9,6 +9,29 @@ var  pivotal  = require("./controllers/pivotal");
 
 module.exports = function(app){
   app.get('/api/v1/projects', function(req, res){
-    console.log(req.user);
+
+    if(req.user){
+      pivotal.getProyects(req.user.token, function(result){
+        var projects = result.projects.project;
+        var total = projects.length;
+        var i = 0;
+        var projetsRespond = [];
+
+        for(i; i<total; i++){
+          projetsRespond[i] = {
+            name: projects[i].name,
+            id: projects[i].id
+          };
+
+          if(i === total - 1){
+            res.send({ proyects: projetsRespond });
+          }
+        }
+
+      });
+    }else{
+      res.send({ error: "Not logged in" });
+    }
   });
+
 };
