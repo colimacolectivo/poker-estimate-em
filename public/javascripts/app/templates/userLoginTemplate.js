@@ -1,0 +1,1 @@
+TXE.Templates.userLoginTemplate = " <form action='/login' method='post' id='login-form'> <div> <input type='email'  name='username'  placeholder='Mail' /> <br /> <input type='password' name='password' placeholder='Password' /> <br /> <input class='radius button' type='submit', value='Log In' /> </div> </form> ";

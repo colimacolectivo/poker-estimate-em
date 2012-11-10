@@ -1,7 +1,9 @@
 TXE.Views.indexView = Backbone.View.extend({
   el: '#main-content',
 
-  template: _.template(TXE.Templates.IndexTemplate),
+  projectsTemplate: _.template(TXE.Templates.projectsTemplate),
+
+  userLoginTemplate: _.template(TXE.Templates.userLoginTemplate),
 
   collection: new TXE.Collections.projectsCollection(),
 
@@ -11,10 +13,15 @@ TXE.Views.indexView = Backbone.View.extend({
   initialize: function(){
     this.collection.bind("reset", this.render, this);
     this.collection.fetch();
+    this.user_logged_in = eval($("#user_logged_in").val());
   },
 
   render: function(){
-    console.log(this.collection);
-    // this.$el.html(this.template(this.collection.toJSON()));
+    if (this.user_logged_in) {
+      var context = this.collection.toJSON();
+      this.$el.html(this.projectsTemplate({context: context}));
+    } else {
+      this.$el.html(this.userLoginTemplate);
+    }
   }
 });
