@@ -66,7 +66,7 @@ module.exports = function(app){
           try{ 
             if(stories[i].estimate[0]._ === "-1"){
               current = {
-                title: stories[i].name,
+                title: stories[i].name[0],
                 project_id: stories[i].project_id[0]._,
                 id: stories[i].id[0]._,
                 url: stories[i].url[0],
@@ -86,6 +86,33 @@ module.exports = function(app){
           }
         }
 
+      });
+    }else{
+      res.send({ error: "Not logged in" });
+    }
+  });
+
+  app.get('/api/v1/projects/:proId/tasks/:strId', function(req, res){
+
+    if(req.user){
+      var proId = req.params.proId;
+      var strId = req.params.strId;
+
+      pivotal.getTask(req.user.token, proId, strId, function(result){
+        var storie = result.story;
+
+        var storieResult = {
+          title: storie.name[0],
+          project_id: storie.project_id[0]._,
+          id: storie.id[0]._,
+          url: storie.url[0],
+          description: storie.description[0],
+          requested_by: storie.requested_by[0],
+          owned_by: storie.owned_by,
+          labels: storie.labels
+        };
+
+        res.send({ task: storieResult });
       });
     }else{
       res.send({ error: "Not logged in" });
