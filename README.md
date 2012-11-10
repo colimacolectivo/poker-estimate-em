@@ -135,3 +135,21 @@ POST /api/v1/projects/:id/games/add_tasks
     {
       name: ""
     }
+
+=== Branch management policy
+
+There are two important things we need to keep in mind, before start new feature make sure that you are on top of develop, the following steps are exactly for doing that via `git fetch`
+
+  git fetch origin
+  git rebase origin/develop
+  git checkout -b new_feature
+
+And the last thing is that before open your pull request resolve possible conflicts if there are too many changes in develop, the following steps will help you on doing that
+
+  git checkout your_feature
+  git fetch origin
+  git rebase develop origin/develop
+  git rebase develop
+  git push origin your_feature (-f if necessary)
+
+Happy versioning!
