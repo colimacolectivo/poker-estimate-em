@@ -4,7 +4,7 @@
 body {
   background-color: #fff;
   h1, h2, h3, h4, li, p {
-    @include global_font
+    @include global_font;
   }
   .row{
     width: 940px;
@@ -64,7 +64,6 @@ body {
           }
         }
       }
-      // .top-bar ul > li.has-dropdown .dropdown li
     }
   }
 }
@@ -101,3 +100,74 @@ body {
     margin: 20px;
   }
 }
+
+
+
+ // --------------------------------- landing page
+ #main-content.row{
+   .container{
+     .side-nav.steps{
+       li{
+         height: 225px;
+         width: 225px;
+         float: left;
+         margin: 1px;
+         text-align:center;
+         &.one-sq{
+           background: #B4BDAD url('../images/landing-page/one.png') no-repeat 15px 10px;
+         }
+         &.two-sq{
+           background: #FAA83F url('../images/landing-page/two.png') no-repeat 15px 10px;
+         }
+         &.three-sq{
+           background: #DFD4C9 url('../images/landing-page/three.png') no-repeat 15px 10px;
+         }
+         &.four-sq{
+           background: #C70A2B url('../images/landing-page/four.png') no-repeat 15px 10px;
+         }
+         span{
+           margin: 0 auto;
+           height: inherit;
+           width: inherit;
+           display: table-cell;
+           vertical-align: middle;
+           font-size: 40px;
+           font-weight: 800;
+           color: #fff;
+           cursor: pointer;
+           @include global_font;
+           .small {
+             display: block;
+             height: auto;
+             width: auto;
+               font-size: 30px;
+             .more{
+               font-size: 40px;
+             }
+           }
+         }
+         .info{
+           @include global_font;
+           text-align: left;
+           padding: 15px;
+           color: #fff;
+           font-size: 17px;
+           h3{
+            font-size: 13px;
+            font-weight: bold;
+            margin: 0 0 24px 24px;
+            color: #FFF;
+           }
+           p {
+             text-align:justify;
+             padding:10px;
+             span{
+               font-size:17px;
+               font-weight:bold;
+             }
+           }
+         }
+       }
+     }
+   }
+ }

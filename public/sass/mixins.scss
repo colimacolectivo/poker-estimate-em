@@ -3,6 +3,8 @@
 }
 @mixin global_font {
   font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
+  letter-spacing:-1px;
+  word-spacing:-1px;
 }
 
 
