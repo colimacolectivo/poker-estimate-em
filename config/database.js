@@ -5,7 +5,7 @@ var port = 10016;
 var options = {};
 
 var server = new mongodb.Server(host, port, options);
-var Database = new mongodb.Db("TexasEstimateEm", server, {});
+var Database = new mongodb.Db("TexasEstimateEm", server, {safe: false});
 
 exports.close = function(){
   Database.close();
@@ -25,7 +25,8 @@ exports.init = function(callback){
     }
 
     var collections = {
-      users: new mongodb.Collection(db, "users")
+      users: new mongodb.Collection(db, "users"),
+      games: new mongodb.Collection(db, "games")
     };
 
     return callback.call(this, collections);
