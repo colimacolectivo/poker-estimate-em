@@ -8,8 +8,8 @@ TXE.Views.indexView = Backbone.View.extend({
   collection: new TXE.Collections.projectsCollection(),
 
   events: {
-    "doubleclick .project" : "displayForm",
-    "click .fn-createGame" : "creatingGame"
+    "click .fn-project" : "displayForm",
+    "click .fn-createGame" : "createGame"
   },
 
   initialize: function(){
@@ -27,7 +27,18 @@ TXE.Views.indexView = Backbone.View.extend({
     //}
   },
 
-  creatingGame: function(e){
+  createGame: function(e){
+    var game = new TXE.Model.Game(this.projectId);
+    var name = $('.fn-game-name').val();
+    game.save({name: name});
+    $('.fn-game-name').val('');
+  },
+
+  displayForm: function(e){
+    $(".fn-project").removeClass("selected");
+    this.projectId = $(e.currentTarget).addClass("selected").attr("data-id");
+    $('.action-panel').attr('hidden', false)
+    $('.fn-game-name').focus();
   }
 
 });
