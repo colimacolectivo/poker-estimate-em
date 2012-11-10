@@ -6,57 +6,87 @@ body {
 body h1, body h2, body h3, body h4, body li, body p {
   font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
 }
-/* line 13, ../sass/main.scss */
+/* line 9, ../sass/main.scss */
+body .row {
+  width: 940px;
+}
+/* line 16, ../sass/main.scss */
 body .top-bar .row ul li.name > * {
   float: left;
 }
-/* line 17, ../sass/main.scss */
+/* line 20, ../sass/main.scss */
 body .top-bar .row ul li.name h1 a {
   font-size: 30px;
-  color: #f00;
+  color: #C70A2B;
   font-weight: 800;
 }
-/* line 21, ../sass/main.scss */
+/* line 24, ../sass/main.scss */
 body .top-bar .row ul li.name h1 a span {
   color: #fff;
 }
-/* line 25, ../sass/main.scss */
+/* line 27, ../sass/main.scss */
+body .top-bar .row ul li.name .slog {
+  padding: 7px 0;
+}
+/* line 31, ../sass/main.scss */
 body .top-bar .row ul li.name .logo a {
   margin: 0;
   padding: 0;
 }
+/* line 40, ../sass/main.scss */
+body .top-bar .row #navigator li a {
+  font-size: 18px;
+}
+/* line 42, ../sass/main.scss */
+body .top-bar .row #navigator li a:hover {
+  color: #F9A73F;
+}
+/* line 44, ../sass/main.scss */
+body .top-bar .row #navigator li .dropdown {
+  padding: 0;
+}
+/* line 46, ../sass/main.scss */
+body .top-bar .row #navigator li .dropdown li.item {
+  padding: 0;
+}
+/* line 47, ../sass/main.scss */
+body .top-bar .row #navigator li .dropdown li.item a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: 400;
+}
 
-/* line 36, ../sass/main.scss */
+/* line 63, ../sass/main.scss */
 .footer {
   background: #3F3F3F;
   color: #fff;
 }
 
-/* line 40, ../sass/main.scss */
+/* line 67, ../sass/main.scss */
 .hide {
   display: none;
 }
 
-/* line 44, ../sass/main.scss */
-.item {
+/* line 72, ../sass/main.scss */
+.item a {
   color: #fff;
-  text-align: center;
   display: block;
-  height: 30px;
   border-bottom: 1px solid black;
+  border-top: 1px solid rgba(204, 204, 204, 0.3);
 }
 
-/* line 53, ../sass/main.scss */
+/* line 81, ../sass/main.scss */
 .login-form-content p {
   padding: 14px;
   color: #F18D05;
   padding-top: 0;
 }
-/* line 57, ../sass/main.scss */
+/* line 85, ../sass/main.scss */
 .login-form-content p i {
   color: #2284A1;
 }
-/* line 61, ../sass/main.scss */
+/* line 89, ../sass/main.scss */
 .login-form-content #login-form {
   width: 300px;
   padding: 10 20px;

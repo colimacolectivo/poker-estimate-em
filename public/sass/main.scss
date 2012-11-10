@@ -6,6 +6,9 @@ body {
   h1, h2, h3, h4, li, p {
     @include global_font
   }
+  .row{
+    width: 940px;
+  }
   .top-bar{
     .row{
       ul{
@@ -16,10 +19,13 @@ body {
           h1{
             a{
               font-size: 30px;
-              color: #f00;
+              color: #C70A2B;
               font-weight: 800;
               span{ color: #fff;}
             }
+          }
+          .slog{
+            padding: 7px 0;
           }
           .logo{
             a{
@@ -29,6 +35,27 @@ body {
           }
         }
       }
+      #navigator{
+        li {
+          a{
+            font-size:18px;
+            &:hover{color: #F9A73F;}
+          }
+          .dropdown{
+            padding: 0;
+            li.item{
+              a{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                font-size: 14px;
+                font-weight: 400;
+              }
+              padding: 0;
+            }
+          }
+        }
+      }
+      // .top-bar ul > li.has-dropdown .dropdown li
     }
   }
 }
@@ -42,11 +69,12 @@ body {
 }
 //navbar style
 .item{
-  color:#fff;
-  text-align:center;
-  display:block;
-  height:30px;
-  border-bottom: 1px solid rgba(0, 0, 0, 1) ; 
+  a{
+    color:#fff;
+    display:block;
+    border-bottom: 1px solid rgba(0, 0, 0, 1) ; 
+    border-top: 1px solid rgba(204, 204, 204, .3) ; 
+  }
 
 }
 .login-form-content{
