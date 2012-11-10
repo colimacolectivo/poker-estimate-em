@@ -4,11 +4,11 @@ var inspect     = require('eyes').inspector({ stream: null });
 var querystring = require('querystring');
 var xml2js      = require('xml2js');
 
-var parser = new xml2js.Parser();
 var denied = new RegExp("Access denied.");
 
 // Access
 module.exports.access = function(data, callback){
+  var parser = new xml2js.Parser();
 
   var stringData = querystring.stringify(data);
 
@@ -50,11 +50,44 @@ module.exports.access = function(data, callback){
 
 // get Proyects
 module.exports.getProyects = function(token, callback){
+  var parser = new xml2js.Parser();
 
   var options = {
     host: 'www.pivotaltracker.com',
     port: 80,
     path: '/services/v3/projects',
+    method: 'GET',
+    headers: {  
+      'X-TrackerToken': token
+    }  
+  };
+
+  parser.addListener('end', function(result) {
+    return callback.call(this, result);
+  });
+
+  var req = http.request(options, function(res) {
+    res.on('data', function(d) {
+      parser.parseString(d);
+    });
+
+  });
+
+  req.end();
+
+  req.on('error', function(e) {
+    console.error(e);
+  });
+
+};
+
+module.exports.getProyect = function(token, id, callback){
+  var parser = new xml2js.Parser();
+
+  var options = {
+    host: 'www.pivotaltracker.com',
+    port: 80,
+    path: '/services/v3/projects/'+id,
     method: 'GET',
     headers: {  
       'X-TrackerToken': token

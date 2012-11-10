@@ -1,13 +1,8 @@
 var  pivotal  = require("./pivotal");
-
-// GET /api/v1/projects
-//   [{
-//     _id: 0,
-//     id: 0,
-//     name: "name"
-//   }]
+var inspect   = require('eyes').inspector({ stream: null });
 
 module.exports = function(app){
+
   app.get('/api/v1/projects', function(req, res){
 
     if(req.user){
@@ -28,6 +23,23 @@ module.exports = function(app){
           }
         }
 
+      });
+    }else{
+      res.send({ error: "Not logged in" });
+    }
+  });
+
+  app.get('/api/v1/projects/:id', function(req, res){
+
+    if(req.user){
+      var id = req.params.id;
+      pivotal.getProyect(req.user.token, id,  function(result){
+        var project = {
+          name: result.project.name,
+          id: result.project.id
+        };
+
+        res.send({ proyect: project });
       });
     }else{
       res.send({ error: "Not logged in" });
