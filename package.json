@@ -1,19 +1,22 @@
 {
-  "name": "nko3-tangosource",
-  "version": "0.0.0",
+  "name": "Texas Estimate'em",
+  "version": "0.0.1",
   "description": "TangoSource",
-  "main": "server.js",
+  "main": "app.js",
+  "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node app"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:nko3/tangosource.git"
   },
-  "dependencies": {
-  },
   "engines": {
-    "node": "0.8.x"
+     "node": "0.8.x"
+  },
+  "dependencies": {
+    "express": "3.0.0rc5",
+    "jade": "*"
   },
   "subdomain": "tangosource.nko3"
 }
