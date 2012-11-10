@@ -7,6 +7,7 @@ TXE.Router = Backbone.Router.extend({
   },
 
   index: function(){
+    this.indexView = new TXE.Views.indexView();
   }
 
 });
