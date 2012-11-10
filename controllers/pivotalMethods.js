@@ -57,35 +57,43 @@ module.exports = function(app){
     if(req.user){
       var id = req.params.id;
       pivotal.getTasks(req.user.token, id, function(result){
-        var stories = result.stories.story;
-        var total = stories.length;
-        var i = 0;
+        var errorMessage   = result.message;
         var storiesRespond = [];
-        var current = {};
 
-        for(i; i<total; i++){
+        if(errorMessage){
+          res.send({ tasks: result });
+        }else{
 
-          try{ 
-            if(stories[i].estimate[0]._ === "-1"){
-              current = {
-                title: stories[i].name[0],
-                project_id: stories[i].project_id[0]._,
-                id: stories[i].id[0]._,
-                url: stories[i].url[0],
-                description: stories[i].description[0],
-                requested_by: stories[i].requested_by[0],
-                owned_by: stories[i].owned_by,
-                labels: stories[i].labels
-              };
-              storiesRespond.push(current);
+          var stories = result.stories.story;
+          var total   = stories.length;
+          var current = {};
+          var i       = 0;
+
+          for(i; i<total; i++){
+
+            try{ 
+              if(stories[i].estimate[0]._ === "-1"){
+                current = {
+                  title: stories[i].name[0],
+                  project_id: stories[i].project_id[0]._,
+                  id: stories[i].id[0]._,
+                  url: stories[i].url[0],
+                  description: stories[i].description[0],
+                  requested_by: stories[i].requested_by[0],
+                  owned_by: stories[i].owned_by,
+                  labels: stories[i].labels
+                };
+                storiesRespond.push(current);
+              }
+            }catch(err){
+              console.log(err);
             }
-          }catch(err){
-            console.log(err);
+
+            if(i === total - 1){
+              res.send({ tasks: storiesRespond });
+            }
           }
 
-          if(i === total - 1){
-            res.send({ tasks: storiesRespond });
-          }
         }
 
       });
