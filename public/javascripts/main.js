@@ -1,14 +1,14 @@
-window.TexasEstimateEm = {
+window.TXE = {
   Models: {},
   Collections: {},
   Views: {},
 
   Initialize: function(){
-    TexasEstimateEm.router = new texasEstimateEm.Router();
-    Backbone.history.stary({pushState: true});
+    TXE.router = new TXE.Router();
+    Backbone.history.start({pushState: true});
   }
 };
 
 $(function(){
-  TexasEstimateEm.Initialize();
+  TXE.Initialize();
 });

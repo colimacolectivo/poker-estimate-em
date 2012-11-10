@@ -1,6 +1,6 @@
-TexasEstimateEm.Router = Backbone.Router.extend({
-  router: {
-    "*" : "initialize";
+TXE.Router = Backbone.Router.extend({
+  routes: {
+    "" : "initialize"
   },
 
   initialize: function(){
