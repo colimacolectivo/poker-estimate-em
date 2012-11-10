@@ -4,8 +4,6 @@ TXE.Collections.projectsCollection = Backbone.Collection.extend({
   model: TXE.Models.Project,
 
   show: function(projectId){
-    $.getJSON(this.url + '/' + projectId, function(data){
-      return data;
-    });
+    this.fetch();
   }
 });
