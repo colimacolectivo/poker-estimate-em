@@ -1,4 +1,5 @@
 var inspect   = require('eyes').inspector({ stream: null });
+var pivotal   = require("./pivotal");
 
 module.exports = function(app, db){
 
@@ -13,16 +14,25 @@ module.exports = function(app, db){
           name: name
         };
 
-        db.games.find(data, function(err, games){
-          games.toArray(function(err, results){
-            if(results.length === 0){
-              db.games.save(data, { safe: true }, function(err, game){
-                res.send(game);
+        pivotal.getProyect(req.user.token, project_id,  function(result){
+          var Access = result.message  ? false : true; 
+
+          if(Access){
+            db.games.find(data, function(err, games){
+              games.toArray(function(err, results){
+                if(results.length === 0){
+                  db.games.save(data, { safe: true }, function(err, game){
+                    res.send(game);
+                  });
+                }else{
+                  res.send({message: "Game all ready exists."});
+                }
               });
-            }else{
-              res.send({message: "Game all ready exists."});
-            }
-          });
+            });
+          }else{
+            res.send(result);
+          }
+
         });
 
       }

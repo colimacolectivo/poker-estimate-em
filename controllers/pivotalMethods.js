@@ -1,4 +1,4 @@
-var  pivotal  = require("./pivotal");
+var pivotal   = require("./pivotal");
 var inspect   = require('eyes').inspector({ stream: null });
 
 module.exports = function(app){
