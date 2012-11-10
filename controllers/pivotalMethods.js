@@ -21,7 +21,7 @@ module.exports = function(app){
           };
 
           if(i === total - 1){
-            res.send({ proyects: projetsRespond });
+            res.send(projetsRespond);
           }
         }
 
