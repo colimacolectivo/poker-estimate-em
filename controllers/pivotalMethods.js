@@ -109,20 +109,26 @@ module.exports = function(app){
       var strId = req.params.strId;
 
       pivotal.getTask(req.user.token, proId, strId, function(result){
-        var storie = result.story;
+        var errorMessage   = result.message;
 
-        var storieResult = {
-          title: storie.name[0],
-          project_id: storie.project_id[0]._,
-          id: storie.id[0]._,
-          url: storie.url[0],
-          description: storie.description[0],
-          requested_by: storie.requested_by[0],
-          owned_by: storie.owned_by,
-          labels: storie.labels
-        };
+        if(errorMessage){
+          res.send({ task: result });
+        }else{
+          var storie = result.story;
+          var storieResult = {
+            title: storie.name[0],
+            project_id: storie.project_id[0]._,
+            id: storie.id[0]._,
+            url: storie.url[0],
+            description: storie.description[0],
+            requested_by: storie.requested_by[0],
+            owned_by: storie.owned_by,
+            labels: storie.labels
+          };
 
-        res.send({ task: storieResult });
+          res.send({ task: storieResult });
+        }
+
       });
     }else{
       res.send({ error: "Not logged in" });
