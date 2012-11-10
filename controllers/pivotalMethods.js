@@ -61,7 +61,7 @@ module.exports = function(app){
         var storiesRespond = [];
 
         if(errorMessage){
-          res.send({ tasks: result });
+          res.send(result);
         }else{
 
           var stories = result.stories.story;
@@ -90,7 +90,7 @@ module.exports = function(app){
             }
 
             if(i === total - 1){
-              res.send({ tasks: storiesRespond });
+              res.send(storiesRespond);
             }
           }
 
