@@ -65,3 +65,73 @@ freenode, email us at <all@nodeknockout.com>, or tweet
 [3]: https://github.com/nko3/tangosource
 [4]: http://handbook.jit.su
 [5]: http://blog.nodeknockout.com/post/35279199042/introduction-to-jitsu-deployment
+
+For TANGOSOURCE Team
+====================
+
+###API
+
+GET /api/v1/projects
+  [{
+    _id: 0,
+    id: 0,
+    name: "name"
+  }]
+
+GET /api/v1/projects/:id
+    {
+      _id: 0,
+      id: 0,
+      name: "name"
+    }
+
+GET /api/v1/projects/:id/tasks
+    [{
+      _id: 0,
+      id: 0,
+      project_id: 0,
+      title: "",
+      url: "",
+      description: "",
+      requested_by: "",
+      owned_by: "",
+      labels: ""
+    }]
+
+GET /api/v1/projects/:id/tasks/:id
+    {
+      _id: 0,
+      id: 0,
+      project_id: 0,
+      title: "",
+      url: "",
+      description: "",
+      requested_by: "",
+      owned_by: "",
+      labels: ""
+    }
+
+GET /api/v1/projects/:id/games
+    [{
+      _id: 0,
+      name: "",
+      archived: false
+    }]
+
+GET /api/v1/projects/:id/games/:id
+    {
+      _id: 0,
+      name: "",
+      archived: false,
+      tasks: [1, 3, 4]
+    }
+
+POST /api/v1/projects/:id/games/new
+    {
+      name: ""
+    }
+
+POST /api/v1/projects/:id/games/add_tasks
+    {
+      name: ""
+    }
