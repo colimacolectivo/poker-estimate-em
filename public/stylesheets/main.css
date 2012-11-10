@@ -22,3 +22,25 @@ body {
 .hide {
   display: none;
 }
+
+/* line 19, ../sass/main.scss */
+.top-bar {
+  margin: 0;
+}
+
+/* line 23, ../sass/main.scss */
+.login-form-content p {
+  padding: 14px;
+  color: #F18D05;
+  padding-top: 0;
+}
+/* line 27, ../sass/main.scss */
+.login-form-content p i {
+  color: #2284A1;
+}
+/* line 31, ../sass/main.scss */
+.login-form-content #login-form {
+  width: 300px;
+  padding: 10 20px;
+  margin: 20px;
+}

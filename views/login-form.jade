@@ -1,13 +1,12 @@
 - if(user) 
-    p Welcome #{user.email}
+    p Welcome 
+      i #{user.email}
     a(href="/logout") Log out
 - else
   form(action="/login", method="post", id="login-form")
     div
-      label Username:
-      input(type="text", name="username")
+      input(type="text", name="username", placeholder="Mail")
       br
-      label Password:
-      input(type="password", name="password")
+      input(type="password", name="password", placeholder="Password")
       br
-      input(type="submit", value="Log In")
+      input.radius.button(type="submit", value="Log In")

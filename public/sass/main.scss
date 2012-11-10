@@ -16,3 +16,21 @@ body{
 .hide{
   display: none;
 }
+.top-bar{
+ margin: 0;
+}
+.login-form-content{
+  p{
+    padding: 14px;
+    color: #F18D05;
+    padding-top: 0;
+    i{
+      color: #2284A1;
+    }
+  }
+  #login-form{
+    width: 300px;
+    padding: 10 20px;
+    margin: 20px;
+  }
+}

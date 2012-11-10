@@ -1,13 +1,27 @@
+nav.top-bar
+  .row
+    ul
+      li.name
+        h1
+          a(href="/") Poker Planning
+    section
+      ul.right
+        li
+          a(href='#') Link
+        li.has-dropdown
+          a(href='#') Long In
+          ul.dropdown
+            li.login-form-content
+              include login-form
+  
 .head
   header.row
       .four.columns
         a(href="/")
-          img(src="images/poker-logo.png")
+          // img(src="images/poker-logo.png")
       .eight.columns
         ul.link-list.right
           li
-            a(href="#login-form") Login
+            a(href="#login-form") link
           li
             a(href="games") games
-      include login-form
-  
