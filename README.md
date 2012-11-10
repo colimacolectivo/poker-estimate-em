@@ -129,7 +129,7 @@ GET /api/v1/projects/:id/games/:id
 POST /api/v1/games/new
     {
       name: "",
-      proyect_id: ""
+      project_id: ""
     }
 
 DELETE /api/v1/projects/:id/games/:id

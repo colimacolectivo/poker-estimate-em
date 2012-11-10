@@ -2,18 +2,18 @@ var inspect   = require('eyes').inspector({ stream: null });
 
 module.exports = function(app, db){
 
-  app.post('/api/v1/projects/:proId/games/new', function(req, res){
+  app.post('/api/v1/games/new', function(req, res){
     if(req.user){
-      var proId = parseInt(req.params.proId, 10);
-      var name  = req.body.name;
+      var project_id = parseInt(req.body.project_id, 10);
+      var name       = req.body.name;
 
-      if(typeof proId === "number" && name){
+      if(typeof project_id === "number" && name){
         var data = {
-          project_id: proId,
+          project_id: project_id,
           name: name
         };
 
-        db.games.find({project_id: proId, name: name}, function(err, games){
+        db.games.find(data, function(err, games){
           games.toArray(function(err, results){
             if(results.length === 0){
               db.games.save(data, { safe: true }, function(err, game){
@@ -28,11 +28,13 @@ module.exports = function(app, db){
       }
 
       if(!name){
-        res.send({ error: "Missing name" });
+        res.send({ error: "Missing name." });
       }
 
-      if(!proId){
-        res.send({ error: "Missing project id" });
+      if(!project_id){
+        res.send({ error: "Missing project id." });
+      }else if(typeof project_id !== 'number'){
+        res.send({ error: "Project id must be number." });
       }
 
     }else{
