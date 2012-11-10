@@ -3,6 +3,11 @@ TXE.Collections.tasksCollection = Backbone.Collection.extend({
   
   initialize: function(projectId){
     this.url = '/api/v1/projects/' + projectId + '/tasks';
+    this.fetch();
+  },
+
+  all: function(){
+    return this.models[0].get('tasks');
   },
 
   // this method allows you to get a specific task through the API by passing an ID
