@@ -5,7 +5,9 @@ TXE.Views.indexView = Backbone.View.extend({
   },
 
   initialize: function(){
-    this.template = JST['appindexTemplate'];
-    this.$el.html(this.template);
+    var source = $('#projects').html();
+    var template = Handlebars.compile(source);
+    var data = {name: "From handlebars template"};
+    $('.projects').append(template(data));
   }
 });
