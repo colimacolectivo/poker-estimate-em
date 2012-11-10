@@ -36,14 +36,16 @@ module.exports = function(app){
     if(req.user){
       var id = req.params.id;
       pivotal.getProyect(req.user.token, id,  function(result){
-        var project = {
-          name: result.project.name[0],
-          id: result.project.id[0],
-          public: result.project.public[0],
-          account: result.project.account[0]
-        };
 
-        res.send({ proyect: project });
+        var project = result.message  ? result : 
+          {
+            name: result.project.name[0],
+            id: result.project.id[0],
+            public: result.project.public[0],
+            account: result.project.account[0]
+          };
+
+        res.send({ project: project });
       });
     }else{
       res.send({ error: "Not logged in" });
