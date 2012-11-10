@@ -5901,9 +5901,10 @@ body {
 /* line 12, ../sass/main.scss */
 .footer {
   background: #3F3F3F;
+  color: #fff;
 }
 
-/* line 15, ../sass/main.scss */
+/* line 16, ../sass/main.scss */
 .hide {
   display: none;
 }
