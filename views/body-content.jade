@@ -46,10 +46,21 @@
       .six.columns#work-area
         - if(user) 
           .row.title PROJECTS
-          .row#log-form
+          .row#projects
             // this content is for the projects template
+            .titles.row
+              .six Project Name
+              .three Account
+              .two Games
+            .project
+              .six
+                img(src="images/landing-page/project-carts.png")
+                span name
+              .three acount
+              .two 44
           .row.fot 
             .image-fot
+
         - else
           .row.title LOGIN 
             span WITH YOUR 

@@ -176,7 +176,7 @@ body {
        font-size: 27px;
        @include global_font;
        padding-bottom: 5px;
-       margin: 20px 0 0 0;
+       margin-top: 20px;
        border-bottom: 4px solid #000;
        span{
          font-size: 13px;
@@ -225,6 +225,27 @@ body {
        .image-fot{
          background: #fff url('../images/landing-page/graph-footer.png') repeat-x;
          height: 50px;
+       }
+     }
+     #projects{
+       .titles, .project{
+         font-size: 16px;
+         @include global_font;
+         font-weight: 800;
+         .six, .three, .two{
+           float: left;
+         }
+       }
+       .titles{
+         margin-left: 0px;
+       }
+       .project{
+         padding: 10px 0;
+         color: #999999;
+         img{
+           margin-right: 5px;
+           float:left;
+         }
        }
      }
    }

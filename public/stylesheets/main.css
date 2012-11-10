@@ -189,7 +189,7 @@ body .top-bar .row #navigator li .dropdown li.item a {
   letter-spacing: -1px;
   word-spacing: -1px;
   padding-bottom: 5px;
-  margin: 20px 0 0 0;
+  margin-top: 20px;
   border-bottom: 4px solid #000;
 }
 /* line 181, ../sass/main.scss */
@@ -255,8 +255,34 @@ body .top-bar .row #navigator li .dropdown li.item a {
   background: white url("../images/landing-page/graph-footer.png") repeat-x;
   height: 50px;
 }
+/* line 231, ../sass/main.scss */
+#main-content.row #work-area #projects .titles, #main-content.row #work-area #projects .project {
+  font-size: 16px;
+  font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
+  letter-spacing: -1px;
+  word-spacing: -1px;
+  font-weight: 800;
+}
+/* line 235, ../sass/main.scss */
+#main-content.row #work-area #projects .titles .six, #main-content.row #work-area #projects .titles .three, #main-content.row #work-area #projects .titles .two, #main-content.row #work-area #projects .project .six, #main-content.row #work-area #projects .project .three, #main-content.row #work-area #projects .project .two {
+  float: left;
+}
+/* line 239, ../sass/main.scss */
+#main-content.row #work-area #projects .titles {
+  margin-left: 0px;
+}
+/* line 242, ../sass/main.scss */
+#main-content.row #work-area #projects .project {
+  padding: 10px 0;
+  color: #999999;
+}
+/* line 245, ../sass/main.scss */
+#main-content.row #work-area #projects .project img {
+  margin-right: 5px;
+  float: left;
+}
 
-/* line 233, ../sass/main.scss */
+/* line 254, ../sass/main.scss */
 .clear {
   clear: both;
 }
