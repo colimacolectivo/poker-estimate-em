@@ -1,1 +1,1 @@
-TXE.Templates.IndexTemplate = "<li><%= name%></li>";
+TXE.Templates.IndexTemplate = "<li><%= name %></li>";
