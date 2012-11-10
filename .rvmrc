@@ -1,2 +1,1 @@
 rvm --create 1.9.2@poker-planning
-gem install zurb-foundation

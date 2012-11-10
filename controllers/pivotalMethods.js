@@ -21,7 +21,7 @@ module.exports = function(app){
           };
 
           if(i === total - 1){
-            res.send({ proyects: projetsRespond });
+            res.send(projetsRespond);
           }
         }
 
@@ -45,7 +45,7 @@ module.exports = function(app){
             account: result.project.account[0]
           };
 
-        res.send({ project: project });
+        res.send(project);
       });
     }else{
       res.send({ error: "Not logged in" });
@@ -61,7 +61,7 @@ module.exports = function(app){
         var storiesRespond = [];
 
         if(errorMessage){
-          res.send({ tasks: result });
+          res.send(result);
         }else{
 
           var stories = result.stories.story;
@@ -90,7 +90,7 @@ module.exports = function(app){
             }
 
             if(i === total - 1){
-              res.send({ tasks: storiesRespond });
+              res.send(storiesRespond);
             }
           }
 
@@ -112,7 +112,7 @@ module.exports = function(app){
         var errorMessage   = result.message;
 
         if(errorMessage){
-          res.send({ task: result });
+          res.send(result);
         }else{
           var storie = result.story;
           var storieResult = {
@@ -126,7 +126,7 @@ module.exports = function(app){
             labels: storie.labels
           };
 
-          res.send({ task: storieResult });
+          res.send(storieResult);
         }
 
       });

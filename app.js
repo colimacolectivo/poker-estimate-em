@@ -94,6 +94,7 @@ database.init(function(db){
   });
 
   require("./controllers/home")(app);
+  require("./controllers/games")(app, db);
   require("./controllers/pivotalMethods")(app);
 
 
