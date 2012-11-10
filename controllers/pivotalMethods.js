@@ -14,8 +14,10 @@ module.exports = function(app){
 
         for(i; i<total; i++){
           projetsRespond[i] = {
-            name: projects[i].name,
-            id: projects[i].id
+            name: projects[i].name[0],
+            id: projects[i].id[0],
+            public: projects[i].public[0],
+            account: projects[i].account[0]
           };
 
           if(i === total - 1){
@@ -35,8 +37,10 @@ module.exports = function(app){
       var id = req.params.id;
       pivotal.getProyect(req.user.token, id,  function(result){
         var project = {
-          name: result.project.name,
-          id: result.project.id
+          name: result.project.name[0],
+          id: result.project.id[0],
+          public: result.project.public[0],
+          account: result.project.account[0]
         };
 
         res.send({ proyect: project });
