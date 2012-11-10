@@ -39,7 +39,16 @@ body {
         li {
           a{
             font-size:18px;
+            img{
+              margin: 10px 5px 0 0;
+              float: left;
+            }
             &:hover{color: #F9A73F;}
+            &.logout{
+              img{
+                margin-top: 7px;
+              }
+            }
           }
           .dropdown{
             padding: 0;

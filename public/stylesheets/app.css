@@ -5924,18 +5924,27 @@ body .top-bar .row #navigator li a {
   font-size: 18px;
 }
 /* line 42, ../sass/main.scss */
+body .top-bar .row #navigator li a img {
+  margin: 10px 5px 0 0;
+  float: left;
+}
+/* line 46, ../sass/main.scss */
 body .top-bar .row #navigator li a:hover {
   color: #F9A73F;
 }
-/* line 44, ../sass/main.scss */
+/* line 48, ../sass/main.scss */
+body .top-bar .row #navigator li a.logout img {
+  margin-top: 7px;
+}
+/* line 53, ../sass/main.scss */
 body .top-bar .row #navigator li .dropdown {
   padding: 0;
 }
-/* line 46, ../sass/main.scss */
+/* line 55, ../sass/main.scss */
 body .top-bar .row #navigator li .dropdown li.item {
   padding: 0;
 }
-/* line 47, ../sass/main.scss */
+/* line 56, ../sass/main.scss */
 body .top-bar .row #navigator li .dropdown li.item a {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -5943,18 +5952,18 @@ body .top-bar .row #navigator li .dropdown li.item a {
   font-weight: 400;
 }
 
-/* line 63, ../sass/main.scss */
+/* line 72, ../sass/main.scss */
 .footer {
   background: #3F3F3F;
   color: #fff;
 }
 
-/* line 67, ../sass/main.scss */
+/* line 76, ../sass/main.scss */
 .hide {
   display: none;
 }
 
-/* line 72, ../sass/main.scss */
+/* line 81, ../sass/main.scss */
 .item a {
   color: #fff;
   display: block;
@@ -5962,17 +5971,17 @@ body .top-bar .row #navigator li .dropdown li.item a {
   border-top: 1px solid rgba(204, 204, 204, 0.3);
 }
 
-/* line 81, ../sass/main.scss */
+/* line 90, ../sass/main.scss */
 .login-form-content p {
   padding: 14px;
   color: #F18D05;
   padding-top: 0;
 }
-/* line 85, ../sass/main.scss */
+/* line 94, ../sass/main.scss */
 .login-form-content p i {
   color: #2284A1;
 }
-/* line 89, ../sass/main.scss */
+/* line 98, ../sass/main.scss */
 .login-form-content #login-form {
   width: 300px;
   padding: 10 20px;
