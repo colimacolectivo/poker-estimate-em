@@ -40,4 +40,25 @@ module.exports = function(app, db){
     }
   });
 
+  app.get('/api/v1/projects/:proId/games', function(req, res){
+    if(req.user){
+      var proId = parseInt(req.params.proId, 10);
+
+      if(typeof proId === "number"){
+        db.games.find({project_id: proId}, function(err, games){
+          games.toArray(function(err, results){
+            res.send(results);
+          });
+        });
+      }
+
+      if(!proId){
+        res.send({ error: "Missing project id" });
+      }
+
+    }else{
+      res.send({ error: "Not logged in" });
+    }
+  });
+
 };
