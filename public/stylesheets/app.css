@@ -5900,12 +5900,7 @@ body {
   display: none;
 }
 
-/* line 20, ../sass/main.scss */
-.top-bar {
-  margin: 0;
-}
-
-/* line 24, ../sass/main.scss */
+/* line 21, ../sass/main.scss */
 .item {
   color: #fff;
   text-align: center;
@@ -5914,17 +5909,17 @@ body {
   border-bottom: 1px solid black;
 }
 
-/* line 33, ../sass/main.scss */
+/* line 30, ../sass/main.scss */
 .login-form-content p {
   padding: 14px;
   color: #F18D05;
   padding-top: 0;
 }
-/* line 37, ../sass/main.scss */
+/* line 34, ../sass/main.scss */
 .login-form-content p i {
   color: #2284A1;
 }
-/* line 41, ../sass/main.scss */
+/* line 38, ../sass/main.scss */
 .login-form-content #login-form {
   width: 300px;
   padding: 10 20px;
