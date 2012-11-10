@@ -170,4 +170,66 @@ body {
        }
      }
    }
+   #work-area{
+     .title{
+       color: #C01126;
+       font-size: 27px;
+       @include global_font;
+       padding-bottom: 5px;
+       margin: 20px 0 0 0;
+       border-bottom: 4px solid #000;
+       span{
+         font-size: 13px;
+       }
+     }
+     #log-form{
+       margin-top: 30px;
+       padding: 15px;
+       input[type=text], input[type=password]{
+         height: 55px;
+         @include global_font;
+         font-size: 24px;
+         padding: 0 15px;
+       }
+       input.button{
+         @include global_font;
+         background: #FAA83F;
+         float: right;
+         margin-top: 20px;
+         border: 1px solid #FCD39E;
+         &:hover{
+           background: #E39737;
+         }
+       }
+       label{
+         @include global_font;
+         font-size: 30px;
+         font-weight: 800;
+         margin-bottom: 5px;
+       }
+       .sign{
+         a{
+           font-size: 16px;
+           color: #DFD3C7;
+           font-weight: 800;
+           @include global_font;
+           float: right;
+         }
+       }
+     }
+     .fot{
+       padding: 15px;
+       padding-top: 10px;
+       border-top: 4px solid #000;
+       margin-top: 10px;
+       .image-fot{
+         background: #fff url('../images/landing-page/graph-footer.png') repeat-x;
+         height: 50px;
+       }
+     }
+   }
  }
+
+.clear{
+  clear: both;
+}

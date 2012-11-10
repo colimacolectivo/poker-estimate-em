@@ -7,8 +7,12 @@
   input(id="user_logged_in", type="hidden", value="false")
   form(action="/login", method="post", id="login-form")
     div
-      input(type="text", name="username", placeholder="Mail")
+      label Mail
+      input(type="text", name="username", placeholder="EXAMPLE@DOMAIN.COM")
       br
-      input(type="password", name="password", placeholder="Password")
-      br
-      input.radius.button(type="submit", value="Log In")
+      label Password
+      input(type="password", name="password", placeholder="********")
+      .sign
+        a(href="https://www.pivotaltracker.com/signup/new") OR SIGN UP
+      .clear
+      input.button(type="submit", value="LOGIN")
