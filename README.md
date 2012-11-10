@@ -126,10 +126,15 @@ GET /api/v1/projects/:id/games/:id
       tasks: [1, 3, 4]
     }
 
-POST /api/v1/projects/:id/games/new
+POST /api/v1/games/new
     {
       name: "",
       proyect_id: ""
+    }
+
+DELETE /api/v1/projects/:id/games/:id
+    {
+      _id: ""
     }
 
 POST /api/v1/projects/:id/games/add_tasks
