@@ -112,7 +112,7 @@ module.exports = function(app){
         var errorMessage   = result.message;
 
         if(errorMessage){
-          res.send({ task: result });
+          res.send(result);
         }else{
           var storie = result.story;
           var storieResult = {
@@ -126,7 +126,7 @@ module.exports = function(app){
             labels: storie.labels
           };
 
-          res.send({ task: storieResult });
+          res.send(storieResult);
         }
 
       });
