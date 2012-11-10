@@ -1,11 +1,11 @@
 var mongodb = require('mongodb');
 
-var host = "127.0.0.1";
-var port = 27017;
+var host = "alex.mongohq.com";
+var port = 10016;
 var options = {};
 
-var server = new mongodb.Server(host, port, options, {native_parser: true});
-var Database = new mongodb.Db("Texas", server, {});
+var server = new mongodb.Server(host, port, options);
+var Database = new mongodb.Db("TexasEstimateEm", server, {});
 
 exports.close = function(){
   Database.close();
@@ -14,6 +14,11 @@ exports.close = function(){
 exports.init = function(callback){
 
   Database.open(function(error, db){
+
+    db.authenticate('narciso', 'guillen', function (err, replies) {
+      console.log(replies);
+      // We are now connected and authenticated.
+    });
 
     if(error){
       throw error;
