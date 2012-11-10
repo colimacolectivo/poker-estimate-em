@@ -93,7 +93,8 @@ database.init(function(db){
     app.use(express.errorHandler());
   });
 
-  require("./controllers/home")(app, db);
+  require("./controllers/home")(app);
+  require("./controllers/pivotalMothods")(app);
 
   app.post('/login', 
           passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }),
