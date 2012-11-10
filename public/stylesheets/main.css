@@ -1,6 +1,6 @@
 /* line 2, ../sass/main.scss */
 body {
-  background-color: #ccc;
+  background-color: #fff;
 }
 /* line 4, ../sass/main.scss */
 body #someid {
@@ -12,4 +12,14 @@ body #someid {
   display: block;
   color: #f00;
   border: 1px solid #000;
+}
+
+/* line 13, ../sass/main.scss */
+.head {
+  background-color: #2BA6CB;
+}
+
+/* line 17, ../sass/main.scss */
+.footer {
+  background: #3F3F3F;
 }
