@@ -1,21 +1,10 @@
 TXE.Collections.gamesCollection = Backbone.Collection.extend({
+  model: TXE.Models.Game,
 
   initialize: function(projectId){
     this.project_id = projectId;
     this.url = '/api/v1/projects/' + projectId + '/games';
     this.fetch();
-  },
-
-  all: function(){
-    this.fetch();
-    return this.models[0].get('games');
-  },
-
-  find: function(gameId){
-    var old = this.url;
-    this.url = old + '/' + gameId;
-    this.fetch();
-    this.url = old;
   },
 
   // TODO add the create action
