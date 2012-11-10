@@ -5,3 +5,16 @@ block content
   .large.radius.nice.blue.button this a button example
   #someid
     some text
+  - if(user) 
+      p Welcome #{user.email}
+      a(href="/logout") Log out
+  - else
+    form(action="/login", method="post")
+      div
+        label Username:
+        input(type="text", name="username")
+        br
+        label Password:
+        input(type="password", name="password")
+        br
+        input(type="submit", value="Log In")
