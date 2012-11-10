@@ -1,4 +1,5 @@
 TXE.Collections.gamesCollection = Backbone.Collection.extend({
+
   initialize: function(projectId){
     this.project_id = projectId;
   },
@@ -23,4 +24,5 @@ TXE.Collections.gamesCollection = Backbone.Collection.extend({
     var taskGame = new TXE.Models.taskGame(this.project_id);
     taskGame.save({name: name});
   }
+
 });

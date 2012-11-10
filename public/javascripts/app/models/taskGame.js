@@ -1,4 +1,6 @@
 TXE.Models.taskGame = Backbone.Model.extend({
+  localStorage: new Backbone.LocalStorage("taskGame"),
+  
   initialize: function(projectId){
     this.project_id = projectId;
   },
