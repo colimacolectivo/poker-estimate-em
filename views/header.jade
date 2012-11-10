@@ -12,18 +12,25 @@ nav.top-bar
           img(src="images/slog.png")
     section#navigator
       ul.right
-        li.has-dropdown
-          a(href='#') Projects
-          ul.dropdown
-            li.item 
-              a(href='#') project1
-            li.item 
-              a(href='#') project2
-            li.item 
-              a(href='#') project3
-            li.item 
-              a(href='#') project4
-        li
-          a(href='#') Eduardo Ruiz
-        li
-          a(href='#') Exit
+        -if(user)
+          li.has-dropdown
+            a(href='#') Projects
+            ul.dropdown
+              li.item 
+                a(href='#') project1
+              li.item 
+                a(href='#') project2
+              li.item 
+                a(href='#') project3
+              li.item 
+                a(href='#') project4
+            li
+              a(href='#') 
+                img(src="images/user.png")
+                span Eduardo Ruiz
+          li
+            a.logout(href='#')
+              img(src="images/exit.png")
+        -else
+          li.item
+            a(href='#') Login
