@@ -1,7 +1,8 @@
-window.TXE = {
+var TXE = {
   Models: {},
   Collections: {},
   Views: {},
+  Templates: {},
 
   Initialize: function(){
     TXE.router = new TXE.Router();
