@@ -1,5 +1,583 @@
 // rivets.js
-// version: 0.3.8
+// version: 0.4.1
 // author: Michael Richards
 // license: MIT
-(function(){var a,b,c,d,e,f,g,h,i,j=function(a,b){return function(){return a.apply(b,arguments)}},k=[].slice,l=[].indexOf||function(a){for(var b=0,c=this.length;b<c;b++)if(b in this&&this[b]===a)return b;return-1};a={},String.prototype.trim||(String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g,"")}),a.Binding=function(){function h(c,f,h,i,k){this.el=c,this.type=f,this.model=h,this.keypath=i,this.options=k!=null?k:{},this.unbind=j(this.unbind,this),this.bind=j(this.bind,this),this.publish=j(this.publish,this),this.sync=j(this.sync,this),this.set=j(this.set,this),this.formattedValue=j(this.formattedValue,this),this.isBidirectional=j(this.isBidirectional,this),this.routine=function(){switch(this.options.special){case"event":return e(this.type);case"class":return d(this.type);case"iteration":return g(this.type);default:return a.routines[this.type]||b(this.type)}}.call(this),this.formatters=this.options.formatters||[]}return h.prototype.isBidirectional=function(){var a;return(a=this.type)==="value"||a==="checked"||a==="unchecked"},h.prototype.formattedValue=function(b){var c,d,e,f,g,h,i,j;h=this.formatters;for(f=0,g=h.length;f<g;f++)d=h[f],c=d.split(/\s+/),e=c.shift(),b=this.model[e]instanceof Function?(i=this.model)[e].apply(i,[b].concat(k.call(c))):a.formatters[e]?(j=a.formatters)[e].apply(j,[b].concat(k.call(c))):void 0;return b},h.prototype.set=function(a){return a=a instanceof Function&&this.options.special!=="event"?this.formattedValue(a.call(this.model)):this.formattedValue(a),this.options.special==="event"?(this.routine(this.el,a,this.currentListener),this.currentListener=a):this.options.special==="iteration"?this.routine(this.el,a,this):this.routine(this.el,a)},h.prototype.sync=function(){return this.set(this.options.bypass?this.model[this.keypath]:a.config.adapter.read(this.model,this.keypath))},h.prototype.publish=function(){return a.config.adapter.publish(this.model,this.keypath,f(this.el))},h.prototype.bind=function(){var b,d,e,f,g,h,i;this.options.bypass?this.sync():(a.config.adapter.subscribe(this.model,this.keypath,this.sync),a.config.preloadData&&this.sync());if((h=this.options.dependencies)!=null?h.length:void 0){i=this.options.dependencies;for(f=0,g=i.length;f<g;f++)b=i[f],/^\./.test(b)?(e=this.model,d=b.substr(1)):(b=b.split("."),e=this.view.models[b.shift()],d=b.join(".")),a.config.adapter.subscribe(e,d,this.sync)}if(this.isBidirectional())return c(this.el,"change",this.publish)},h.prototype.unbind=function(){var b,c,d,e,f;if(!this.options.bypass){a.config.adapter.unsubscribe(this.model,this.keypath,this.sync);if((e=this.options.dependencies)!=null?e.length:void 0){f=this.options.dependencies;for(c=0,d=f.length;c<d;c++)b=f[c],a.config.adapter.unsubscribe(this.model,b,this.sync)}if(this.isBidirectional())return this.el.removeEventListener("change",this.publish)}},h}(),a.View=function(){function b(a,b){this.els=a,this.models=b,this.publish=j(this.publish,this),this.sync=j(this.sync,this),this.unbind=j(this.unbind,this),this.bind=j(this.bind,this),this.select=j(this.select,this),this.build=j(this.build,this),this.bindingRegExp=j(this.bindingRegExp,this),this.els.jquery||this.els instanceof Array||(this.els=[this.els]),this.build()}return b.prototype.bindingRegExp=function(){var b;return b=a.config.prefix,b?new RegExp("^data-"+b+"-"):/^data-/},b.prototype.build=function(){var b,c,d,e,f,g,h,i,j,k,m,n,o,p,q,r=this;this.bindings=[],j=[],g=null,b=this.bindingRegExp(),e=/^on-/,c=/^class-/,f=/^each-/,i=function(d){var h,i,k,m,n,o,p,q,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J;if(l.call(j,d)<0){H=d.attributes;for(z=0,D=H.length;z<D;z++){i=H[z];if(b.test(i.name)){y=i.name.replace(b,"");if(f.test(y)&&!r.models[y.replace(f,"")]){I=d.getElementsByTagName("*");for(A=0,E=I.length;A<E;A++)s=I[A],j.push(s);g=[i]}}}J=g||d.attributes;for(B=0,F=J.length;B<F;B++){i=J[B];if(b.test(i.name)){t={},y=i.name.replace(b,""),w=function(){var a,b,c,d;c=i.value.split("|"),d=[];for(a=0,b=c.length;a<b;a++)v=c[a],d.push(v.trim());return d}(),m=function(){var a,b,c,d;c=w.shift().split("<"),d=[];for(a=0,b=c.length;a<b;a++)n=c[a],d.push(n.trim());return d}(),u=m.shift(),x=u.split(/\.|:/),t.formatters=w,q=r.models[x.shift()],t.bypass=u.indexOf(":")!==-1,p=x.join(".");if(q){if(o=m.shift())t.dependencies=o.split(/\s+/);e.test(y)&&(y=y.replace(e,""),t.special="event"),c.test(y)&&(y=y.replace(c,""),t.special="class"),f.test(y)&&(y=y.replace(f,""),t.special="iteration"),k=new a.Binding(d,y,q,p,t),k.view=r,r.bindings.push(k)}}if(g){for(C=0,G=g.length;C<G;C++)h=g[C],d.removeAttribute(h.name);g=null}}}},p=this.els;for(k=0,n=p.length;k<n;k++){d=p[k],i(d),q=d.getElementsByTagName("*");for(m=0,o=q.length;m<o;m++)h=q[m],i(h)}},b.prototype.select=function(a){var b,c,d,e,f;e=this.bindings,f=[];for(c=0,d=e.length;c<d;c++)b=e[c],a(b)&&f.push(b);return f},b.prototype.bind=function(){var a,b,c,d,e;d=this.bindings,e=[];for(b=0,c=d.length;b<c;b++)a=d[b],e.push(a.bind());return e},b.prototype.unbind=function(){var a,b,c,d,e;d=this.bindings,e=[];for(b=0,c=d.length;b<c;b++)a=d[b],e.push(a.unbind());return e},b.prototype.sync=function(){var a,b,c,d,e;d=this.bindings,e=[];for(b=0,c=d.length;b<c;b++)a=d[b],e.push(a.sync());return e},b.prototype.publish=function(){var a,b,c,d,e;d=this.select(function(a){return a.isBidirectional()}),e=[];for(b=0,c=d.length;b<c;b++)a=d[b],e.push(a.publish());return e},b}(),c=function(a,b,c){return window.jQuery!=null?(a=jQuery(a),a.on!=null?a.on(b,c):a.bind(b,c)):window.addEventListener!=null?a.addEventListener(b,c,!1):(b="on"+b,a.attachEvent(b,c))},i=function(a,b,c){return window.jQuery!=null?(a=jQuery(a),a.off!=null?a.off(b,c):a.unbind(b,c)):window.removeEventListener?a.removeEventListener(b,c,!1):(b="on"+b,a.detachEvent(b,c))},f=function(a){switch(a.type){case"checkbox":return a.checked;default:return a.value}},e=function(a){return function(b,d,e){d&&c(b,a,d);if(e)return i(b,a,e)}},d=function(a){return function(b,c){var d,e;d=" "+b.className+" ",e=d.indexOf(" "+a+" ")!==-1;if(!c===e)return b.className=c?""+b.className+" "+a:d.replace(" "+a+" "," ").trim()}},g=function(a){return function(b,c,d){var e,f,g,i,j,k,l,m,n,o,p,q,r,s;if(d.iterated!=null){q=d.iterated;for(m=0,o=q.length;m<o;m++)i=q[m],i.view.unbind(),i.el.parentNode.removeChild(i.el)}else d.marker=document.createComment(" rivets: each-"+a+" "),b.parentNode.insertBefore(d.marker,b),b.parentNode.removeChild(b);d.iterated=[],s=[];for(n=0,p=c.length;n<p;n++){f=c[n],e={},r=d.view.models;for(k in r)j=r[k],e[k]=j;e[a]=f,g=b.cloneNode(!0),l=d.iterated[d.iterated.length-1]||d.marker,d.marker.parentNode.insertBefore(g,l.nextSibling),s.push(d.iterated.push({el:g,view:h.bind(g,e)}))}return s}},b=function(a){return function(b,c){return c?b.setAttribute(a,c):b.removeAttribute(a)}},a.routines={enabled:function(a,b){return a.disabled=!b},disabled:function(a,b){return a.disabled=!!b},checked:function(a,b){return a.type==="radio"?a.checked=a.value===b:a.checked=!!b},unchecked:function(a,b){return a.type==="radio"?a.checked=a.value!==b:a.checked=!b},show:function(a,b){return a.style.display=b?"":"none"},hide:function(a,b){return a.style.display=b?"none":""},html:function(a,b){return a.innerHTML=b!=null?b:""},value:function(a,b){return a.value=b!=null?b:""},text:function(a,b){return a.innerText!=null?a.innerText=b!=null?b:"":a.textContent=b!=null?b:""}},a.config={preloadData:!0},a.formatters={},h={routines:a.routines,formatters:a.formatters,config:a.config,configure:function(b){var c,d;b==null&&(b={});for(c in b)d=b[c],a.config[c]=d},bind:function(b,c){var d;return c==null&&(c={}),d=new a.View(b,c),d.bind(),d}},typeof module!="undefined"&&module!==null?module.exports=h:this.rivets=h}).call(this);
+(function() {
+  var Rivets, bindEvent, getInputValue, rivets, unbindEvent,
+    __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+    __slice = [].slice,
+    __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
+
+  Rivets = {};
+
+  if (!String.prototype.trim) {
+    String.prototype.trim = function() {
+      return this.replace(/^\s+|\s+$/g, '');
+    };
+  }
+
+  Rivets.Binding = (function() {
+
+    function Binding(el, type, model, keypath, options) {
+      var identifier, regexp, value, _ref;
+      this.el = el;
+      this.type = type;
+      this.model = model;
+      this.keypath = keypath;
+      this.options = options != null ? options : {};
+      this.unbind = __bind(this.unbind, this);
+
+      this.bind = __bind(this.bind, this);
+
+      this.publish = __bind(this.publish, this);
+
+      this.sync = __bind(this.sync, this);
+
+      this.set = __bind(this.set, this);
+
+      this.formattedValue = __bind(this.formattedValue, this);
+
+      if (!(this.binder = Rivets.binders[type])) {
+        _ref = Rivets.binders;
+        for (identifier in _ref) {
+          value = _ref[identifier];
+          if (identifier !== '*' && identifier.indexOf('*') !== -1) {
+            regexp = new RegExp("^" + (identifier.replace('*', '.+')) + "$");
+            if (regexp.test(type)) {
+              this.binder = value;
+              this.args = new RegExp("^" + (identifier.replace('*', '(.+)')) + "$").exec(type);
+              this.args.shift();
+            }
+          }
+        }
+      }
+      this.binder || (this.binder = Rivets.binders['*']);
+      if (this.binder instanceof Function) {
+        this.binder = {
+          routine: this.binder
+        };
+      }
+      this.formatters = this.options.formatters || [];
+    }
+
+    Binding.prototype.formattedValue = function(value) {
+      var args, formatter, id, _i, _len, _ref, _ref1, _ref2;
+      _ref = this.formatters;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        formatter = _ref[_i];
+        args = formatter.split(/\s+/);
+        id = args.shift();
+        value = this.model[id] instanceof Function ? (_ref1 = this.model)[id].apply(_ref1, [value].concat(__slice.call(args))) : Rivets.formatters[id] ? (_ref2 = Rivets.formatters)[id].apply(_ref2, [value].concat(__slice.call(args))) : void 0;
+      }
+      return value;
+    };
+
+    Binding.prototype.set = function(value) {
+      var _ref;
+      value = value instanceof Function && !this.binder["function"] ? this.formattedValue(value.call(this.model)) : this.formattedValue(value);
+      return (_ref = this.binder.routine) != null ? _ref.call(this, this.el, value) : void 0;
+    };
+
+    Binding.prototype.sync = function() {
+      return this.set(this.options.bypass ? this.model[this.keypath] : Rivets.config.adapter.read(this.model, this.keypath));
+    };
+
+    Binding.prototype.publish = function() {
+      return Rivets.config.adapter.publish(this.model, this.keypath, getInputValue(this.el));
+    };
+
+    Binding.prototype.bind = function() {
+      var dependency, keypath, model, _i, _len, _ref, _ref1, _ref2, _results;
+      if ((_ref = this.binder.bind) != null) {
+        _ref.call(this, this.el);
+      }
+      if (this.options.bypass) {
+        this.sync();
+      } else {
+        Rivets.config.adapter.subscribe(this.model, this.keypath, this.sync);
+        if (Rivets.config.preloadData) {
+          this.sync();
+        }
+      }
+      if ((_ref1 = this.options.dependencies) != null ? _ref1.length : void 0) {
+        _ref2 = this.options.dependencies;
+        _results = [];
+        for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
+          dependency = _ref2[_i];
+          if (/^\./.test(dependency)) {
+            model = this.model;
+            keypath = dependency.substr(1);
+          } else {
+            dependency = dependency.split('.');
+            model = this.view.models[dependency.shift()];
+            keypath = dependency.join('.');
+          }
+          _results.push(Rivets.config.adapter.subscribe(model, keypath, this.sync));
+        }
+        return _results;
+      }
+    };
+
+    Binding.prototype.unbind = function() {
+      var keypath, _i, _len, _ref, _ref1, _ref2, _results;
+      if ((_ref = this.binder.unbind) != null) {
+        _ref.call(this, this.el);
+      }
+      if (!this.options.bypass) {
+        Rivets.config.adapter.unsubscribe(this.model, this.keypath, this.sync);
+      }
+      if ((_ref1 = this.options.dependencies) != null ? _ref1.length : void 0) {
+        _ref2 = this.options.dependencies;
+        _results = [];
+        for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
+          keypath = _ref2[_i];
+          _results.push(Rivets.config.adapter.unsubscribe(this.model, keypath, this.sync));
+        }
+        return _results;
+      }
+    };
+
+    return Binding;
+
+  })();
+
+  Rivets.View = (function() {
+
+    function View(els, models) {
+      this.els = els;
+      this.models = models;
+      this.publish = __bind(this.publish, this);
+
+      this.sync = __bind(this.sync, this);
+
+      this.unbind = __bind(this.unbind, this);
+
+      this.bind = __bind(this.bind, this);
+
+      this.select = __bind(this.select, this);
+
+      this.build = __bind(this.build, this);
+
+      this.bindingRegExp = __bind(this.bindingRegExp, this);
+
+      if (!(this.els.jquery || this.els instanceof Array)) {
+        this.els = [this.els];
+      }
+      this.build();
+    }
+
+    View.prototype.bindingRegExp = function() {
+      var prefix;
+      prefix = Rivets.config.prefix;
+      if (prefix) {
+        return new RegExp("^data-" + prefix + "-");
+      } else {
+        return /^data-/;
+      }
+    };
+
+    View.prototype.build = function() {
+      var bindingRegExp, el, node, parseNode, skipNodes, _i, _j, _len, _len1, _ref, _ref1,
+        _this = this;
+      this.bindings = [];
+      skipNodes = [];
+      bindingRegExp = this.bindingRegExp();
+      parseNode = function(node) {
+        var attribute, attributes, binder, binding, context, ctx, dependencies, identifier, keypath, model, n, options, path, pipe, pipes, regexp, splitPath, type, value, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3;
+        if (__indexOf.call(skipNodes, node) < 0) {
+          _ref = node.attributes;
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            attribute = _ref[_i];
+            if (bindingRegExp.test(attribute.name)) {
+              type = attribute.name.replace(bindingRegExp, '');
+              if (!(binder = Rivets.binders[type])) {
+                _ref1 = Rivets.binders;
+                for (identifier in _ref1) {
+                  value = _ref1[identifier];
+                  if (identifier !== '*' && identifier.indexOf('*') !== -1) {
+                    regexp = new RegExp("^" + (identifier.replace('*', '.+')) + "$");
+                    if (regexp.test(type)) {
+                      binder = value;
+                    }
+                  }
+                }
+              }
+              binder || (binder = Rivets.binders['*']);
+              if (binder.block) {
+                _ref2 = node.getElementsByTagName('*');
+                for (_j = 0, _len1 = _ref2.length; _j < _len1; _j++) {
+                  n = _ref2[_j];
+                  skipNodes.push(n);
+                }
+                attributes = [attribute];
+              }
+            }
+          }
+          _ref3 = attributes || node.attributes;
+          for (_k = 0, _len2 = _ref3.length; _k < _len2; _k++) {
+            attribute = _ref3[_k];
+            if (bindingRegExp.test(attribute.name)) {
+              options = {};
+              type = attribute.name.replace(bindingRegExp, '');
+              pipes = (function() {
+                var _l, _len3, _ref4, _results;
+                _ref4 = attribute.value.split('|');
+                _results = [];
+                for (_l = 0, _len3 = _ref4.length; _l < _len3; _l++) {
+                  pipe = _ref4[_l];
+                  _results.push(pipe.trim());
+                }
+                return _results;
+              })();
+              context = (function() {
+                var _l, _len3, _ref4, _results;
+                _ref4 = pipes.shift().split('<');
+                _results = [];
+                for (_l = 0, _len3 = _ref4.length; _l < _len3; _l++) {
+                  ctx = _ref4[_l];
+                  _results.push(ctx.trim());
+                }
+                return _results;
+              })();
+              path = context.shift();
+              splitPath = path.split(/\.|:/);
+              options.formatters = pipes;
+              options.bypass = path.indexOf(':') !== -1;
+              if (splitPath[0]) {
+                model = _this.models[splitPath.shift()];
+              } else {
+                model = _this.models;
+                splitPath.shift();
+              }
+              keypath = splitPath.join('.');
+              if (model) {
+                if (dependencies = context.shift()) {
+                  options.dependencies = dependencies.split(/\s+/);
+                }
+                binding = new Rivets.Binding(node, type, model, keypath, options);
+                binding.view = _this;
+                _this.bindings.push(binding);
+              }
+            }
+          }
+          if (attributes) {
+            attributes = null;
+          }
+        }
+      };
+      _ref = this.els;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        el = _ref[_i];
+        parseNode(el);
+        _ref1 = el.getElementsByTagName('*');
+        for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+          node = _ref1[_j];
+          parseNode(node);
+        }
+      }
+    };
+
+    View.prototype.select = function(fn) {
+      var binding, _i, _len, _ref, _results;
+      _ref = this.bindings;
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        binding = _ref[_i];
+        if (fn(binding)) {
+          _results.push(binding);
+        }
+      }
+      return _results;
+    };
+
+    View.prototype.bind = function() {
+      var binding, _i, _len, _ref, _results;
+      _ref = this.bindings;
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        binding = _ref[_i];
+        _results.push(binding.bind());
+      }
+      return _results;
+    };
+
+    View.prototype.unbind = function() {
+      var binding, _i, _len, _ref, _results;
+      _ref = this.bindings;
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        binding = _ref[_i];
+        _results.push(binding.unbind());
+      }
+      return _results;
+    };
+
+    View.prototype.sync = function() {
+      var binding, _i, _len, _ref, _results;
+      _ref = this.bindings;
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        binding = _ref[_i];
+        _results.push(binding.sync());
+      }
+      return _results;
+    };
+
+    View.prototype.publish = function() {
+      var binding, _i, _len, _ref, _results;
+      _ref = this.select(function(b) {
+        return b.binder.publishes;
+      });
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        binding = _ref[_i];
+        _results.push(binding.publish());
+      }
+      return _results;
+    };
+
+    return View;
+
+  })();
+
+  bindEvent = function(el, event, handler, context) {
+    var fn;
+    fn = function(e) {
+      return handler.call(context, e);
+    };
+    if (window.jQuery != null) {
+      el = jQuery(el);
+      if (el.on != null) {
+        el.on(event, fn);
+      } else {
+        el.bind(event, fn);
+      }
+    } else if (window.addEventListener != null) {
+      el.addEventListener(event, fn, false);
+    } else {
+      event = 'on' + event;
+      el.attachEvent(event, fn);
+    }
+    return fn;
+  };
+
+  unbindEvent = function(el, event, fn) {
+    if (window.jQuery != null) {
+      el = jQuery(el);
+      if (el.off != null) {
+        return el.off(event, fn);
+      } else {
+        return el.unbind(event, fn);
+      }
+    } else if (window.removeEventListener) {
+      return el.removeEventListener(event, fn, false);
+    } else {
+      event = 'on' + event;
+      return el.detachEvent(event, fn);
+    }
+  };
+
+  getInputValue = function(el) {
+    var o, _i, _len, _results;
+    switch (el.type) {
+      case 'checkbox':
+        return el.checked;
+      case 'select-multiple':
+        _results = [];
+        for (_i = 0, _len = el.length; _i < _len; _i++) {
+          o = el[_i];
+          if (o.selected) {
+            _results.push(o.value);
+          }
+        }
+        return _results;
+        break;
+      default:
+        return el.value;
+    }
+  };
+
+  Rivets.binders = {
+    enabled: function(el, value) {
+      return el.disabled = !value;
+    },
+    disabled: function(el, value) {
+      return el.disabled = !!value;
+    },
+    checked: {
+      publishes: true,
+      bind: function(el) {
+        return this.currentListener = bindEvent(el, 'change', this.publish);
+      },
+      unbind: function(el) {
+        return unbindEvent(el, 'change', this.currentListener);
+      },
+      routine: function(el, value) {
+        if (el.type === 'radio') {
+          return el.checked = el.value === value;
+        } else {
+          return el.checked = !!value;
+        }
+      }
+    },
+    unchecked: {
+      publishes: true,
+      bind: function(el) {
+        return this.currentListener = bindEvent(el, 'change', this.publish);
+      },
+      unbind: function(el) {
+        return unbindEvent(el, 'change', this.currentListener);
+      },
+      routine: function(el, value) {
+        if (el.type === 'radio') {
+          return el.checked = el.value !== value;
+        } else {
+          return el.checked = !value;
+        }
+      }
+    },
+    show: function(el, value) {
+      return el.style.display = value ? '' : 'none';
+    },
+    hide: function(el, value) {
+      return el.style.display = value ? 'none' : '';
+    },
+    html: function(el, value) {
+      return el.innerHTML = value != null ? value : '';
+    },
+    value: {
+      publishes: true,
+      bind: function(el) {
+        return this.currentListener = bindEvent(el, 'change', this.publish);
+      },
+      unbind: function(el) {
+        return unbindEvent(el, 'change', this.currentListener);
+      },
+      routine: function(el, value) {
+        var o, _i, _len, _ref, _results;
+        if (el.type === 'select-multiple') {
+          if (value != null) {
+            _results = [];
+            for (_i = 0, _len = el.length; _i < _len; _i++) {
+              o = el[_i];
+              _results.push(o.selected = (_ref = o.value, __indexOf.call(value, _ref) >= 0));
+            }
+            return _results;
+          }
+        } else {
+          return el.value = value != null ? value : '';
+        }
+      }
+    },
+    text: function(el, value) {
+      if (el.innerText != null) {
+        return el.innerText = value != null ? value : '';
+      } else {
+        return el.textContent = value != null ? value : '';
+      }
+    },
+    "on-*": {
+      "function": true,
+      routine: function(el, value) {
+        if (this.currentListener) {
+          unbindEvent(el, this.args[0], this.currentListener);
+        }
+        return this.currentListener = bindEvent(el, this.args[0], value, this.model);
+      }
+    },
+    "each-*": {
+      block: true,
+      bind: function(el, collection) {
+        return el.removeAttribute(['data', rivets.config.prefix, this.type].join('-').replace('--', '-'));
+      },
+      routine: function(el, collection) {
+        var data, e, item, itemEl, m, n, previous, view, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _results;
+        if (this.iterated != null) {
+          _ref = this.iterated;
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            view = _ref[_i];
+            view.unbind();
+            _ref1 = view.els;
+            for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+              e = _ref1[_j];
+              e.parentNode.removeChild(e);
+            }
+          }
+        } else {
+          this.marker = document.createComment(" rivets: " + this.type + " ");
+          el.parentNode.insertBefore(this.marker, el);
+          el.parentNode.removeChild(el);
+        }
+        this.iterated = [];
+        _results = [];
+        for (_k = 0, _len2 = collection.length; _k < _len2; _k++) {
+          item = collection[_k];
+          data = {};
+          _ref2 = this.view.models;
+          for (n in _ref2) {
+            m = _ref2[n];
+            data[n] = m;
+          }
+          data[this.args[0]] = item;
+          itemEl = el.cloneNode(true);
+          previous = this.iterated[this.iterated.length - 1] || this.marker;
+          this.marker.parentNode.insertBefore(itemEl, (_ref3 = previous.nextSibling) != null ? _ref3 : null);
+          _results.push(this.iterated.push(rivets.bind(itemEl, data)));
+        }
+        return _results;
+      }
+    },
+    "class-*": function(el, value) {
+      var elClass;
+      elClass = " " + el.className + " ";
+      if (!value === (elClass.indexOf(" " + this.args[0] + " ") !== -1)) {
+        return el.className = value ? "" + el.className + " " + this.args[0] : elClass.replace(" " + this.args[0] + " ", ' ').trim();
+      }
+    },
+    "*": function(el, value) {
+      if (value) {
+        return el.setAttribute(this.type, value);
+      } else {
+        return el.removeAttribute(this.type);
+      }
+    }
+  };
+
+  Rivets.config = {
+    preloadData: true
+  };
+
+  Rivets.formatters = {};
+
+  rivets = {
+    binders: Rivets.binders,
+    formatters: Rivets.formatters,
+    config: Rivets.config,
+    configure: function(options) {
+      var property, value;
+      if (options == null) {
+        options = {};
+      }
+      for (property in options) {
+        value = options[property];
+        Rivets.config[property] = value;
+      }
+    },
+    bind: function(el, models) {
+      var view;
+      if (models == null) {
+        models = {};
+      }
+      view = new Rivets.View(el, models);
+      view.bind();
+      return view;
+    }
+  };
+
+  if (typeof module !== "undefined" && module !== null) {
+    module.exports = rivets;
+  } else {
+    this.rivets = rivets;
+  }
+
+}).call(this);
