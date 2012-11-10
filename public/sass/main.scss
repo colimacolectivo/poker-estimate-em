@@ -2,13 +2,14 @@
 body{
  background-color: #fff;
 }
-.head{
-  background-color: #2BA6CB;
-  a{
-    color: #fff;
-  }
+
+// .head{
+//   background-color: #2BA6CB;
+//   a{
+//     color: #fff;
+//   }
   
-}
+// }
 .footer{
   background: #3F3F3F;
   color: #fff;
@@ -18,6 +19,15 @@ body{
 }
 .top-bar{
  margin: 0;
+}
+//navbar style
+.item{
+  color:#fff;
+  text-align:center;
+  display:block;
+  height:30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 1) ; 
+
 }
 .login-form-content{
   p{
