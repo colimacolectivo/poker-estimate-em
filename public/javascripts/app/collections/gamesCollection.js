@@ -15,5 +15,11 @@ TXE.Collections.gamesCollection = Backbone.Collection.extend({
     $.getJSON(this.url() + '/' + gameId, function(data){
       return data;
     });
+  },
+
+  // TODO add the create action
+  create: function(name){
+    var game = this.model();
+    game.save({name: name})
   }
 });
