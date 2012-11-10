@@ -128,7 +128,8 @@ GET /api/v1/projects/:id/games/:id
 
 POST /api/v1/projects/:id/games/new
     {
-      name: ""
+      name: "",
+      proyect_id: ""
     }
 
 POST /api/v1/projects/:id/games/add_tasks
