@@ -1,29 +1,36 @@
 doctype 5
 html
   head
+
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(type='text/javascript', src='/javascripts/libs/jquery.js')
+    script(type='text/javascript', src='/javascripts/libs/jquery-ui-1.9.1.custom.min.js')
     script(type='text/javascript', src='/javascripts/libs/lodash.js')
     script(type='text/javascript', src='/javascripts/libs/rivets.js')
     script(type='text/javascript', src='/javascripts/libs/backbone.js')
-    script(type='text/javascript', src='/javascripts/libs/backbone.localStorage.js')
-    script(type='text/javascript', src='/javascripts/main.js')
-    script(type='text/javascript', src='/javascripts/fixtures.js')
+
+    script(type='text/javascript', src='/javascripts/bootstrap.js')
+
     script(type='text/javascript', src='/javascripts/app/models/project.js')
     script(type='text/javascript', src='/javascripts/app/models/game.js')
     script(type='text/javascript', src='/javascripts/app/models/taskGame.js')
+
     script(type='text/javascript', src='/javascripts/app/collections/tasksCollection.js')
     script(type='text/javascript', src='/javascripts/app/collections/gamesCollection.js')
     script(type='text/javascript', src='/javascripts/app/collections/projectsCollection.js')
-    script(type='text/javascript', src='/javascripts/app/templates/projectsTemplate.js')
+
     script(type='text/javascript', src='/javascripts/app/templates/projectsTopNavTemplate.js')
     script(type='text/javascript', src='/javascripts/app/templates/projectGamesTemplate.js')
+
     script(type='text/javascript', src='/javascripts/app/views/indexView.js')
     script(type='text/javascript', src='/javascripts/app/views/topNavBarView.js')
+    script(type='text/javascript', src='/javascripts/app/views/projectItem.js')
     script(type='text/javascript', src='/javascripts/app/views/projectGamesView.js')
     script(type='text/javascript', src='/javascripts/app/views/taskListView.js')
+
     script(type='text/javascript', src='/javascripts/router.js')
-    script(type='text/javascript', src='/javascripts/libs/jquery-ui-1.9.1.custom.min.js')
+    script(type='text/javascript', src='/javascripts/main.js')
+
     link(href="/stylesheets/app.css", media="screen, projector, print", rel="stylesheet", type="text/css")
     link(href="/stylesheets/screen.css", media="screen, projection", rel="stylesheet", type="text/css")
     link(href="/stylesheets/print.css", media="print", rel="stylesheet", type="text/css")
@@ -32,5 +39,24 @@ html
         link(href="/stylesheets/ie.css", media="screen, projection", rel="stylesheet", type="text/css")
 
     // [endif]
+
   body
     block content
+
+    // TEMPLATES ===============================================================
+
+    // script(type="text/html", id="projectItemTemplate")
+    //   | <div class='project fn-project'>
+    //   |   <div>
+    //   |     <img src='images/landing-page/project-carts.png' /> 
+    //   |     <span><%= project.name %></span>
+    //   |   </div>
+    //   | </div>
+
+    script(type="text/html", id="projectItemTemplate")
+      .projectItem.project
+        div
+          img(src='images/landing-page/project-carts.png')
+          span
+            | <%= name %>
+
