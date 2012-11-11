@@ -4,7 +4,8 @@ TXE.Views.Project = Backbone.View.extend({
 
   events: {
    "keyup .fn-game-name" : "addGame",
-   "click .fn-createGame": "add"
+   "click .fn-createGame": "add",
+   "click .fn-taskList .item": "select"
   },
   
   initialize: function() {
@@ -20,6 +21,12 @@ TXE.Views.Project = Backbone.View.extend({
     this.games.fetch();
 
     this.render();
+  },
+
+  select: function(e){
+    var $target = $(e.currentTarget);
+
+    $target.toggleClass("selected");
   },
 
   showTasks: function() {
