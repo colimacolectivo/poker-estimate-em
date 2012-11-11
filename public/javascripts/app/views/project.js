@@ -1,6 +1,11 @@
 TXE.Views.Project = Backbone.View.extend({
 
   el: "#main-content",
+
+  events: {
+   "keyup .fn-game-name" : "addGame",
+   "click .fn-createGame": "add"
+  },
   
   initialize: function() {
     this.template = _.template($("#project-view").html());
@@ -28,14 +33,38 @@ TXE.Views.Project = Backbone.View.extend({
     this.$('.fn-taskList').append(task.el);
   },
 
+  add: function(e){
+    e.preventDefault();
+    $('.fn-game-input').show();
+  },
+
   showGames: function(){
-    var gameList = this.$('.fn-game-input');
+    var gameList = this.$('.fn-game-list');
+    gameList.html("");
     var title = "";
 
     _.each(this.games.models, function(model){
       title=model.get('name');
-      gameList.prepend("<li>"+title+"</li>");
+      gameList.append("<li>"+title+"</li>");
     });
+  },
+
+  addGame: function(e){
+    var name = e.currentTarget.value;
+    var collection = this.games;
+
+    if(e.keyCode === 13){
+      var projectId = this.model.get('id');
+      $('.fn-game-input').hide();
+      $.ajax({
+        type: "POST",
+        url: "/api/v1/games/new",
+        data: {project_id: projectId, name: name}
+      }).done(function(){
+        collection.fetch();
+      });
+    }
+
   },
 
   render: function() {
