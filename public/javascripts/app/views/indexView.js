@@ -9,7 +9,8 @@ TXE.Views.indexView = Backbone.View.extend({
 
   events: {
     "click .fn-project" : "displayForm",
-    "click .fn-createGame" : "createGame"
+    "click .fn-createGame" : "createGame",
+    "keydown .fn-game-name " : "keyCreate"
   },
 
   initialize: function(){
@@ -44,6 +45,16 @@ TXE.Views.indexView = Backbone.View.extend({
     $('.action-panel').attr('hidden', false)
     $('.fn-game-name').focus();
     
+  },
+
+  keyCreate: function(e){
+    var key = $(".fn-game-name").val();
+    if((e.keyCode == 13) && (e.keyCode != "")){
+      this.createGame();      
+    } if(e.keyCode == 27){
+      $(".fn-game-name").blur();
+      $(".action-panel").attr("hidden", true);
+    }
   }
 
 });
