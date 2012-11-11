@@ -1,10 +1,6 @@
 TXE.Views.topNavBarView = Backbone.View.extend({
   el: '.top-bar',
 
-  events: {
-    'click .project-top-item' : 'gotoProject'
-  },
-
   initialize: function(){
     this.render();
   },
@@ -16,8 +12,4 @@ TXE.Views.topNavBarView = Backbone.View.extend({
       self.$('.dropdown').append(topProjectItem.el);
     });
   },
-
-  gotoProject: function(){
-    TXE.router.navigate('projects/'+this.model.get('id'), true);
-  }
 });
