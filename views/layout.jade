@@ -26,6 +26,7 @@ html
     script(type='text/javascript', src='/javascripts/app/views/chatView.js')
     script(type='text/javascript', src='/javascripts/app/views/topNavBarView.js')
     script(type='text/javascript', src='/javascripts/app/views/projectItem.js')
+    script(type='text/javascript', src='/javascripts/app/views/topProjectItem.js')
     script(type='text/javascript', src='/javascripts/app/views/projectGamesView.js')
     script(type='text/javascript', src='/javascripts/app/views/taskListView.js')
     script(type='text/javascript', src='/javascripts/app/views/project.js')
@@ -46,15 +47,8 @@ html
   body
     block content
 
-    // TEMPLATES ===============================================================
-
-    // script(type="text/html", id="projectItemTemplate")
-    //   | <div class='project fn-project'>
-    //   |   <div>
-    //   |     <img src='images/landing-page/project-carts.png' /> 
-    //   |     <span><%= project.name %></span>
-    //   |   </div>
-    //   | </div>
+    // TEMPLATES
     include templates/project-item
+    include templates/project-item-top
     include templates/project-games-game
     include templates/project-games-task
