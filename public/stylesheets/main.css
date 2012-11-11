@@ -397,7 +397,7 @@ body .top-bar .row #navigator li .dropdown li.item a {
 }
 /* line 55, ../sass/games.scss */
 #game-container .container.row #list-games .list {
-  padding: 10px 10px 10px 0;
+  padding: 10px 10px 0 0;
 }
 /* line 58, ../sass/games.scss */
 #game-container .container.row #list-games .list .item {

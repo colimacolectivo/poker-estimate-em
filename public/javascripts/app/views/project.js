@@ -42,23 +42,26 @@ TXE.Views.Project = Backbone.View.extend({
 
   add: function(e){
     e.preventDefault();
-    $('.fn-game-input').show();
+    this.$('.fn-game-input')
+      .show()
+      .find('input')
+      .val('')
+      .focus();
   },
 
   addGame: function(e){
     var name = e.currentTarget.value;
-    var collection = this.games;
 
     if(e.keyCode === 13){
       var projectId = this.model.get('id');
-      $('.fn-game-input').hide();
-      $.ajax({
-        type: "POST",
-        url: "/api/v1/games/new",
-        data: {project_id: projectId, name: name}
-      }).done(function(){
-        collection.fetch();
+
+      this.$('.fn-game-input').hide();
+      var model = this.games.create({
+        name: name,
+        project_id: this.model.get('id')
       });
+      
+      this.renderGame(model);
     }
 
   },
