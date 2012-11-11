@@ -11,21 +11,19 @@ TXE.Views.Project = Backbone.View.extend({
     this.template = _.template($("#project-view").html());
     var projectId = this.model.get('id');
 
-    this.tasksCollection = new TXE.Collections.tasksCollection(projectId);
-
-    this.tasksCollection.fetch();
-
-    this.tasksCollection.on('reset', this.showTasks, this);
+    this.tasks = new TXE.Collections.tasksCollection(projectId);
+    this.tasks.on('reset', this.showTasks, this);
+    this.tasks.fetch();
 
     this.games = new TXE.Collections.gamesCollection(projectId);
-    this.games.bind('reset', this.showGames, this);
+    this.games.on('reset', this.showGames, this);
     this.games.fetch();
 
     this.render();
   },
 
   showTasks: function() {
-    this.tasksCollection.forEach(this.renderTask);
+    this.tasks.forEach(this.renderTask);
   },
 
   renderTask: function(model) {
@@ -33,20 +31,18 @@ TXE.Views.Project = Backbone.View.extend({
     this.$('.fn-taskList').append(task.el);
   },
 
+  showGames: function() {
+    this.games.forEach(this.renderGame);
+  },
+
+  renderGame: function(model) {
+    var game = new TXE.Views.GameItem({model: model});
+    this.$('.fn-game-list').append(game.el);
+  },
+
   add: function(e){
     e.preventDefault();
     $('.fn-game-input').show();
-  },
-
-  showGames: function(){
-    var gameList = this.$('.fn-game-list');
-    gameList.html("");
-    var title = "";
-
-    _.each(this.games.models, function(model){
-      title=model.get('name');
-      gameList.append("<li>"+title+"</li>");
-    });
   },
 
   addGame: function(e){

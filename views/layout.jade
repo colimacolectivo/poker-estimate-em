@@ -32,6 +32,7 @@ html
     script(type='text/javascript', src='/javascripts/app/views/topProjectItem.js')
     script(type='text/javascript', src='/javascripts/app/views/game.js')
     script(type='text/javascript', src='/javascripts/app/views/taskItem.js')
+    script(type='text/javascript', src='/javascripts/app/views/gameItem.js')
 
     script(type='text/javascript', src='/javascripts/router.js')
     script(type='text/javascript', src='/javascripts/main.js')
@@ -51,13 +52,13 @@ html
     // TEMPLATES
     include templates/project-item
     include templates/project-item-top
-    include templates/project-games-game
     include templates/landing-page
     include templates/estimations-game
     include templates/loginform
     include templates/projects-list
     include templates/game-page
     include templates/taskItem
+    include templates/gameItem
 
     script
       TXE.user = !{JSON.stringify(user)};
