@@ -32,9 +32,11 @@ TXE.Views.GameItem = Backbone.View.extend({
   pushTask: function(id) {
     var model = new TXE.Models.TaskGame({
       project_id: this.model.get('project_id'),
-      game_id: this.model.get('_id'),
+      gameId: this.model.get('_id'),
       tasks: [id]
-    }).save();
+    });
+
+    model.save();
   },
 
   onDrop: function(e, ui) {
@@ -48,7 +50,7 @@ TXE.Views.GameItem = Backbone.View.extend({
     this.$el.html(this.template(this.model.toJSON()));
 
     this.$el.droppable({
-      scope: 'tasks'
+      accept: '.task'
     });
 
     return this;

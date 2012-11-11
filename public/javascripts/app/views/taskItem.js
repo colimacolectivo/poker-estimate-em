@@ -17,8 +17,7 @@ TXE.Views.TaskItem = Backbone.View.extend({
     this.$el.draggable({
       revert: "invalid",
       opacity: 1,
-      cursor: "move",
-      scope: "tasks"
+      cursor: "move"
     });
 
     this.$el.data('id', this.model.get('id'));
