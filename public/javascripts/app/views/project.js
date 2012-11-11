@@ -1,11 +1,13 @@
-TXE.Views.Project = new Backbone.View.extend({
+TXE.Views.Project = Backbone.View.extend({
+
+  el: "#main-content",
   
-  intialize: function() {
+  initialize: function() {
     this.render();
   },
 
   render: function() {
-    console.log(this.model);
+    this.$el.html('');
   }
 
 });
