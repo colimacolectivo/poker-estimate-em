@@ -1,4 +1,4 @@
-#main-content.row
+script(type="text/html", id="landing-page")
   .container
 
     .row
@@ -37,7 +37,6 @@
             span WITH YOUR 
             r PIVOTAL TRACKER 
             span ACCOUNT
-          .row#log-form
-            include login-form
+          .row#log-form != partial('../login-form');
           .row.fot 
             .image-fot
