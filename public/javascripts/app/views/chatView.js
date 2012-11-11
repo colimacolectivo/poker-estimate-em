@@ -26,7 +26,7 @@ TXE.Views.chatView = Backbone.View.extend({
   },
 
   post: function(msg){
-    $('#output').append('<p>'+msg+'</p>');
+    $('#output').prepend('<p>'+msg+'</p>');
     $('#message').val("");
   }
 
