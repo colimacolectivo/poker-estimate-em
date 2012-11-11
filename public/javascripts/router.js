@@ -27,7 +27,7 @@ TXE.Router = Backbone.Router.extend({
       delete this.game;
     }
 
-    this.game = new TXE.Views.Games({
+    this.game = new TXE.Views.Game({
       projectId: proId,
       gameId: gameId
     });

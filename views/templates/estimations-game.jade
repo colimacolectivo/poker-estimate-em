@@ -1,41 +1,42 @@
-#poker-game.row
-  h1.name Game name
-  .row.results
-    .three Story name
-    .nine
-      ul.carts
-        li.cart 
-          a.active
-          h1 NG
-        li.cart 
-          a.active
-          h1 JVCR
-        li.cart 
-          a.off
-          h1 PUTO
-        li.cart 
-          a.off
-          h1 VC
-        li.cart 
-          a.displayed 2
-          h1 ER
-  .row.headers
-    .stories-information.four.columns 
-      h3 Stories
-      
-      ul.list
-        li.item Story one
-        li.item Story two
-        li.item Story three
-        li.item Story four
-        li.item Story five
+script(type="text/html", id="pokerGameTemplate")
+  #poker-game.row
+    h1.name Game name
+    .row.results
+      .three Story name
+      .nine
+        ul.carts
+          li.cart 
+            a.active
+            h1 NG
+          li.cart 
+            a.active
+            h1 JVCR
+          li.cart 
+            a.off
+            h1 PUTO
+          li.cart 
+            a.off
+            h1 VC
+          li.cart 
+            a.displayed 2
+            h1 ER
+    .row.headers
+      .stories-information.four.columns 
+        h3 Stories
+        
+        ul.list
+          li.item Story one
+          li.item Story two
+          li.item Story three
+          li.item Story four
+          li.item Story five
 
-    .time.five.columns 
-      img(src="images/estimation-game/clock.png")
-    .chat-information.three.columns 
-      img(src="images/estimation-game/people.png")
-      p Chat & Participants
-      #chat
-        input#message
-        a.tiny.button send
-        #output
+      .time.five.columns 
+        img(src="images/estimation-game/clock.png")
+      .chat-information.three.columns 
+        img(src="images/estimation-game/people.png")
+        p Chat & Participants
+        #chat
+          input#message
+          a.tiny.button send
+          #output
