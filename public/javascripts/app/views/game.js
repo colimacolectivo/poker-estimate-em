@@ -1,6 +1,6 @@
 TXE.Views.Game = Backbone.View.extend({
 
-  el: "#poker-game",
+  el: "#main-content",
 
   events:{
   },
@@ -15,6 +15,16 @@ TXE.Views.Game = Backbone.View.extend({
   },
 
   render: function(){
-    console.log(this.model);
+    var tasks = this.model.get('tasks') || [];
+    var name = this.model.get('name');
+    var $list = this.$(".list");
+
+    this.$('.results .three').text(name);
+
+    _.each(tasks, function(task){ 
+      var id = task.id;
+      $list.prepend("<li class='item'>"+id+"</li>");
+    });
+
   }
 });

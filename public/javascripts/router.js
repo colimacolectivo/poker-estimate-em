@@ -40,14 +40,21 @@ TXE.Router = Backbone.Router.extend({
       delete this.game;
     }
 
-    this.game = new TXE.Views.Game({
-      projectId: proId,
-      gameId: gameId,
-      model: new TXE.Models.Game({
-        project_id: proId,
-        _id: gameId
-      })
-    });
+    if (TXE.user.email){
+
+      this.game = new TXE.Views.Game({
+        projectId: proId,
+        gameId: gameId,
+        model: new TXE.Models.Game({
+          project_id: proId,
+          _id: gameId
+        })
+      });
+
+    }else{
+      this.navigate("", true);
+    }
+
 
   }
 
