@@ -99,9 +99,12 @@ module.exports = function(app, db){
           var Access = result.message  ? false : true; 
 
           if(Access){
-            db.games.find({project_id: project_id, _id: objectId}, function(err, games){
-              games.toArray(function(err, results){
-                res.send(results);
+            db.games.findOne({project_id: project_id, _id: objectId}, function(err, game){
+              db.tasks.find({gameId: id}, function(err, tasks){
+                tasks.toArray(function(err, results){
+                  game.tasks = results;
+                  res.send(game);
+                });
               });
             });
           }else{
@@ -127,6 +130,14 @@ module.exports = function(app, db){
     }
   });
 
+
+  // db.games.update({_id: objectId},{$set: {tasks: tasks}}, function(err){
+  //   if(err){
+  //     res.send(err);
+  //   }else{
+  //     res.send(true);
+  //   }
+  // });
 
   var setTasks = function(gameId, list){
     var i = 0;
