@@ -211,7 +211,7 @@ module.exports = function(app, db){
           var objectId = new ObjectID(gameId);
 
           if(Access){
-            db.games.delete({_id: objectId}, { safe: true }, function(err, game){
+            db.games.remove({_id: objectId}, { safe: true }, function(err, game){
               res.send(game);
             });
           }else{
