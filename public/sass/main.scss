@@ -3,7 +3,7 @@
 
 body {
   background-color: #F2F1ED;
-  h1, h2, h3, h4, li, p {
+  h1, h2, h3, h4, li, p , button, a{
     @include global_font;
   }
   .row{

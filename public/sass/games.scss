@@ -1,3 +1,4 @@
+@import "mixins";
 #game-container{
 
   h1.name{
@@ -47,7 +48,8 @@
       }
 
       .nametask{
-        margin: 0;
+       width: 225px;
+       margin: 0;
       }
 
       .list{
@@ -73,6 +75,7 @@
             border: none;
             margin-right: 10px;
             margin-top: 1px;
+            cursor: pointer;
           }
 
           .delete{
@@ -83,6 +86,7 @@
             background: transparent url('../images/games/delete.png') no-repeat center center;
             border: none;
             margin: 1px 8px 0 8px;
+            cursor: pointer;
           }
 
           .play{
@@ -94,6 +98,7 @@
             background: transparent url('../images/games/playgame.png') no-repeat center center;
             border: none;
             margin-top: -8px;
+            cursor: pointer;
           }
 
           .list-tasks-group{
@@ -146,6 +151,9 @@
           width: 272px;
           margin: 0;
           height: 27px;
+          padding-left: 30px;
+          background: #fff url('../images/search.png') no-repeat 10px center;
+          @include global_font;
         }
 
       }
@@ -171,16 +179,19 @@
             cursor: move;
           }
 
-          &:hover{
+          &.selected{
             background: #FAF9F8;
+          }
+
+          &:hover{
+            background: #fff;
             color: #000;
+            border-right: 3px solid #DFD4C7;
             .drag{
               opacity: 1;
             }
           }
-
         }
-
       }
     }
   }

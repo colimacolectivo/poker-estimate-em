@@ -1,99 +1,192 @@
-/*
-Syntax error: Undefined mixin 'global_font'.
-        on line 25 of /Users/jaime/work/node-projects/poker-planning/public/sass/games.scss, in `global_font'
-        from line 25 of /Users/jaime/work/node-projects/poker-planning/public/sass/games.scss
-
-Backtrace:
-/Users/jaime/work/node-projects/poker-planning/public/sass/games.scss:25:in `global_font'
-/Users/jaime/work/node-projects/poker-planning/public/sass/games.scss:25
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:251:in `visit_mixin'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:98:in `visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:318:in `visit_rule'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:98:in `visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:318:in `visit_rule'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:98:in `visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:318:in `visit_rule'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:98:in `visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:126:in `visit_root'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:98:in `visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:7:in `visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/root_node.rb:20:in `render'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/engine.rb:315:in `_render'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/engine.rb:262:in `render'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `block (2 levels) in compile'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `block in compile'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `block (2 levels) in run'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `each'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `block in run'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:147:in `recompile'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/fssm-0.2.9/lib/fssm/path.rb:73:in `call'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/fssm-0.2.9/lib/fssm/path.rb:73:in `run_callback'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/fssm-0.2.9/lib/fssm/path.rb:55:in `callback_action'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/fssm-0.2.9/lib/fssm/path.rb:35:in `update'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/fssm-0.2.9/lib/fssm/state/directory.rb:39:in `block in modified'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/fssm-0.2.9/lib/fssm/state/directory.rb:37:in `each'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/fssm-0.2.9/lib/fssm/state/directory.rb:37:in `modified'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/fssm-0.2.9/lib/fssm/state/directory.rb:18:in `refresh'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `block (2 levels) in run'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `each'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `block in run'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:15:in `loop'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:15:in `run'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/fssm-0.2.9/lib/fssm/monitor.rb:26:in `run'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/fssm-0.2.9/lib/fssm.rb:70:in `monitor'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:87:in `perform'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/bin/compass:30:in `block in <top (required)>'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/bin/compass:44:in `call'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/compass-0.12.2/bin/compass:44:in `<top (required)>'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/bin/compass:19:in `load'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/bin/compass:19:in `<main>'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/bin/ruby_noexec_wrapper:14:in `eval'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/bin/ruby_noexec_wrapper:14:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Undefined mixin 'global_font'.\A         on line 25 of /Users/jaime/work/node-projects/poker-planning/public/sass/games.scss, in `global_font'\A         from line 25 of /Users/jaime/work/node-projects/poker-planning/public/sass/games.scss"; }
+/* line 4, ../sass/games.scss */
+#game-container h1.name {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+/* line 9, ../sass/games.scss */
+#game-container .container.row {
+  width: 940px;
+  margin: 0 auto;
+  background: transparent url("../images/games/line-bg.jpg") repeat-y 235px;
+}
+/* line 14, ../sass/games.scss */
+#game-container .container.row .head {
+  border: 1px solid #DFD4C8;
+  overflow: hidden;
+}
+/* line 18, ../sass/games.scss */
+#game-container .container.row .head h1 {
+  float: left;
+  line-height: 22px;
+  font-size: 18px;
+}
+/* line 25, ../sass/games.scss */
+#game-container .container.row .item {
+  font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  color: #999999;
+  padding: 7px 0 7px 15px;
+  margin: 2px 0;
+}
+/* line 33, ../sass/games.scss */
+#game-container .container.row #list-games {
+  float: left;
+}
+/* line 36, ../sass/games.scss */
+#game-container .container.row #list-games h1 {
+  padding-left: 30px;
+  background: transparent url("../images/games/title-games.png") no-repeat left center;
+}
+/* line 41, ../sass/games.scss */
+#game-container .container.row #list-games .head {
+  border-left: none;
+  padding: 7px 10px 7px 0;
+}
+/* line 46, ../sass/games.scss */
+#game-container .container.row #list-games .button {
+  float: right;
+}
+/* line 50, ../sass/games.scss */
+#game-container .container.row #list-games .nametask {
+  width: 225px;
+  margin: 0;
+}
+/* line 55, ../sass/games.scss */
+#game-container .container.row #list-games .list {
+  padding: 10px 10px 10px 0;
+}
+/* line 58, ../sass/games.scss */
+#game-container .container.row #list-games .list .item {
+  border: 1px dashed #E3DACE;
+  background: #E9E8E5;
+}
+/* line 61, ../sass/games.scss */
+#game-container .container.row #list-games .list .item.closed {
+  text-decoration: line-through;
+}
+/* line 65, ../sass/games.scss */
+#game-container .container.row #list-games .list .item.opened {
+  padding-bottom: 0;
+}
+/* line 69, ../sass/games.scss */
+#game-container .container.row #list-games .list .item .edit {
+  float: right;
+  height: 10px;
+  width: 10px;
+  display: block;
+  background: transparent url("../images/games/edit.png") no-repeat center center;
+  border: none;
+  margin-right: 10px;
+  margin-top: 1px;
+  cursor: pointer;
+}
+/* line 81, ../sass/games.scss */
+#game-container .container.row #list-games .list .item .delete {
+  float: right;
+  height: 10px;
+  width: 10px;
+  display: block;
+  background: transparent url("../images/games/delete.png") no-repeat center center;
+  border: none;
+  margin: 1px 8px 0 8px;
+  cursor: pointer;
+}
+/* line 92, ../sass/games.scss */
+#game-container .container.row #list-games .list .item .play {
+  float: right;
+  height: 27px;
+  width: 27px;
+  float: right;
+  display: block;
+  background: transparent url("../images/games/playgame.png") no-repeat center center;
+  border: none;
+  margin-top: -8px;
+  cursor: pointer;
+}
+/* line 104, ../sass/games.scss */
+#game-container .container.row #list-games .list .item .list-tasks-group {
+  margin-left: 0;
+  border-top: 1px solid #DFD4C7;
+  margin-top: 5px;
+}
+/* line 108, ../sass/games.scss */
+#game-container .container.row #list-games .list .item .list-tasks-group li {
+  padding: 7px 0;
+}
+/* line 115, ../sass/games.scss */
+#game-container .container.row #list-games .list .item:hover {
+  background: #fff;
+}
+/* line 117, ../sass/games.scss */
+#game-container .container.row #list-games .list .item:hover .play {
+  background: transparent url("../images/games/play.png") no-repeat center center;
+}
+/* line 128, ../sass/games.scss */
+#game-container .container.row #list-tasks {
+  float: left;
+}
+/* line 131, ../sass/games.scss */
+#game-container .container.row #list-tasks .head {
+  border-right: none;
+  padding: 5px 0 5px 10px;
+}
+/* line 135, ../sass/games.scss */
+#game-container .container.row #list-tasks .head h1 {
+  margin-top: 4px;
+}
+/* line 141, ../sass/games.scss */
+#game-container .container.row #list-tasks nav {
+  float: right;
+}
+/* line 144, ../sass/games.scss */
+#game-container .container.row #list-tasks nav a.button {
+  float: left;
+  margin: 2px 5px 0 5px;
+}
+/* line 149, ../sass/games.scss */
+#game-container .container.row #list-tasks nav #filter {
+  float: right;
+  width: 272px;
+  margin: 0;
+  height: 27px;
+  padding-left: 30px;
+  background: white url("../images/search.png") no-repeat 10px center;
+  font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
+}
+/* line 161, ../sass/games.scss */
+#game-container .container.row #list-tasks .list {
+  padding-top: 10px;
+}
+/* line 164, ../sass/games.scss */
+#game-container .container.row #list-tasks .list .item {
+  float: left;
+  border-right: 1px solid #DFD4C7;
+  width: 32.8%;
+  margin-left: 3px;
+}
+/* line 170, ../sass/games.scss */
+#game-container .container.row #list-tasks .list .item .drag {
+  float: right;
+  height: 10px;
+  width: 10px;
+  display: block;
+  background: transparent url("../images/games/drag.png") no-repeat center center;
+  border: none;
+  margin: 1px 8px 0 8px;
+  opacity: .4;
+  cursor: move;
+}
+/* line 182, ../sass/games.scss */
+#game-container .container.row #list-tasks .list .item.selected {
+  background: #FAF9F8;
+}
+/* line 186, ../sass/games.scss */
+#game-container .container.row #list-tasks .list .item:hover {
+  background: #fff;
+  color: #000;
+  border-right: 3px solid #DFD4C7;
+}
+/* line 190, ../sass/games.scss */
+#game-container .container.row #list-tasks .list .item:hover .drag {
+  opacity: 1;
+}
