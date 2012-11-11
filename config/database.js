@@ -4,7 +4,7 @@ var host = "alex.mongohq.com";
 var port = 10016;
 var options = {};
 
-var server = new mongodb.Server(host, port, options);
+var server = new mongodb.Server(host, port, options, {native_parser: true});
 var Database = new mongodb.Db("TexasEstimateEm", server, {safe: false});
 
 exports.close = function(){
