@@ -54,18 +54,31 @@ module.exports = function(app, db){
 
   app.get('/api/v1/projects/:proId/games', function(req, res){
     if(req.user){
-      var proId = parseInt(req.params.proId, 10);
+      var project_id = parseInt(req.params.proId, 10);
 
-      if(typeof proId === "number"){
-        db.games.find({project_id: proId}, function(err, games){
-          games.toArray(function(err, results){
-            res.send(results);
-          });
+      if(typeof project_id === "number"){
+
+        pivotal.getProyect(req.user.token, project_id,  function(result){
+          var Access = result.message  ? false : true; 
+
+          if(Access){
+            db.games.find({project_id: project_id}, function(err, games){
+              games.toArray(function(err, results){
+                res.send(results);
+              });
+            });
+          }else{
+            res.send(result);
+          }
+
         });
+
+      }else{
+        res.send({ error: "Project id must be number." });
       }
 
-      if(!proId){
-        res.send({ error: "Missing project id" });
+      if(!project_id){
+        res.send({ error: "Missing project id." });
       }
 
     }else{
