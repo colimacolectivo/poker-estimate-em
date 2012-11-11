@@ -1,0 +1,74 @@
+/* line 4, ../sass/estimation-game.scss */
+#poker-game h1.name {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+/* line 11, ../sass/estimation-game.scss */
+#poker-game .results .three {
+  float: left;
+}
+/* line 15, ../sass/estimation-game.scss */
+#poker-game .results .nine {
+  float: left;
+}
+/* line 20, ../sass/estimation-game.scss */
+#poker-game .results .nine .carts .cart {
+  float: left;
+  text-align: center;
+}
+/* line 24, ../sass/estimation-game.scss */
+#poker-game .results .nine .carts .cart a {
+  width: 40px;
+  height: 50px;
+  display: block;
+  text-align: center;
+  padding-top: 16px;
+  font-size: 16px;
+  color: #000;
+  font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
+}
+/* line 34, ../sass/estimation-game.scss */
+#poker-game .results .nine .carts .cart a.active {
+  background: transparent url("../images/estimation-game/cart.png") no-repeat center center;
+  opacity: 1;
+}
+/* line 39, ../sass/estimation-game.scss */
+#poker-game .results .nine .carts .cart a.off {
+  background: transparent url("../images/estimation-game/cart.png") no-repeat center center;
+  opacity: 0.5;
+}
+/* line 44, ../sass/estimation-game.scss */
+#poker-game .results .nine .carts .cart a.displayed {
+  background: transparent url("../images/estimation-game/show-cart.png") no-repeat center center;
+}
+/* line 53, ../sass/estimation-game.scss */
+#poker-game .headers {
+  padding: 10px 0;
+  border-top: 1px solid #E3DACE;
+}
+/* line 58, ../sass/estimation-game.scss */
+#poker-game .stories-information {
+  height: 100px;
+  padding: 0;
+}
+/* line 62, ../sass/estimation-game.scss */
+#poker-game .stories-information h3 {
+  background: transparent url("../images/games/title-games.png") no-repeat left center;
+  padding: 0 0 10px 30px;
+}
+/* line 67, ../sass/estimation-game.scss */
+#poker-game .stories-information .list {
+  border-top: 1px solid #E3DACE;
+  border-right: 1px solid #E3DACE;
+  padding: 5px 0px;
+}
+/* line 71, ../sass/estimation-game.scss */
+#poker-game .stories-information .list .item {
+  padding: 10px;
+  border: solid 1px #ccc;
+}
+/* line 78, ../sass/estimation-game.scss */
+#poker-game .chat-information {
+  border-bottom: 1px solid #E3DACE;
+  margin-bottom: 15px;
+}
