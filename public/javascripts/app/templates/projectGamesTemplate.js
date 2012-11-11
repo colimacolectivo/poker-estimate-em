@@ -1,1 +1,1 @@
-TXE.Templates.projectGamesTemplate = "<% _.each(games, function(game){ %> <li data-id='<%= game.project_id %>'><%= game.name %> </li> <% }) %>";
+TXE.Templates.projectGamesTemplate = "<% _.each(games, function(game){ %> <li data-id='<%= game._id %>'><%= game.name %> <span class='fn-removeGame'>×</span></li> <% }) %>";

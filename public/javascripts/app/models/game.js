@@ -1,4 +1,4 @@
 TXE.Models.Game = Backbone.Model.extend({
   idAttribute: "_id",
-  url: '/api/v1/games/new'
+  url: '/api/v1/projects/:projectId/games/:id'
 });

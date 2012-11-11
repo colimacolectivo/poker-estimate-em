@@ -6,11 +6,13 @@ TXE.Views.projectGamesView = Backbone.View.extend({
 
   events:{
     "click .fn-createGame"   : "createGame",
-    "keydown .fn-game-name " : "keyCreate"
+    "keydown .fn-game-name " : "keyCreate",
+    "click .fn-removeGame"   : "removeGame"
   },
 
   initialize: function(){
     this.$el.attr('hidden', false);
+    this.model = new TXE.Models.Game(this.options.projectId);
     this.collection = new TXE.Collections.gamesCollection(this.options.projectId),
     this.collection.bind("reset change", this.render,this);
     this.collection.fetch();
@@ -30,13 +32,16 @@ TXE.Views.projectGamesView = Backbone.View.extend({
   },
 
   createGame: function(e){
-    var game = new TXE.Models.Game(this.options.projectId),
-        name = $('.fn-game-name').val(),
+    var name = $('.fn-game-name').val(),
         self = this;
-    game.save({project_id: this.options.projectId, name: name}).done(function(){
+    this.model.save({project_id: this.options.projectId, name: name},{url: '/api/v1/games/new'}).done(function(){
       self.collection.fetch();
     });
     $('.fn-game-name').val('');
+  },
+
+  removeGame: function(e){
+    var gameId = $(e.target).parent().attr('data-id');
   },
 
   hideIndexView: function(){
