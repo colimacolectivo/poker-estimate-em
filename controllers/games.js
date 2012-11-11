@@ -214,8 +214,12 @@ module.exports = function(app, db){
 
           if(Access){
             db.games.remove({_id: objectId}, { safe: true }, function(err, game){
-              res.send(game);
+              db.tasks.remove({gameId: gameId}, { safe: true }, function(err, r){
+                res.send(r);
+              });
             });
+
+
           }else{
             res.send(result);
           }
