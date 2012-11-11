@@ -8,8 +8,8 @@ nav.top-bar
         h1
           a(href="/") POKER 
             span ESTIMATE’EM
-        .slog
-          img(src="images/slog.png")
+        // .slog
+        //   img(src="images/slog.png")
     section#navigator
       ul.right
         -if(user)
@@ -27,7 +27,7 @@ nav.top-bar
             li
               a(href='#') 
                 img(src="images/user.png")
-                span Eduardo Ruiz
+                span #{user.email}
           li
             a(href="/logout")
               img(src="images/exit.png")
