@@ -153,11 +153,31 @@
   background: transparent url("../images/estimation-game/clock.png") no-repeat left center;
 }
 /* line 166, ../sass/estimation-game.scss */
+#poker-game #play-place .time #arena
+li.ca {
+  background: transparent url("../images/estimation-game/cart-bg.png") no-repeat center center;
+  width: 90px;
+  height: 125px;
+  display: block;
+  text-align: center;
+  padding-top: 50px;
+  font-size: 40px;
+  color: #000;
+  font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
+  float: left;
+  margin: 10px;
+}
+/* line 178, ../sass/estimation-game.scss */
+#poker-game #play-place .time #arena
+li.ca.selected {
+  background: transparent url("../images/estimation-game/cart-sel.png") no-repeat center center;
+}
+/* line 184, ../sass/estimation-game.scss */
 #poker-game #play-place .chat-information {
   border-bottom: 1px solid #E3DACE;
   margin-bottom: 15px;
 }
-/* line 170, ../sass/estimation-game.scss */
+/* line 188, ../sass/estimation-game.scss */
 #poker-game #play-place .chat-information h3 {
   background: transparent url("../images/estimation-game/people.png") no-repeat left center;
 }
