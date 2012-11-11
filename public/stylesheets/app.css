@@ -6389,12 +6389,16 @@ body .top-bar .row #navigator li .dropdown li.item a {
 }
 /* line 164, ../sass/games.scss */
 #game-container .container.row #list-tasks .list .item {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
   float: left;
   border-right: 1px solid #DFD4C7;
   width: 32.8%;
   margin-left: 3px;
 }
-/* line 170, ../sass/games.scss */
+/* line 171, ../sass/games.scss */
 #game-container .container.row #list-tasks .list .item .drag {
   float: right;
   height: 10px;
@@ -6406,17 +6410,17 @@ body .top-bar .row #navigator li .dropdown li.item a {
   opacity: .4;
   cursor: move;
 }
-/* line 182, ../sass/games.scss */
+/* line 183, ../sass/games.scss */
 #game-container .container.row #list-tasks .list .item.selected {
-  background: #FAF9F8;
-}
-/* line 186, ../sass/games.scss */
-#game-container .container.row #list-tasks .list .item:hover {
   background: #fff;
+}
+/* line 187, ../sass/games.scss */
+#game-container .container.row #list-tasks .list .item:hover {
+  background: #FAF9F8;
   color: #000;
   border-right: 3px solid #DFD4C7;
 }
-/* line 190, ../sass/games.scss */
+/* line 191, ../sass/games.scss */
 #game-container .container.row #list-tasks .list .item:hover .drag {
   opacity: 1;
 }

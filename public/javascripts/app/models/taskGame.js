@@ -1,7 +1,11 @@
-TXE.Models.taskGame = Backbone.Model.extend({
+TXE.Models.TaskGame = Backbone.Model.extend({
 
-  url: function(){
-    return '/api/v1/projects/' + this.get('project_id') + '/games/add_tasks';
+  url: function() {
+    if(this.isNew()) {
+      return '/api/v1/games/add_tasks';
+    } else {
+      return  "/api/v1/projects/" +this.get('project_id')+ "/games/" +this.get('_id');
+    }
   }
 
 });
