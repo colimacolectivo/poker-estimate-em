@@ -161,6 +161,24 @@
         text-align: right;
         background: transparent url('../images/estimation-game/clock.png') no-repeat left center;
       }
+
+      #arena
+       li.ca{
+         background: transparent url('../images/estimation-game/cart-bg.png') no-repeat center center;
+         width: 90px;
+         height: 125px;
+         display: block;
+         text-align: center;
+         padding-top: 50px;
+         font-size: 40px;
+         color: #000;
+         @include global_font;
+         float:left;
+         margin: 10px;
+         &.selected{
+           background: transparent url('../images/estimation-game/cart-sel.png') no-repeat center center;
+         }
+       }
     }
 
     .chat-information{
