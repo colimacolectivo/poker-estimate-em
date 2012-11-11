@@ -14,7 +14,7 @@ TXE.Views.indexView = Backbone.View.extend({
   initialize: function(){
     this.collection.bind("reset", this.render, this);
     this.collection.fetch();
-    this.user_logged_in = eval($("#user_logged_in").val());
+    this.user_logged_in = this.$('#user_logged_in').val() === "true";
   },
 
   render: function(){
@@ -58,9 +58,9 @@ TXE.Views.indexView = Backbone.View.extend({
 
   keyCreate: function(e){
     var key = $(".fn-game-name").val();
-    if((e.keyCode == 13) && (e.keyCode != "")){
+    if((e.keyCode === 13) && (e.keyCode !== "")){
       this.createGame();      
-    } if(e.keyCode == 27){
+    } if(e.keyCode === 27){
       $(".fn-game-name").blur();
       $(".action-panel").attr("hidden", true);
     }
