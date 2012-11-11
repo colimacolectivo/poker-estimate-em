@@ -5,17 +5,30 @@ TXE.Router = Backbone.Router.extend({
     "projects/:proId/game/:gameId" : "playGame"
   },
 
+  initilize: function(){
+  },
+
   index: function(){
     this.indexView = new TXE.Views.indexView();
   },
 
   showProject: function(id) {
-    var model = new TXE.Models.Project({id: id}),
-        self = this;
+    if(this.projectView){
+      this.projectView.undelegateEvents();
+      delete this.projectView;
+    }
 
-    model.fetch().done(function(data) {
-      self.projectView = new TXE.Views.Project({model: model});
-    });
+    if (TXE.user.email){
+      var model = new TXE.Models.Project({id: id}),
+      self = this;
+
+      model.fetch().done(function(data) {
+        self.projectView = new TXE.Views.Project({model: model});
+      });
+
+    }else{
+      this.navigate("", true);
+    }
     // model.on('reset', function(){
     //   this.projectView = new TXE.Views.Project({model: model});
     // }, this);
