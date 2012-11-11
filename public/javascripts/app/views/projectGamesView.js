@@ -5,13 +5,14 @@ TXE.Views.projectGamesView = Backbone.View.extend({
   template: _.template(TXE.Templates.projectGamesTemplate),
 
   events:{
-    "click .fn-createGame"   : "createGame"
+    "click .fn-createGame"   : "createGame",
+    "keydown .fn-game-name " : "keyCreate"
   },
 
   initialize: function(){
     this.$el.attr('hidden', false);
     this.collection = new TXE.Collections.gamesCollection(this.options.projectId),
-    this.collection.bind("reset", this.render,this);
+    this.collection.bind("reset change", this.render,this);
     this.collection.fetch();
     this.hideIndexView();
   },
@@ -21,10 +22,20 @@ TXE.Views.projectGamesView = Backbone.View.extend({
     this.$('#games-list').html(this.template({games: this.collection.toJSON()}));
   },
 
+  keyCreate: function(e){
+    var key = $(".fn-game-name").val();
+    if((e.keyCode === 13) && (e.keyCode !== "")){
+      this.createGame();      
+    } 
+  },
+
   createGame: function(e){
     var game = new TXE.Models.Game(this.options.projectId),
-        name = $('.fn-game-name').val();
-    game.save({project_id: this.options.projectId, name: name});
+        name = $('.fn-game-name').val(),
+        self = this;
+    game.save({project_id: this.options.projectId, name: name}).done(function(){
+      self.collection.fetch();
+    });
     $('.fn-game-name').val('');
   },
 
@@ -32,8 +43,7 @@ TXE.Views.projectGamesView = Backbone.View.extend({
     $("#main-content").hide();
     this.$el.show();
   }
-//Add a "Create Game" button
-//Show a list of games
+
 //games could be delated
 //Games Name could be edited
 //When a game is played it should be showed disabled.
