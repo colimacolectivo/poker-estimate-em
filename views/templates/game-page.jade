@@ -1,0 +1,24 @@
+script(type="text/html", id="project-view")
+  #game-container.row
+    h1.name Project Name
+
+    .container.row
+      #list-games.three
+        .head
+          h1 GAMES
+          a.tiny.alert.button.fn-createGame(href="#") Add +
+          .clear
+        
+        ul.list.fn-game-list
+        .fn-game-input(hidden=true)
+          input.nametask.fn-game-name(type="text", name="nametask", placeholder="Name of your game...")
+
+      #list-tasks.nine 
+        .head
+          h1.four STORIES
+          nav.eight
+            a.tiny.alert.button(href="#") Select All
+            a.tiny.alert.button(href="#") Unselect All
+            input#filter(type="text", name="nametask", placeholder="Filter")
+
+        ul.list.fn-taskList
