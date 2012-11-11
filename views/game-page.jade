@@ -5,32 +5,12 @@
     #list-games.three
       .head
         h1 GAMES
-        a.tiny.alert.button(href="#") Add +
+        a.tiny.alert.button.fn-createGame(href="#") Add +
         .clear
       
-      ul.list
-        li.item.closed Game Name
-          a.delete
-        li.item.closed Game Name
-          a.delete
-        li.item.active Game Name
-          a.play
-          a.delete
-          a.edit
-        li.item.opened Game Name
-          a.play
-          a.delete
-          a.edit
-          ul.list-tasks-group
-            li.task Task Name
-              a.delete
-            li.task Task Name
-              a.delete
-            li.task Task Name
-              a.delete
-            li.task Task Name
-              a.delete
-      input.nametask(type="text", name="nametask", placeholder="Name of your task...")
+      ul.list.fn-game-list
+      .fn-game-input(hidden=true)
+        input.nametask.fn-game-name(type="text", name="nametask", placeholder="Name of your game...")
 
     #list-tasks.nine 
       .head
