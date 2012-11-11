@@ -1,5 +1,4 @@
-@import "compass/css3/border-radius";
-@import "compass/css3/opacity";
+@import "compass/css3";
 @import "mixins";
 
 body {
@@ -321,3 +320,5 @@ body {
 .clear {
   clear: both;
 }
+
+@import "games";

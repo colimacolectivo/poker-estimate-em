@@ -1,0 +1,58 @@
+#game-container{
+  h1.name{
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  .container.row{
+    width: 940px;
+    margin: 0 auto;
+    .head{
+      border: 1px solid #ccc;
+      overflow: hidden;
+      h1{
+        float: left;
+        line-height: 22px;
+        font-size: 18px;
+      }
+    }
+    #list-games{
+      float: left;
+      h1{
+        padding-left: 30px;
+        background: transparent url('../images/games/title-games.png') no-repeat left center;
+      }
+      .head{
+        border-left: none;
+        padding: 7px 10px 7px 0;
+      }
+      .button{
+        float: right;
+      }
+    }
+
+    #list-tasks{
+      float: left;
+      .head{
+        border-right: none;
+        padding: 5px 0 5px 10px;
+        h1{
+          margin-top: 4px;
+        }
+      }
+      nav{
+        float: right;
+        a.button{
+          float: left;
+          margin: 2px 5px 0 5px;
+        }
+        #filter{
+          float: right;
+          width: 272px;
+          margin: 0;
+          height: 27px;
+        }
+      }
+    }
+  }
+}
+
