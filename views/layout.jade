@@ -46,9 +46,15 @@ html
   body
     block content
 
-    script(type="text/html", id="projectItemTemplate")
-      .projectItem.project
-        div
-          img(src='images/landing-page/project-carts.png')
-          span
-            | <%= name %>
+    // TEMPLATES ===============================================================
+
+    // script(type="text/html", id="projectItemTemplate")
+    //   | <div class='project fn-project'>
+    //   |   <div>
+    //   |     <img src='images/landing-page/project-carts.png' /> 
+    //   |     <span><%= project.name %></span>
+    //   |   </div>
+    //   | </div>
+    include templates/project-item
+    include templates/project-games-game
+    include templates/project-games-task
