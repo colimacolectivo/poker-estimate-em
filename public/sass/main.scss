@@ -41,7 +41,7 @@ body {
           a{
             font-size:18px;
             img{
-              margin: 10px 5px 0 0;
+              margin: 5px 5px 0 0;
               float: left;
             }
             &:hover{color: #F9A73F;}
@@ -154,6 +154,7 @@ body {
            padding: 15px;
            color: #fff;
            font-size: 17px;
+           display:none;
            h3{
             font-size: 13px;
             font-weight: bold;

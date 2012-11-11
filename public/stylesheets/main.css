@@ -40,7 +40,7 @@ body .top-bar .row #navigator li a {
 }
 /* line 43, ../sass/main.scss */
 body .top-bar .row #navigator li a img {
-  margin: 10px 5px 0 0;
+  margin: 5px 5px 0 0;
   float: left;
 }
 /* line 47, ../sass/main.scss */
@@ -159,25 +159,26 @@ body .top-bar .row #navigator li .dropdown li.item a {
   padding: 15px;
   color: #fff;
   font-size: 17px;
+  display: none;
 }
-/* line 157, ../sass/main.scss */
+/* line 158, ../sass/main.scss */
 #main-content.row .container .side-nav.steps li .info h3 {
   font-size: 13px;
   font-weight: bold;
   margin: 0 0 24px 24px;
   color: #FFF;
 }
-/* line 163, ../sass/main.scss */
+/* line 164, ../sass/main.scss */
 #main-content.row .container .side-nav.steps li .info p {
   text-align: justify;
   padding: 10px;
 }
-/* line 166, ../sass/main.scss */
+/* line 167, ../sass/main.scss */
 #main-content.row .container .side-nav.steps li .info p span {
   font-size: 17px;
   font-weight: bold;
 }
-/* line 176, ../sass/main.scss */
+/* line 177, ../sass/main.scss */
 #main-content.row #work-area .title {
   color: #C01126;
   font-size: 27px;
@@ -185,23 +186,23 @@ body .top-bar .row #navigator li .dropdown li.item a {
   margin-top: 20px;
   border-bottom: 4px solid #000;
 }
-/* line 182, ../sass/main.scss */
+/* line 183, ../sass/main.scss */
 #main-content.row #work-area .title span {
   font-size: 13px;
 }
-/* line 186, ../sass/main.scss */
+/* line 187, ../sass/main.scss */
 #main-content.row #work-area #log-form {
   margin-top: 30px;
   padding: 15px;
 }
-/* line 189, ../sass/main.scss */
+/* line 190, ../sass/main.scss */
 #main-content.row #work-area #log-form input[type=text], #main-content.row #work-area #log-form input[type=password] {
   height: 55px;
   font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
   font-size: 24px;
   padding: 0 15px;
 }
-/* line 195, ../sass/main.scss */
+/* line 196, ../sass/main.scss */
 #main-content.row #work-area #log-form input.button {
   font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
   background: #FAA83F;
@@ -209,18 +210,18 @@ body .top-bar .row #navigator li .dropdown li.item a {
   margin-top: 20px;
   border: 1px solid #FCD39E;
 }
-/* line 201, ../sass/main.scss */
+/* line 202, ../sass/main.scss */
 #main-content.row #work-area #log-form input.button:hover {
   background: #E39737;
 }
-/* line 205, ../sass/main.scss */
+/* line 206, ../sass/main.scss */
 #main-content.row #work-area #log-form label {
   font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
   font-size: 30px;
   font-weight: 800;
   margin-bottom: 5px;
 }
-/* line 212, ../sass/main.scss */
+/* line 213, ../sass/main.scss */
 #main-content.row #work-area #log-form .sign a {
   font-size: 16px;
   color: #DFD3C7;
@@ -228,45 +229,45 @@ body .top-bar .row #navigator li .dropdown li.item a {
   font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
   float: right;
 }
-/* line 221, ../sass/main.scss */
+/* line 222, ../sass/main.scss */
 #main-content.row #work-area .fot {
   padding: 15px;
   padding-top: 10px;
   border-top: 4px solid #000;
   margin-top: 10px;
 }
-/* line 226, ../sass/main.scss */
+/* line 227, ../sass/main.scss */
 #main-content.row #work-area .fot .image-fot {
   background: white url("../images/landing-page/graph-footer.png") repeat-x;
   height: 50px;
 }
-/* line 232, ../sass/main.scss */
+/* line 233, ../sass/main.scss */
 #main-content.row #work-area #projects .titles, #main-content.row #work-area #projects .project {
   font-size: 16px;
   font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
   font-weight: 800;
 }
-/* line 236, ../sass/main.scss */
+/* line 237, ../sass/main.scss */
 #main-content.row #work-area #projects .titles .six, #main-content.row #work-area #projects .titles .three, #main-content.row #work-area #projects .titles .two, #main-content.row #work-area #projects .project .six, #main-content.row #work-area #projects .project .three, #main-content.row #work-area #projects .project .two {
   float: left;
 }
-/* line 240, ../sass/main.scss */
+/* line 241, ../sass/main.scss */
 #main-content.row #work-area #projects .titles {
   margin-left: 0px;
 }
-/* line 243, ../sass/main.scss */
+/* line 244, ../sass/main.scss */
 #main-content.row #work-area #projects .project {
   padding: 10px 0;
   color: #999999;
   overflow: hidden;
 }
-/* line 247, ../sass/main.scss */
+/* line 248, ../sass/main.scss */
 #main-content.row #work-area #projects .project img {
   margin-right: 5px;
   float: left;
 }
 
-/* line 256, ../sass/main.scss */
+/* line 257, ../sass/main.scss */
 .clear {
   clear: both;
 }
