@@ -5,7 +5,7 @@ script(type="text/html", id="loginform")
     r PIVOTAL TRACKER 
     span ACCOUNT
   .row#log-form
-    - if(user)
+    - if(user.email)
         p Welcome 
           i #{user.email}
         a(href="/logout") Log out
