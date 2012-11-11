@@ -23,6 +23,7 @@ html
     script(type='text/javascript', src='/javascripts/app/templates/projectGamesTemplate.js')
 
     script(type='text/javascript', src='/javascripts/app/views/indexView.js')
+    script(type='text/javascript', src='/javascripts/app/views/chatView.js')
     script(type='text/javascript', src='/javascripts/app/views/topNavBarView.js')
     script(type='text/javascript', src='/javascripts/app/views/projectItem.js')
     script(type='text/javascript', src='/javascripts/app/views/projectGamesView.js')
@@ -30,6 +31,7 @@ html
 
     script(type='text/javascript', src='/javascripts/router.js')
     script(type='text/javascript', src='/javascripts/main.js')
+    script(type='text/javascript', src='/socket.io/socket.io.js')
 
     link(href="/stylesheets/app.css", media="screen, projector, print", rel="stylesheet", type="text/css")
     link(href="/stylesheets/screen.css", media="screen, projection", rel="stylesheet", type="text/css")
@@ -52,4 +54,11 @@ html
     //   |     <span><%= project.name %></span>
     //   |   </div>
     //   | </div>
-    include templates/index-projects
+
+    script(type="text/html", id="projectItemTemplate")
+      .projectItem.project
+        div
+          img(src='images/landing-page/project-carts.png')
+          span
+            | <%= name %>
+            | <%= id %>
