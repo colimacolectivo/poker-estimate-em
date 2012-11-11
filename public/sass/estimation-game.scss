@@ -98,6 +98,55 @@
           @include global_font;
           font-size: 12px;
           color: #999;
+
+          a{
+            border: none;
+          }
+
+          &:hover{
+            background: #fff;
+          }
+          .delete{
+            float: right;
+            height: 10px;
+            width: 10px;
+            display: block;
+            background: transparent url('../images/games/delete.png') no-repeat center center;
+            border: none;
+            margin: 1px 8px 0 8px;
+            cursor: pointer;
+          }
+          .points{
+            float: right;
+            height: 34px;
+            width: 34px;
+            float:right;
+            display: block;
+            background: #000;
+            border: none;
+            margin-top: -8px;
+            cursor: pointer;
+            color: #fff;
+            margin-top: -11px;
+            margin-right: -10px;
+            text-align: center;
+            padding-top: 10px;
+            font-size: 12px;
+          }
+          .user{
+            float: right;
+            display: block;
+            border: none;
+            margin: 1px 8px 0 8px;
+            cursor: pointer;
+            @include global_font;
+            font-size: 12px;
+            color: #999;
+          }
+          &.finished{
+            background: #B5BDAB;
+            color: #000;
+          }
         }
       }
     }
