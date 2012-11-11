@@ -21,7 +21,9 @@ TXE.Views.indexView = Backbone.View.extend({
     if (this.user_logged_in) {
       var context = this.collection.toJSON();
       this.getProjectGames(context);
+
       this.$('.project-items').html(this.projectsTemplate({context: context}));
+      this.topNavBarView = new TXE.Views.topNavBarView(context);
     }
   },
 
