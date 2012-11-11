@@ -21,6 +21,14 @@
       }
 
     }
+    .item{
+      @include global_font;
+      font-size: 12px;
+      color: #999999;
+      padding: 7px 0 7px 15px;
+      margin: 2px 0;
+    }
+
     #list-games{
       float: left;
 
@@ -46,13 +54,8 @@
         padding: 10px 10px 10px 0;
 
         .item{
-          @include global_font;
-          font-size: 12px;
-          color: #999999;
-          background: #E9E8E5;
-          padding: 7px 0 7px 15px;
-          margin: 2px 0;
           border: 1px dashed #E3DACE;
+          background: #E9E8E5;
           &.closed{
             text-decoration:line-through;
           }
@@ -143,6 +146,39 @@
           width: 272px;
           margin: 0;
           height: 27px;
+        }
+
+      }
+
+      .list{
+        padding-top: 10px;
+
+        .item{
+          float: left;
+          border-right: 1px solid #DFD4C7;
+          width: 32.8%;
+          margin-left: 3px;
+
+          .drag{
+            float: right;
+            height: 10px;
+            width: 10px;
+            display: block;
+            background: transparent url('../images/games/drag.png') no-repeat center center;
+            border: none;
+            margin: 1px 8px 0 8px;
+            opacity: .4;
+            cursor: move;
+          }
+
+          &:hover{
+            background: #FAF9F8;
+            color: #000;
+            .drag{
+              opacity: 1;
+            }
+          }
+
         }
 
       }

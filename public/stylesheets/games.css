@@ -1,32 +1,12 @@
 /*
 Syntax error: Undefined mixin 'global_font'.
-        on line 49 of /Users/jaime/work/node-projects/poker-planning/public/sass/games.scss, in `global_font'
-        from line 49 of /Users/jaime/work/node-projects/poker-planning/public/sass/games.scss
+        on line 25 of /Users/jaime/work/node-projects/poker-planning/public/sass/games.scss, in `global_font'
+        from line 25 of /Users/jaime/work/node-projects/poker-planning/public/sass/games.scss
 
 Backtrace:
-/Users/jaime/work/node-projects/poker-planning/public/sass/games.scss:49:in `global_font'
-/Users/jaime/work/node-projects/poker-planning/public/sass/games.scss:49
+/Users/jaime/work/node-projects/poker-planning/public/sass/games.scss:25:in `global_font'
+/Users/jaime/work/node-projects/poker-planning/public/sass/games.scss:25
 /Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:251:in `visit_mixin'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:98:in `visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:318:in `visit_rule'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:98:in `visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:318:in `visit_rule'
 /Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:37:in `visit'
 /Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:98:in `visit'
 /Users/jaime/.rvm/gems/ruby-1.9.2-p320@poker-planning/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
@@ -116,4 +96,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'global_font'.\A         on line 49 of /Users/jaime/work/node-projects/poker-planning/public/sass/games.scss, in `global_font'\A         from line 49 of /Users/jaime/work/node-projects/poker-planning/public/sass/games.scss"; }
+  content: "Syntax error: Undefined mixin 'global_font'.\A         on line 25 of /Users/jaime/work/node-projects/poker-planning/public/sass/games.scss, in `global_font'\A         from line 25 of /Users/jaime/work/node-projects/poker-planning/public/sass/games.scss"; }
