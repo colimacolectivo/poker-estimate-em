@@ -5,7 +5,7 @@ TXE.Views.Project = Backbone.View.extend({
   events: {
    "keyup .fn-game-name" : "addGame",
    "click .fn-createGame": "add",
-   "click .fn-taskList .item": "select"
+   "click .fn-taskList .item": "select",
    "keyup .fn-filter-tasks" : "filter"
   },
   
