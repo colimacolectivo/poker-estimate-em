@@ -4,13 +4,15 @@ TXE.Views.indexView = Backbone.View.extend({
   collection: new TXE.Collections.projectsCollection(),
 
   initialize: function(){
+    this.template = _.template($('#landing-page').html());
+
     this.collection.bind("reset", this.render, this);
     this.collection.fetch();
-    this.user_logged_in = this.$('#user_logged_in').val() === "true";
   },
 
   render: function(){
-    this.$('.project-items').html('');
+    this.$el.html(this.template);
+    this.user_logged_in = this.$('#user_logged_in').val() === "true";
 
     if (this.user_logged_in) {
       var context = this.collection.toJSON();
