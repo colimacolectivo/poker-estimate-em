@@ -127,4 +127,65 @@ module.exports = function(app, db){
     }
   });
 
+
+  var setTasks = function(gameId, list){
+    var i = 0;
+
+    var saveTask = function(task){
+      db.tasks.save(task, { safe: true }, function(err, t){
+        console.log(inspect(t));
+      });
+    };
+
+    var lookForTask = function(data){
+      db.tasks.findOne(data, function(err, task){
+        if(!task){
+          saveTask(data);
+        }
+      });
+    };
+
+    for(i in list){
+      lookForTask({id: parseInt(list[i], 10), gameId: gameId});
+    }
+
+  };
+
+  app.post('/api/v1/games/add_tasks', function(req, res){
+    if(req.user){
+      var project_id = parseInt(req.body.project_id, 10);
+      var gameId = req.body.gameId;
+      var tasks = req.body.tasks;
+
+      if(typeof project_id === 'number' && gameId){
+        pivotal.getProyect(req.user.token, project_id,  function(result){
+          var Access = result.message  ? false : true; 
+          var objectId = new ObjectID(gameId);
+
+          if(Access){
+            setTasks(gameId, tasks);
+            res.send(true);
+          }else{
+            res.send(result);
+          }
+
+        });
+      }
+
+      if(!project_id){
+        res.send({ error: "Missing project id." });
+      }else if(typeof project_id !== 'number'){
+        res.send({ error: "Project id must be number." });
+      }
+
+      if(!gameId){
+        res.send({ error: "Missing game id." });
+      }
+
+    }else{
+      res.send({ error: "Not logged in" });
+    }
+
+  });
+
 };

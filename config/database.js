@@ -26,7 +26,8 @@ exports.init = function(callback){
 
     var collections = {
       users: new mongodb.Collection(db, "users"),
-      games: new mongodb.Collection(db, "games")
+      games: new mongodb.Collection(db, "games"),
+      tasks: new mongodb.Collection(db, "tasks")
     };
 
     return callback.call(this, collections);
