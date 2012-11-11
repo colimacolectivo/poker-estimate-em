@@ -1,7 +1,7 @@
 TXE.Views.TaskItem = Backbone.View.extend({
 
   tagName: 'li',
-  className: 'item four',
+  className: 'item four task',
   
   initialize: function() {
     this.template = _.template($('#task-item-template').html());
@@ -10,20 +10,19 @@ TXE.Views.TaskItem = Backbone.View.extend({
   },
 
   render: function() {
+    var self = this;
+
     this.$el.html(this.template(this.model.toJSON()));
 
     this.$el.draggable({
-        revert: "invalid",
-        opacity: 0.6,
-        cursor: "move",
-        cursorAt: {
-          top: 15,
-          left: 25
-        }
-      });
+      revert: "invalid",
+      opacity: 1,
+      cursor: "move",
+      scope: "tasks"
+    });
 
-
-      this.$el.data('model',this.model);
+    this.$el.data('id', this.model.get('id'));
+    return this;
   }
 
 });

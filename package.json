@@ -1,6 +1,6 @@
 {
   "name": "TexasEstimateEm",
-  "version": "0.0.3",
+  "version": "0.0.3-2",
   "description": "TangoSource",
   "main": "app.js",
   "private": true,

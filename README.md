@@ -137,9 +137,11 @@ DELETE /api/v1/projects/:id/games/:id
       _id: ""
     }
 
-POST /api/v1/projects/:id/games/add_tasks
+POST /api/v1/games/add_tasks
     {
-      name: ""
+      project_id: 0,
+      game_id: 0,
+      tasks: [id's]
     }
 
 === Branch management policy

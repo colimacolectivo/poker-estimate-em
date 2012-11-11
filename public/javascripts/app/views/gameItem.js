@@ -5,7 +5,8 @@ TXE.Views.GameItem = Backbone.View.extend({
   
   events: {
     "click .delete" : "remove",
-    "click .play" : "play"
+    "click .play" : "play",
+    "drop" : "onDrop"
   },
 
   initialize: function() {
@@ -28,8 +29,29 @@ TXE.Views.GameItem = Backbone.View.extend({
       
   },
 
+  pushTask: function(id) {
+    var model = new TXE.Models.TaskGame({
+      project_id: this.model.get('project_id'),
+      game_id: this.model.get('_id'),
+      tasks: [id]
+    }).save();
+  },
+
+  onDrop: function(e, ui) {
+    this.pushTask($(ui.draggable).data('id'));
+    $(ui.draggable).remove();
+  },
+
   render: function() {
+    var self = this;
+
     this.$el.html(this.template(this.model.toJSON()));
+
+    this.$el.droppable({
+      scope: 'tasks'
+    });
+
+    return this;
   }
 
 });
