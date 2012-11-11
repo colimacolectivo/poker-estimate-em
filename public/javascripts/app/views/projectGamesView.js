@@ -5,7 +5,7 @@ TXE.Views.projectGamesView = Backbone.View.extend({
   template: _.template(TXE.Templates.projectGamesTemplate),
 
   events:{
-    "click .fn-createGame"   : "createGame",
+    "click .fn-createGame"   : "showGameInput",
     "keydown .fn-game-name " : "keyCreate",
     "click .fn-removeGame"   : "removeGame"
   },
@@ -20,15 +20,22 @@ TXE.Views.projectGamesView = Backbone.View.extend({
   },
 
   render: function(){
-    $('#project-title').html(this.options.projectName);
-    this.$('#games-list').html(this.template({games: this.collection.toJSON()}));
+    $('h1.name').html(this.options.projectName);
+    this.$('.fn-game-list').html(this.template({games: this.collection.toJSON()}));
+  },
+
+  showGameInput: function(){
+    $('.fn-game-input').attr('hidden', false);
+    $('.fn-game-name').focus();
   },
 
   keyCreate: function(e){
-    var key = $(".fn-game-name").val();
     if((e.keyCode === 13) && (e.keyCode !== "")){
       this.createGame();      
-    } 
+    } if (e.keyCode === 27){
+      $('.fn-game-input').attr('hidden', true);
+      $('.fn-game-name').blur();
+    }
   },
 
   createGame: function(e){
@@ -45,8 +52,10 @@ TXE.Views.projectGamesView = Backbone.View.extend({
   },
 
   hideIndexView: function(){
+    var self = this;
     $("#main-content").hide();
     this.$el.show();
+    this.tasklistView = new TXE.Views.taskListView({projectId: this.options.projectId});
   }
 
 //games could be delated
