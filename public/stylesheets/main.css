@@ -540,20 +540,31 @@ body .top-bar .row #navigator li .dropdown li.item a {
   font-size: 30px;
   margin-bottom: 15px;
 }
-/* line 11, ../sass/estimation-game.scss */
+/* line 9, ../sass/estimation-game.scss */
+#poker-game .results {
+  border-top: 1px solid #E3DACE;
+}
+/* line 12, ../sass/estimation-game.scss */
 #poker-game .results .three {
   float: left;
+  padding: 12px;
+  font-size: 16px;
+  color: #666666;
+  font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
 }
-/* line 15, ../sass/estimation-game.scss */
+/* line 20, ../sass/estimation-game.scss */
 #poker-game .results .nine {
   float: left;
 }
-/* line 20, ../sass/estimation-game.scss */
+/* line 25, ../sass/estimation-game.scss */
 #poker-game .results .nine .carts .cart {
   float: left;
   text-align: center;
+  margin: 10px;
+  font-size: 12px;
+  font-weight: 800;
 }
-/* line 24, ../sass/estimation-game.scss */
+/* line 34, ../sass/estimation-game.scss */
 #poker-game .results .nine .carts .cart a {
   width: 40px;
   height: 50px;
@@ -564,48 +575,73 @@ body .top-bar .row #navigator li .dropdown li.item a {
   color: #000;
   font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
 }
-/* line 34, ../sass/estimation-game.scss */
+/* line 44, ../sass/estimation-game.scss */
 #poker-game .results .nine .carts .cart a.active {
   background: transparent url("../images/estimation-game/cart.png") no-repeat center center;
   opacity: 1;
 }
-/* line 39, ../sass/estimation-game.scss */
+/* line 49, ../sass/estimation-game.scss */
 #poker-game .results .nine .carts .cart a.off {
   background: transparent url("../images/estimation-game/cart.png") no-repeat center center;
   opacity: 0.5;
 }
-/* line 44, ../sass/estimation-game.scss */
+/* line 54, ../sass/estimation-game.scss */
 #poker-game .results .nine .carts .cart a.displayed {
   background: transparent url("../images/estimation-game/show-cart.png") no-repeat center center;
 }
-/* line 53, ../sass/estimation-game.scss */
-#poker-game .headers {
+/* line 61, ../sass/estimation-game.scss */
+#poker-game .results .nine .carts .cart.showed h1 {
+  color: #C21128;
+}
+/* line 71, ../sass/estimation-game.scss */
+#poker-game #play-place {
   padding: 10px 0;
   border-top: 1px solid #E3DACE;
 }
-/* line 58, ../sass/estimation-game.scss */
-#poker-game .stories-information {
-  height: 100px;
-  padding: 0;
-}
-/* line 62, ../sass/estimation-game.scss */
-#poker-game .stories-information h3 {
-  background: transparent url("../images/games/title-games.png") no-repeat left center;
+/* line 75, ../sass/estimation-game.scss */
+#poker-game #play-place h3 {
+  font-size: 18px;
+  color: #666;
   padding: 0 0 10px 30px;
 }
-/* line 67, ../sass/estimation-game.scss */
-#poker-game .stories-information .list {
+/* line 82, ../sass/estimation-game.scss */
+#poker-game #play-place .stories-information {
+  padding: 0;
+}
+/* line 85, ../sass/estimation-game.scss */
+#poker-game #play-place .stories-information h3 {
+  background: transparent url("../images/games/title-games.png") no-repeat left -1px;
+}
+/* line 89, ../sass/estimation-game.scss */
+#poker-game #play-place .stories-information .list {
   border-top: 1px solid #E3DACE;
   border-right: 1px solid #E3DACE;
-  padding: 5px 0px;
+  padding: 10px 10px 0 0;
 }
-/* line 71, ../sass/estimation-game.scss */
-#poker-game .stories-information .list .item {
+/* line 94, ../sass/estimation-game.scss */
+#poker-game #play-place .stories-information .list .item {
   padding: 10px;
-  border: solid 1px #ccc;
+  border: solid 1px #DFD4C7;
+  margin: 5px 0;
+  font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  color: #999;
 }
-/* line 78, ../sass/estimation-game.scss */
-#poker-game .chat-information {
+/* line 107, ../sass/estimation-game.scss */
+#poker-game #play-place .time p {
+  padding: 0 0 10px 30px;
+  font-size: 26px;
+  color: #C11127;
+  float: right;
+  text-align: right;
+  background: transparent url("../images/estimation-game/clock.png") no-repeat left center;
+}
+/* line 117, ../sass/estimation-game.scss */
+#poker-game #play-place .chat-information {
   border-bottom: 1px solid #E3DACE;
   margin-bottom: 15px;
+}
+/* line 121, ../sass/estimation-game.scss */
+#poker-game #play-place .chat-information h3 {
+  background: transparent url("../images/estimation-game/people.png") no-repeat left center;
 }
