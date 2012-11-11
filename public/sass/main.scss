@@ -3,7 +3,7 @@
 @import "mixins";
 
 body {
-  background-color: #fff;
+  background-color: #F2F1ED;
   h1, h2, h3, h4, li, p {
     @include global_font;
   }
@@ -40,9 +40,9 @@ body {
       #navigator{
         li {
           a{
-            font-size:18px;
+            font-size:14px;
             img{
-              margin: 5px 5px 0 0;
+              margin: 10px 5px 0 0;
               float: left;
             }
             &:hover{color: #F9A73F;}
@@ -71,8 +71,34 @@ body {
 }
 
 .footer{
-  background: #3F3F3F;
-  color: #fff;
+  border-top: 2px solid #DFD4C8;
+  color: #B5BDAB;
+  @include global_font;
+  font-size: 16px;
+  p{
+    text-align: center;
+    width: 460px;
+    margin: 0 auto;
+    height: 24px;
+    padding: 10px;
+    line-height: 28px;
+    &:before{
+      content: " ";
+      background: transparent url('../images/landing-page/footer-1.png') no-repeat center center;
+      height: 26px;
+      width: 25px;
+      display:block;
+      float: left;
+    }
+    &:after{
+      content: " ";
+      background: transparent url('../images/landing-page/footer-2.png') no-repeat center center;
+      height: 26px;
+      width: 26px;
+      display:block;
+      float: right;
+    }
+  }
 }
 .hide{
   display: none;
@@ -228,7 +254,7 @@ body {
        border-top: 4px solid #000;
        margin-top: 10px;
        .image-fot{
-         background: #fff url('../images/landing-page/graph-footer.png') repeat-x;
+         background: transparent url('../images/landing-page/graph-footer.png') repeat-x;
          height: 50px;
        }
      }
@@ -256,6 +282,16 @@ body {
          img{
            margin-right: 5px;
            float:left;
+         }
+         .six{
+           width: 250px;
+         }
+         .four{
+           width: 125px;
+         }
+         .two{
+           width: 60px;
+           text-align: center;
          }
        }
      }
