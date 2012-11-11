@@ -1,11 +1,15 @@
 TXE.Views.topNavBarView = Backbone.View.extend({
   el: '.top-bar',
-  template: _.template(TXE.Templates.projectsTopNavTemplate),
-  initialize: function(context){
-    this.context = context;
+
+  initialize: function(){
     this.render();
   },
+
   render: function(){
-    this.$('.dropdown').html(this.template({context: this.context}));
-  }
+    var self = this;
+    this.collection.forEach(function(project){
+      var topProjectItem = new TXE.Views.TopProjectItem({model: project});
+      self.$('.dropdown').append(topProjectItem.el);
+    });
+  },
 });

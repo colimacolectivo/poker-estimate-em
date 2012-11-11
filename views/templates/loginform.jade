@@ -1,0 +1,25 @@
+script(type="text/html", id="loginform")
+  input(id="user_logged_in", type="hidden", value="false")
+  .row.title LOGIN 
+    span WITH YOUR 
+    r PIVOTAL TRACKER 
+    span ACCOUNT
+  .row#log-form
+    - if(user.email)
+        p Welcome 
+          i #{user.email}
+        a(href="/logout") Log out
+    - else
+      form(action="/login", method="post", id="login-form")
+        div
+          label Mail
+          input(type="text", name="username", placeholder="EXAMPLE@DOMAIN.COM")
+          br
+          label Password
+          input(type="password", name="password", placeholder="********")
+          .sign
+            a(href="https://www.pivotaltracker.com/signup/new") OR SIGN UP
+          .clear
+          input.button(type="submit", value="LOGIN")
+  .row.fot 
+    .image-fot

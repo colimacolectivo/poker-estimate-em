@@ -1,0 +1,83 @@
+@import "mixins";
+#poker-game{
+
+  h1.name{
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+
+  .results{
+
+    .three{
+      float: left;
+    }
+
+    .nine{
+      float: left;
+
+      .carts{
+
+        .cart{
+          float: left;
+          text-align: center;
+
+          a{
+            width: 40px;
+            height: 50px;
+            display: block;
+            text-align: center;
+            padding-top: 16px;
+            font-size: 16px;
+            color: #000;
+            @include global_font;
+
+            &.active{
+              background: transparent url('../images/estimation-game/cart.png') no-repeat center center;
+              opacity: 1;
+            }
+
+            &.off{
+              background: transparent url('../images/estimation-game/cart.png') no-repeat center center;
+              opacity: 0.5;
+            }
+
+            &.displayed{
+              background: transparent url('../images/estimation-game/show-cart.png') no-repeat center center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .headers{
+    padding: 10px 0;
+    border-top: 1px solid #E3DACE;
+  }
+
+  .stories-information{
+    height:100px;
+    padding: 0;
+
+    h3{
+      background: transparent url('../images/games/title-games.png') no-repeat left center;
+      padding: 0 0 10px 30px;
+    }
+
+    .list{
+      border-top: 1px solid #E3DACE;
+      border-right: 1px solid #E3DACE;
+      padding: 5px 0px;
+      .item{
+        padding: 10px;
+        border: solid 1px #ccc;
+      }
+    }
+  }
+
+  .chat-information{
+    border-bottom: 1px solid #E3DACE;
+    margin-bottom: 15px;
+  }
+
+}

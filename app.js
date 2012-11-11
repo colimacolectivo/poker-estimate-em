@@ -93,9 +93,16 @@ database.init(function(db){
     app.use(express.errorHandler());
   });
 
+  var server = http.createServer(app).listen(app.get('port'), function(){
+    console.log("Express server listening on port " + app.get('port'));
+  });
+
+  var io = require('socket.io').listen(server);
+
   require("./controllers/home")(app);
   require("./controllers/games")(app, db);
-  require("./controllers/pivotalMethods")(app);
+  require("./controllers/socketio")(io);
+  require("./controllers/pivotalMethods")(app, db);
 
 
   app.post('/login', 
@@ -104,8 +111,5 @@ database.init(function(db){
             res.redirect('/');
   });
 
-  http.createServer(app).listen(app.get('port'), function(){
-    console.log("Express server listening on port " + app.get('port'));
-  });
 
 });
