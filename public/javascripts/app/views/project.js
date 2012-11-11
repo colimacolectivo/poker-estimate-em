@@ -25,9 +25,6 @@ TXE.Views.Project = Backbone.View.extend({
 
     this.render();
 
-    TXE.socket.on("show games", function(){
-      self.games.fetch();
-    });
   },
 
   select: function(e){
@@ -62,7 +59,6 @@ TXE.Views.Project = Backbone.View.extend({
       .val('')
       .focus();
 
-    TXE.socket.emit('new game');
   },
 
   addGame: function(e){

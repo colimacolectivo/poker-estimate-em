@@ -5,10 +5,5 @@ module.exports = function(io){
       socket.emit('post', msg);
     });
 
-
-    socket.on('new game', function (msg) {
-      socket.emit('show games', msg);
-    });
-
   });
 }
