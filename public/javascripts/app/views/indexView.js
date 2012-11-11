@@ -14,14 +14,28 @@ TXE.Views.indexView = Backbone.View.extend({
   initialize: function(){
     this.collection.bind("reset", this.render, this);
     this.collection.fetch();
-    this.user_logged_in = eval($("#user_logged_in").val());
+    this.user_logged_in = this.$('#user_logged_in').val() === "true";
   },
 
   render: function(){
     if (this.user_logged_in) {
       var context = this.collection.toJSON();
+      this.getProjectGames(context);
+
       this.$('.project-items').html(this.projectsTemplate({context: context}));
+      this.topNavBarView = new TXE.Views.topNavBarView(context);
     }
+  },
+
+  getProjectGames: function(context){
+    _.each(context, function(project){
+      var projectId = project.id;
+      games = new TXE.Collections.gamesCollection(projectId);
+      games.fetch().done(function(data){
+        var gamesProject = $(".fn-project[data-id="+projectId+"]").find(".two");
+        gamesProject.text(data.length); 
+      });
+    });
   },
 
   createGame: function(e){
@@ -46,9 +60,9 @@ TXE.Views.indexView = Backbone.View.extend({
 
   keyCreate: function(e){
     var key = $(".fn-game-name").val();
-    if((e.keyCode == 13) && (e.keyCode != "")){
+    if((e.keyCode === 13) && (e.keyCode !== "")){
       this.createGame();      
-    } if(e.keyCode == 27){
+    } if(e.keyCode === 27){
       $(".fn-game-name").blur();
       $(".action-panel").attr("hidden", true);
     }
