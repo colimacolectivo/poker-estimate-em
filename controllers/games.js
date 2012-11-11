@@ -102,7 +102,9 @@ module.exports = function(app, db){
             db.games.findOne({project_id: project_id, _id: objectId}, function(err, game){
               db.tasks.find({gameId: id}, function(err, tasks){
                 tasks.toArray(function(err, results){
-                  game.tasks = results;
+                  if(game){
+                    game.tasks = results;
+                  }
                   res.send(game);
                 });
               });
