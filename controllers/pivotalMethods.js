@@ -7,7 +7,7 @@ module.exports = function(app){
 
     if(req.user){
       pivotal.getProyects(req.user.token, function(result){
-        var projects = result.projects.project;
+        var projects =  result.projects ?  result.projects.project : [];
         var total = projects.length;
         var i = 0;
         var projetsRespond = [];
