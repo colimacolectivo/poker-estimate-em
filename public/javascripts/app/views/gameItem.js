@@ -51,7 +51,6 @@ TXE.Views.GameItem = Backbone.View.extend({
 
     this.$el.droppable({
       accept: '.task'
-      // scope: 'tasks'
     });
 
     return this;
