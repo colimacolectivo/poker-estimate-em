@@ -52,8 +52,10 @@ TXE.Views.projectGamesView = Backbone.View.extend({
   },
 
   hideIndexView: function(){
+    var self = this;
     $("#main-content").hide();
     this.$el.show();
+    this.tasklistView = new TXE.Views.taskListView({projectId: this.options.projectId});
   }
 
 //games could be delated
