@@ -199,4 +199,41 @@ module.exports = function(app, db){
 
   });
 
+
+  app.delete('/api/v1/projects/:proId/games/:id', function(req, res){
+    if(req.user){
+      var project_id = parseInt(req.params.proId, 10);
+      var gameId = req.params.id;
+
+      if(typeof project_id === 'number' && gameId){
+        pivotal.getProyect(req.user.token, project_id,  function(result){
+          var Access = result.message  ? false : true; 
+          var objectId = new ObjectID(gameId);
+
+          if(Access){
+            db.games.delete({_id: objectId}, { safe: true }, function(err, game){
+              res.send(game);
+            });
+          }else{
+            res.send(result);
+          }
+
+        });
+      }
+
+      if(!project_id){
+        res.send({ error: "Missing project id." });
+      }else if(typeof project_id !== 'number'){
+        res.send({ error: "Project id must be number." });
+      }
+
+      if(!gameId){
+        res.send({ error: "Missing game id." });
+      }
+
+    }else{
+      res.send({ error: "Not logged in" });
+    }
+  });
+
 };
