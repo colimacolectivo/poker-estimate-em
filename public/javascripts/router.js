@@ -42,7 +42,8 @@ TXE.Router = Backbone.Router.extend({
 
     this.game = new TXE.Views.Game({
       projectId: proId,
-      gameId: gameId
+      gameId: gameId,
+      model: new TXE.Models.Game(proId, gameId)
     });
 
   }
