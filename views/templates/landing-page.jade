@@ -21,21 +21,3 @@ script(type="text/html", id="landing-page")
             .box-info Wait for all the participants, start the game and PLAY! 
 
       .six.columns#work-area
-        - if(user) 
-          input(id="user_logged_in", type="hidden", value="true")
-          .row.title PROJECTS
-          .row#projects
-            // this content is for the projects template
-            .project-items
-          .row.fot 
-            .image-fot
-
-        - else
-          input(id="user_logged_in", type="hidden", value="false")
-          .row.title LOGIN 
-            span WITH YOUR 
-            r PIVOTAL TRACKER 
-            span ACCOUNT
-          .row#log-form != partial('../login-form');
-          .row.fot 
-            .image-fot
