@@ -1,12 +1,14 @@
 #game-container.row
-  h1 Project Name
+  h1.name Project Name
 
   .container.row
     #list-games.three
-      h1 GAMES
-      a.tiny.alert.button(href="#") Add
+      .head
+        h1 GAMES
+        a.tiny.alert.button(href="#") Add +
+        .clear
       
-      ul.list
+      ul.list.accordion
         li.game-item.closed Game Name
         li.game-item.closed Game Name
         li.game-item.active Game Name
@@ -18,9 +20,10 @@
       input(type="text", name="nametask", placeholder="Name of your task...")
 
     #list-tasks.nine 
-      h1.four STORIES
-      nav.eight
-        a.tiny.alert.button(href="#") Select All
-        a.tiny.alert.button(href="#") Unselect All
-        input(type="text", name="nametask", placeholder="Name of your task...")
+      .head
+        h1.four STORIES
+        nav.eight
+          a.tiny.alert.button(href="#") Select All
+          a.tiny.alert.button(href="#") Unselect All
+          input#filter(type="text", name="nametask", placeholder="Filter")
       
