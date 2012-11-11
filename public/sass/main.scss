@@ -10,14 +10,34 @@ body {
   .row{
     width: 940px;
   }
-  .top-bar{
-    .row{
-      ul{
+  .top-bar {
+    .egg {
+      background: transparent url('../images/poker-face.png') no-repeat 0 bottom;
+      position: absolute;
+      width: 32px;
+      height: 50px;
+      left: 0;
+      top: 0;
+      @include transition;
+    }
+
+    .name:hover {
+      .egg {
+        left: -30px;
+      }
+    }
+
+    .row {
+      ul {
         li.name {
+          position: relative;
+
           & > * {
             float: left;
           }
           h1{
+            padding-left: 60px;
+
             a{
               font-size: 30px;
               color: #C70A2B;
@@ -31,7 +51,10 @@ body {
             margin-left: 5px;
           }
           .logo{
-            a{
+            z-index: 5;
+            position: absolute;
+
+            a {
               margin: 0;
               padding: 0;
             }
@@ -137,13 +160,16 @@ body {
 #main-content.row{
   .container{
     .side-nav.steps{
-      li{
+      .box {
         height: 225px;
         width: 225px;
         float: left;
         margin: 1px;
+        overflow: hidden;
+        padding: 10px;
         text-align:center;
         position: relative;
+
         &.one-sq{
           background: #B4BDAD url('../images/landing-page/one.png') no-repeat 15px 10px;
         }
@@ -159,55 +185,51 @@ body {
         &.four-sq{
           margin-bottom: 15px;
           background: #C70A2B url('../images/landing-page/four.png') no-repeat 15px 10px;
+          .box-info {
+            font-size: 20px;
+          }
         }
-        span{
+
+        &:hover {
+          .box-title {
+            font-size: 22px;
+            height: auto;
+            padding: 0 25px;
+          }
+
+          .box-info {
+            top: 50px;
+            @include opacity(1);
+          }
+        }
+
+        .box-title {
+          @include transition;
           margin: 0 auto;
-          height: inherit;
-          width: inherit;
           display: table-cell;
           vertical-align: middle;
           font-size: 40px;
           font-weight: 100;
           color: #fff;
-          cursor: pointer;
           letter-spacing: 1px;
           @include global_font;
-          .small {
-            display: block;
-            height: auto;
-            width: auto;
-            font-size: 30px;
-            .more{
-              font-size: 40px;
-            }
-          }
+          width: inherit;
+          height: inherit;
         }
-        .info{
+
+        .box-info {
+          @include transition;
           @include global_font;
           text-align: left;
           padding: 15px;
+          font-weight: 100;
           color: #fff;
           font-size: 17px;
+          letter-spacing: 1px;
           position: absolute;
           left: 0;
-          top: 0;
-          background: rgba(0, 0, 0, 0.7);
-          height: 0;
+          top: 220px;
           opacity: 0;
-          h3{
-            font-size: 12px;
-            font-weight: bold;
-            margin: 0 0 24px 24px;
-            color: #FFF;
-          }
-          p {
-            text-align:justify;
-            padding:10px;
-            span{
-              font-size:17px;
-              font-weight:bold;
-            }
-          }
         }
       }
     }
