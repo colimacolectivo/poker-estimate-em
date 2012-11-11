@@ -5,7 +5,8 @@ TXE.Router = Backbone.Router.extend({
     "projects/:proId/game/:gameId" : "playGame"
   },
 
-  initilize: function(){
+  initialize: function(){
+    TXE.socket = io.connect(window.location.origin);
   },
 
   index: function(){

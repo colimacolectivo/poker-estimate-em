@@ -10,6 +10,8 @@ TXE.Views.Project = Backbone.View.extend({
   },
   
   initialize: function() {
+    var self = this;
+
     this.template = _.template($("#project-view").html());
     var projectId = this.model.get('id');
 
@@ -22,6 +24,10 @@ TXE.Views.Project = Backbone.View.extend({
     this.games.fetch();
 
     this.render();
+
+    TXE.socket.on("show games", function(){
+      self.games.fetch();
+    });
   },
 
   select: function(e){
@@ -55,6 +61,8 @@ TXE.Views.Project = Backbone.View.extend({
       .find('input')
       .val('')
       .focus();
+
+    TXE.socket.emit('new game');
   },
 
   addGame: function(e){
