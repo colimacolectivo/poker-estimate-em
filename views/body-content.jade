@@ -4,25 +4,75 @@
     button Create Game 
     input{type="text"}
   .container
-    aside.games
-    section.list-tasks
-    input(type="checkbox", checked=0)
 
-.row
-  .three.columns
-    ul.side-nav
-      li
-        a(href='#') Section 1
-      li
-        a(href='#') Section 2
-      li
-        a(href='#') Section 3
-      li
-        a(href='#') Section 4
-      li
-        a(href='#') Section 5
-      li
-        a(href='#') Section 6
-    p
-      img(src='http://placehold.it/320x240&text=Ad')
-  .nine.columns
+    .row
+      .six.columns
+        ul.side-nav.steps
+          li.one-sq
+            span LOGIN
+            .info
+              h3 LOGIN
+              p
+                In order to use this App you would need a 
+                span Pivotal Tracker 
+                Account to fetch all your projects. Otherwise, you should 
+                span i create one.
+          li.two-sq
+            span CHOOSE A PROJECT
+            .info
+              h3 CHOOSE A PROJECT
+              p
+                Once you have logged in you will be able to navigate between projects on the 
+                span Top Navigator 
+                or on the right side of this square.
+                i create one.
+          li.three-sq
+            span CREATE 
+              span.small on
+               span.more SELECT A GAME
+            .info
+              h3 CREATE OR SELECT A GAME
+              p
+                After selected a project you can create or select games. This is another name for the iteration occurred during a sprint planning meeting. Here you can assign unestimated stories to a game. 
+                i create one.
+          li.four-sq
+            span PLAY
+            .info
+              h3 PLAY
+              p
+                Wait for all the participants, start the game and 
+                span PLAY! 
+
+      .six.columns#work-area
+        - if(user) 
+          .row.title PROJECTS
+          .row#projects
+            // this content is for the projects template
+            .titles.row
+              .six Project Name
+              .three Account
+              .two Games
+            .project
+              .six
+                img(src="images/landing-page/project-carts.png")
+                span name
+              .three acount
+              .two 44
+          .row.fot 
+            .image-fot
+
+        - else
+          .row.title LOGIN 
+            span WITH YOUR 
+            r PIVOTAL TRACKER 
+            span ACCOUNT
+          .row#log-form
+            include login-form
+          .row.fot 
+            .image-fot
+
+
+
+
+
+

@@ -2,26 +2,35 @@ nav.top-bar
   .row
     ul
       li.name
+        .logo
+          a(href="/")
+            img(src="images/logo.png")
         h1
-          a(href="/") Poker Planning
-    section
+          a(href="/") POKER 
+            span ESTIMATE’EM
+        .slog
+          img(src="images/slog.png")
+    section#navigator
       ul.right
-        li
-          a(href='#') Link
-        li.has-dropdown
-          a(href='#') Long In
-          ul.dropdown
-            li.login-form-content
-              include login-form
-  
-.head
-  header.row
-      .four.columns
-        a(href="/")
-          // img(src="images/poker-logo.png")
-      .eight.columns
-        ul.link-list.right
+        -if(user)
+          li.has-dropdown
+            a(href='#') Projects
+            ul.dropdown
+              li.item 
+                a(href='#') project1
+              li.item 
+                a(href='#') project2
+              li.item 
+                a(href='#') project3
+              li.item 
+                a(href='#') project4
+            li
+              a(href='#') 
+                img(src="images/user.png")
+                span Eduardo Ruiz
           li
-            a(href="#login-form") link
-          li
-            a(href="games") games
+            a(href="/logout")
+              img(src="images/exit.png")
+        -else
+          li.item
+            a(href='#') Login
