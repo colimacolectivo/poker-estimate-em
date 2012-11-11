@@ -7,13 +7,12 @@ TXE.Views.chatView = Backbone.View.extend({
   },
 
   initialize: function(){
-    this.socket = io.connect(window.location.origin);
-    this.socket.on("post", this.post);
+    TXE.socket.on("post", this.post);
   },
 
   message: function(e){
     var message = e.currentTarget.value;
-    var socket  = this.socket;
+    var socket  = TXE.socket;
 
     if (e.keyCode === 13){
       socket.emit("message",message);
