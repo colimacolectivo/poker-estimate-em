@@ -1,2 +1,26 @@
-#game-container
-  GAME CONTAINER
+#game-container.row
+  h1 Project Name
+
+  .container.row
+    #list-games.three
+      h1 GAMES
+      a.tiny.alert.button(href="#") Add
+      
+      ul.list
+        li.game-item.closed Game Name
+        li.game-item.closed Game Name
+        li.game-item.active Game Name
+          ul.list-tasks-group
+            li.game-item Task Name
+            li.game-item Task Name
+            li.game-item Task Name
+            li.game-item Task Name
+      input(type="text", name="nametask", placeholder="Name of your task...")
+
+    #list-tasks.nine 
+      h1.four STORIES
+      nav.eight
+        a.tiny.alert.button(href="#") Select All
+        a.tiny.alert.button(href="#") Unselect All
+        input(type="text", name="nametask", placeholder="Name of your task...")
+      
