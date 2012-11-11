@@ -2,9 +2,7 @@
     p Welcome 
       i #{user.email}
     a(href="/logout") Log out
-    input(id="user_logged_in", type="hidden", value="true")
 - else
-  input(id="user_logged_in", type="hidden", value="false")
   form(action="/login", method="post", id="login-form")
     div
       label Mail
