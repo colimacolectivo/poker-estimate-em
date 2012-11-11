@@ -1,15 +1,13 @@
 TXE.Views.indexView = Backbone.View.extend({
   el: '#main-content',
 
-  projectsTemplate: _.template(TXE.Templates.projectsTemplate),
+  template: _.template(TXE.Templates.projectsTemplate),
 
   collection: new TXE.Collections.projectsCollection(),
 
   events: {
-    "click .fn-project"      : "displayForm",
+    "click .fn-project"      : "highligthProject",
     "dblclick .fn-project"   : "displayGames",
-    "click .fn-createGame"   : "createGame",
-    "keydown .fn-game-name " : "keyCreate",
     "mouseover .steps li"    : "showInfo",
     "mouseleave .steps li"   : "changeInfo"
   },
@@ -25,7 +23,7 @@ TXE.Views.indexView = Backbone.View.extend({
       var context = this.collection.toJSON();
       this.getProjectGames(context);
 
-      this.$('.project-items').html(this.projectsTemplate({context: context}));
+      this.$('.project-items').html(this.template({context: context}));
       this.topNavBarView = new TXE.Views.topNavBarView(context);
     }
   },
@@ -47,34 +45,10 @@ TXE.Views.indexView = Backbone.View.extend({
     this.projectgamesView = new TXE.Views.projectGamesView({projectName: projectName, projectId: projectId, });
   },
 
-  createGame: function(e){
-    var game = new TXE.Models.Game(this.projectId),
-        name = $('.fn-game-name').val();
-    game.save({project_id: this.projectId, name: name});
-    $('.fn-game-name').val('');
-  },
 
-  displayForm: function(e){
+  highligthProject: function(e){
     $(".fn-project").removeClass("selected");
     this.projectId = $(e.currentTarget).addClass("selected").attr("data-id");
-    var games = new TXE.Collections.gamesCollection(this.projectId);
-    project = this.collection.get(this.projectId);
-    games.fetch().done(function(data){
-    });
-    $('.action-panel').attr('hidden', false);
-    $('.fn-game-name').attr('placeholder', 'Game name for ' + project.attributes.name);
-    $('.fn-game-name').focus();
-    
-  },
-
-  keyCreate: function(e){
-    var key = $(".fn-game-name").val();
-    if((e.keyCode === 13) && (e.keyCode !== "")){
-      this.createGame();      
-    } if(e.keyCode === 27){
-      $(".fn-game-name").blur();
-      $(".action-panel").attr("hidden", true);
-    }
   },
 
   showInfo: function(e){
@@ -94,5 +68,4 @@ TXE.Views.indexView = Backbone.View.extend({
       height: 0
     }, 500);
   }
-
 });

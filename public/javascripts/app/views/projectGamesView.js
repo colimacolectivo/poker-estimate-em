@@ -1,23 +1,31 @@
 TXE.Views.projectGamesView = Backbone.View.extend({
 
   el: "#games-content",
-  
+
   template: _.template(TXE.Templates.projectGamesTemplate),
 
-  events:{},
+  events:{
+    "click .fn-createGame"   : "createGame"
+  },
 
   initialize: function(){
-    var self = this;
+    this.$el.attr('hidden', false);
+    this.collection = new TXE.Collections.gamesCollection(this.options.projectId),
+    this.collection.bind("reset", this.render,this);
+    this.collection.fetch();
     this.hideIndexView();
-    this.games = new TXE.Collections.gamesCollection(this.options.projectId);
-    this.games.fetch().done(function(data){
-      self.render();
-    });
   },
 
   render: function(){
     $('#project-title').html(this.options.projectName);
-    this.$('#games-list').html(this.template({games: this.games.toJSON()}));
+    this.$('#games-list').html(this.template({games: this.collection.toJSON()}));
+  },
+
+  createGame: function(e){
+    var game = new TXE.Models.Game(this.options.projectId),
+        name = $('.fn-game-name').val();
+    game.save({project_id: this.options.projectId, name: name});
+    $('.fn-game-name').val('');
   },
 
   hideIndexView: function(){
