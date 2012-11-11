@@ -1,6 +1,6 @@
 TXE.Views.projectGamesView = Backbone.View.extend({
 
-  el: "#games-content",
+  el: "#game-container",
 
   template: _.template(TXE.Templates.projectGamesTemplate),
 
