@@ -20,7 +20,7 @@ TXE.Views.indexView = Backbone.View.extend({
         this.$('.project-items').append(projectItem.el);
       });
 
-      this.topNavBarView = new TXE.Views.topNavBarView(context);
+      this.topNavBarView = new TXE.Views.topNavBarView({collection: this.collection});
     }
   }
 });
