@@ -8,16 +8,29 @@
         a.tiny.alert.button(href="#") Add +
         .clear
       
-      ul.list.accordion
-        li.game-item.closed Game Name
-        li.game-item.closed Game Name
-        li.game-item.active Game Name
+      ul.list
+        li.item.closed Game Name
+          a.delete
+        li.item.closed Game Name
+          a.delete
+        li.item.active Game Name
+          a.play
+          a.delete
+          a.edit
+        li.item.opened Game Name
+          a.play
+          a.delete
+          a.edit
           ul.list-tasks-group
-            li.game-item Task Name
-            li.game-item Task Name
-            li.game-item Task Name
-            li.game-item Task Name
-      input(type="text", name="nametask", placeholder="Name of your task...")
+            li.task Task Name
+              a.delete
+            li.task Task Name
+              a.delete
+            li.task Task Name
+              a.delete
+            li.task Task Name
+              a.delete
+      input.nametask(type="text", name="nametask", placeholder="Name of your task...")
 
     #list-tasks.nine 
       .head

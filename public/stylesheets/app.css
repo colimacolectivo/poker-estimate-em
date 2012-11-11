@@ -6229,68 +6229,145 @@ body .top-bar .row #navigator li .dropdown li.item a {
   clear: both;
 }
 
-/* line 2, ../sass/games.scss */
+/* line 3, ../sass/games.scss */
 #game-container h1.name {
   font-size: 30px;
   margin-bottom: 30px;
 }
-/* line 6, ../sass/games.scss */
+/* line 8, ../sass/games.scss */
 #game-container .container.row {
   width: 940px;
   margin: 0 auto;
+  background: transparent url("../images/games/line-bg.jpg") repeat-y 235px;
 }
-/* line 9, ../sass/games.scss */
+/* line 13, ../sass/games.scss */
 #game-container .container.row .head {
-  border: 1px solid #ccc;
+  border: 1px solid #DFD4C8;
   overflow: hidden;
 }
-/* line 12, ../sass/games.scss */
+/* line 17, ../sass/games.scss */
 #game-container .container.row .head h1 {
   float: left;
   line-height: 22px;
   font-size: 18px;
 }
-/* line 18, ../sass/games.scss */
+/* line 24, ../sass/games.scss */
 #game-container .container.row #list-games {
   float: left;
 }
-/* line 20, ../sass/games.scss */
+/* line 27, ../sass/games.scss */
 #game-container .container.row #list-games h1 {
   padding-left: 30px;
   background: transparent url("../images/games/title-games.png") no-repeat left center;
 }
-/* line 24, ../sass/games.scss */
+/* line 32, ../sass/games.scss */
 #game-container .container.row #list-games .head {
   border-left: none;
   padding: 7px 10px 7px 0;
 }
-/* line 28, ../sass/games.scss */
+/* line 37, ../sass/games.scss */
 #game-container .container.row #list-games .button {
   float: right;
 }
-/* line 33, ../sass/games.scss */
+/* line 41, ../sass/games.scss */
+#game-container .container.row #list-games .nametask {
+  margin: 0;
+}
+/* line 45, ../sass/games.scss */
+#game-container .container.row #list-games .list {
+  padding: 10px 10px 10px 0;
+}
+/* line 48, ../sass/games.scss */
+#game-container .container.row #list-games .list .item {
+  font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  color: #999999;
+  background: #E9E8E5;
+  padding: 7px 0 7px 15px;
+  margin: 2px 0;
+  border: 1px dashed #E3DACE;
+}
+/* line 56, ../sass/games.scss */
+#game-container .container.row #list-games .list .item.closed {
+  text-decoration: line-through;
+}
+/* line 60, ../sass/games.scss */
+#game-container .container.row #list-games .list .item.opened {
+  padding-bottom: 0;
+}
+/* line 64, ../sass/games.scss */
+#game-container .container.row #list-games .list .item .edit {
+  float: right;
+  height: 10px;
+  width: 10px;
+  display: block;
+  background: transparent url("../images/games/edit.png") no-repeat center center;
+  border: none;
+  margin-right: 10px;
+  margin-top: 1px;
+}
+/* line 75, ../sass/games.scss */
+#game-container .container.row #list-games .list .item .delete {
+  float: right;
+  height: 10px;
+  width: 10px;
+  display: block;
+  background: transparent url("../images/games/delete.png") no-repeat center center;
+  border: none;
+  margin: 1px 8px 0 8px;
+}
+/* line 85, ../sass/games.scss */
+#game-container .container.row #list-games .list .item .play {
+  float: right;
+  height: 27px;
+  width: 27px;
+  float: right;
+  display: block;
+  background: transparent url("../images/games/playgame.png") no-repeat center center;
+  border: none;
+  margin-top: -8px;
+}
+/* line 96, ../sass/games.scss */
+#game-container .container.row #list-games .list .item .list-tasks-group {
+  margin-left: 0;
+  border-top: 1px solid #DFD4C7;
+  margin-top: 5px;
+}
+/* line 100, ../sass/games.scss */
+#game-container .container.row #list-games .list .item .list-tasks-group li {
+  padding: 7px 0;
+}
+/* line 107, ../sass/games.scss */
+#game-container .container.row #list-games .list .item:hover {
+  background: #fff;
+}
+/* line 109, ../sass/games.scss */
+#game-container .container.row #list-games .list .item:hover .play {
+  background: transparent url("../images/games/play.png") no-repeat center center;
+}
+/* line 120, ../sass/games.scss */
 #game-container .container.row #list-tasks {
   float: left;
 }
-/* line 35, ../sass/games.scss */
+/* line 123, ../sass/games.scss */
 #game-container .container.row #list-tasks .head {
   border-right: none;
   padding: 5px 0 5px 10px;
 }
-/* line 38, ../sass/games.scss */
+/* line 127, ../sass/games.scss */
 #game-container .container.row #list-tasks .head h1 {
   margin-top: 4px;
 }
-/* line 42, ../sass/games.scss */
+/* line 133, ../sass/games.scss */
 #game-container .container.row #list-tasks nav {
   float: right;
 }
-/* line 44, ../sass/games.scss */
+/* line 136, ../sass/games.scss */
 #game-container .container.row #list-tasks nav a.button {
   float: left;
   margin: 2px 5px 0 5px;
 }
-/* line 48, ../sass/games.scss */
+/* line 141, ../sass/games.scss */
 #game-container .container.row #list-tasks nav #filter {
   float: right;
   width: 272px;
