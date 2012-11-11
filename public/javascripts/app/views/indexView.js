@@ -20,8 +20,20 @@ TXE.Views.indexView = Backbone.View.extend({
   render: function(){
     if (this.user_logged_in) {
       var context = this.collection.toJSON();
+      this.getProjectGames(context);
       this.$('.project-items').html(this.projectsTemplate({context: context}));
     }
+  },
+
+  getProjectGames: function(context){
+    _.each(context, function(project){
+      var projectId = project.id;
+      games = new TXE.Collections.gamesCollection(projectId);
+      games.fetch().done(function(data){
+        var gamesProject = $(".fn-project[data-id="+projectId+"]").find(".two");
+        gamesProject.text(data.length); 
+      });
+    });
   },
 
   createGame: function(e){
