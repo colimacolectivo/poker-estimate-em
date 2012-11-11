@@ -1,7 +1,7 @@
 var pivotal   = require("./pivotal");
 var inspect   = require('eyes').inspector({ stream: null });
 
-module.exports = function(app){
+module.exports = function(app, db){
 
   app.get('/api/v1/projects', function(req, res){
 
@@ -52,6 +52,58 @@ module.exports = function(app){
     }
   });
 
+
+  var loadTasksonGame = function(storie, callback){
+    db.tasks.findOne({id: parseInt(storie.id[0]._, 10)}, function(err, taskOnGame){
+      var result = taskOnGame ? null : storie;
+      return callback(result);
+    });
+  };
+
+  var getTaskList = function(stories, Done){
+    var i = 0;
+    var total = [];
+    var end  = stories.length;
+    var storiesRespond = [];
+
+    for(i in stories){
+      loadTasksonGame(stories[i], function(task, current){
+        total.push(1);
+
+        if(task){
+          try{
+
+            if(task.estimate[0]._ === "-1"){
+              current = {
+                title: task.name[0],
+                project_id: task.project_id[0]._,
+                id: task.id[0]._,
+                url: task.url[0],
+                description: task.description[0],
+                requested_by: task.requested_by[0],
+                owned_by: task.owned_by,
+                labels: task.labels
+              };
+
+              storiesRespond.push(current);
+            }
+
+          }catch(err){
+            // pivotal issue
+          }
+
+        }
+
+        // end statement
+        if(end === total.length){
+          return Done(storiesRespond);
+        }
+
+      });
+    }
+
+  };
+
   app.get('/api/v1/projects/:id/tasks', function(req, res){
 
     if(req.user){
@@ -63,36 +115,11 @@ module.exports = function(app){
         if(errorMessage){
           res.send(result);
         }else{
-
           var stories = result.stories.story;
-          var total   = stories.length;
-          var current = {};
-          var i       = 0;
 
-          for(i; i<total; i++){
-
-            try{ 
-              if(stories[i].estimate[0]._ === "-1"){
-                current = {
-                  title: stories[i].name[0],
-                  project_id: stories[i].project_id[0]._,
-                  id: stories[i].id[0]._,
-                  url: stories[i].url[0],
-                  description: stories[i].description[0],
-                  requested_by: stories[i].requested_by[0],
-                  owned_by: stories[i].owned_by,
-                  labels: stories[i].labels
-                };
-                storiesRespond.push(current);
-              }
-            }catch(err){
-              console.log(err);
-            }
-
-            if(i === total - 1){
-              res.send(storiesRespond);
-            }
-          }
+          getTaskList(stories,function(respond){
+            res.send(respond);
+          });
 
         }
 

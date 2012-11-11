@@ -95,7 +95,7 @@ database.init(function(db){
 
   require("./controllers/home")(app);
   require("./controllers/games")(app, db);
-  require("./controllers/pivotalMethods")(app);
+  require("./controllers/pivotalMethods")(app, db);
 
 
   app.post('/login', 
