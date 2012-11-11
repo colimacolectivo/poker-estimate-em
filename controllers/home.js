@@ -1,7 +1,13 @@
 module.exports = function(app) {
  
   app.get('/', function(req, res) {
-    res.render('index', { user: req.user, message: req.flash('info') });
+    var logged = req.user;
+
+    if(logged){
+      logged.password = null;
+    }
+
+    res.render('index', { user: logged, message: req.flash('info') });
   });
 
   app.get('/login', function(req, res){
