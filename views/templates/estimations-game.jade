@@ -17,13 +17,15 @@ script(type="text/html", id="pokerGameTemplate")
           li.cart 
             a.off
             h1 VC
-          li.cart 
+          li.cart.showed
             a.displayed 2
             h1 ER
-    .row.headers
+    .row#play-place
       .stories-information.four.columns 
         h3 Stories
-        
+
+        .clear
+
         ul.list
           li.item Story one
           li.item Story two
@@ -31,12 +33,21 @@ script(type="text/html", id="pokerGameTemplate")
           li.item Story four
           li.item Story five
 
+
       .time.five.columns 
-        img(src="images/estimation-game/clock.png")
+        p 3
+
+        .clear
+
+        #arena
+
       .chat-information.three.columns 
-        img(src="images/estimation-game/people.png")
-        p Chat & Participants
+        h3 Chat & Participants
+
+        .clear
+
         #chat
           input#message
           a.tiny.button send
           #output
+        
