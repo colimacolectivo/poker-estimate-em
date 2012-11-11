@@ -1,4 +1,5 @@
 @import "compass/css3/border-radius";
+@import "compass/css3/opacity";
 @import "mixins";
 
 body {
@@ -245,8 +246,12 @@ body {
        }
        .project{
          padding: 10px 0;
-         color: #999999;
+         color: #000;
          overflow: hidden;
+         @include opacity(.3);
+         &:hover{
+           @include opacity(1);
+         }
          img{
            margin-right: 5px;
            float:left;
