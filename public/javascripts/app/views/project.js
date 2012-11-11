@@ -6,6 +6,7 @@ TXE.Views.Project = Backbone.View.extend({
    "keyup .fn-game-name" : "addGame",
    "click .fn-createGame": "add",
    "click .fn-taskList .item": "select"
+   "keyup .fn-filter-tasks" : "filter"
   },
   
   initialize: function() {
@@ -71,6 +72,23 @@ TXE.Views.Project = Backbone.View.extend({
       this.renderGame(model);
     }
 
+  },
+
+  filter: function(e){
+    var query = $(e.target).val();
+    if(query === ""){
+      $('.fn-taskList').html('');
+      this.showTasks();
+    } else {
+      this.search(query);
+    }
+  },
+
+  search: function(query){
+    $('.fn-taskList').html('');
+    var self = this,
+        results = _.filter(this.tasks.models, function(task){ return task.attributes.title.match(RegExp(query)) });
+    _.each(results, function(result){ self.renderTask(result) });
   },
 
   render: function() {
