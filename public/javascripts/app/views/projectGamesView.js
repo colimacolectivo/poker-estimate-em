@@ -1,12 +1,28 @@
 TXE.Views.projectGamesView = Backbone.View.extend({
 
-  el: "#work-area",
+  el: "#games-content",
+  
+  template: _.template(TXE.Templates.projectGamesTemplate),
 
-  events:{
-  },
+  events:{},
 
   initialize: function(){
-    console.log("Work it!");
+    var self = this;
+    this.hideIndexView();
+    this.games = new TXE.Collections.gamesCollection(this.options.projectId);
+    this.games.fetch().done(function(data){
+      self.render();
+    });
+  },
+
+  render: function(){
+    $('#project-title').html(this.options.projectName);
+    this.$('#games-list').html(this.template({games: this.games.toJSON()}));
+  },
+
+  hideIndexView: function(){
+    $("#main-content").hide();
+    this.$el.show();
   }
 //Add a "Create Game" button
 //Show a list of games

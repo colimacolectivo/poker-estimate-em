@@ -7,6 +7,7 @@ TXE.Views.indexView = Backbone.View.extend({
 
   events: {
     "click .fn-project"      : "displayForm",
+    "dblclick .fn-project"   : "displayGames",
     "click .fn-createGame"   : "createGame",
     "keydown .fn-game-name " : "keyCreate",
     "mouseover .steps li"    : "showInfo",
@@ -38,6 +39,12 @@ TXE.Views.indexView = Backbone.View.extend({
         gamesProject.text(data.length); 
       });
     });
+  },
+
+  displayGames: function(e){
+    var projectId = $(e.currentTarget).attr("data-id"),
+        projectName = this.collection.get(projectId).toJSON().name;
+    this.projectgamesView = new TXE.Views.projectGamesView({projectName: projectName, projectId: projectId, });
   },
 
   createGame: function(e){
