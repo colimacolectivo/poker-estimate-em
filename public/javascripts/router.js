@@ -6,7 +6,6 @@ TXE.Router = Backbone.Router.extend({
 
   index: function(){
     this.indexView = new TXE.Views.indexView();
-    this.chatView = new TXE.Views.chatView();
   },
 
   showProject: function(id) {
