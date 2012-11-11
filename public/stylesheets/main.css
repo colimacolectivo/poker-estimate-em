@@ -284,59 +284,33 @@ body .top-bar .row #navigator li .dropdown li.item a {
   background: transparent url("../images/landing-page/graph-footer.png") repeat-x;
   height: 50px;
 }
-/* line 273, ../sass/main.scss */
-#main-content.row #work-area #projects .titles, #main-content.row #work-area #projects .project {
-  font-size: 16px;
+/* line 274, ../sass/main.scss */
+#main-content.row #work-area #projects .project {
   font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
-  font-weight: 800;
+  font-size: 28px;
+  font-weight: 300;
 }
-/* line 277, ../sass/main.scss */
-#main-content.row #work-area #projects .titles .six, #main-content.row #work-area #projects .titles .three, #main-content.row #work-area #projects .titles .two, #main-content.row #work-area #projects .project .six, #main-content.row #work-area #projects .project .three, #main-content.row #work-area #projects .project .two {
-  float: left;
-}
-/* line 281, ../sass/main.scss */
-#main-content.row #work-area #projects .titles {
-  margin-left: 0px;
-}
-/* line 284, ../sass/main.scss */
+/* line 279, ../sass/main.scss */
 #main-content.row #work-area #projects .project {
   padding: 10px 0;
   color: #000;
   overflow: hidden;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
-  opacity: 0.3;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
   cursor: pointer;
 }
-/* line 285, ../sass/main.scss */
-#main-content.row #work-area #projects .project.selected {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-  opacity: 1;
-}
-/* line 291, ../sass/main.scss */
+/* line 286, ../sass/main.scss */
 #main-content.row #work-area #projects .project:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 294, ../sass/main.scss */
+/* line 290, ../sass/main.scss */
 #main-content.row #work-area #projects .project img {
   margin-right: 5px;
   float: left;
 }
-/* line 298, ../sass/main.scss */
-#main-content.row #work-area #projects .project .six {
-  width: 250px;
-}
-/* line 301, ../sass/main.scss */
-#main-content.row #work-area #projects .project .four {
-  width: 125px;
-}
-/* line 304, ../sass/main.scss */
-#main-content.row #work-area #projects .project .two {
-  width: 60px;
-  text-align: center;
-}
 
-/* line 313, ../sass/main.scss */
+/* line 299, ../sass/main.scss */
 .clear {
   clear: both;
 }
