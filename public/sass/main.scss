@@ -271,6 +271,7 @@ body {
          margin-left: 0px;
        }
        .project{
+         &.selected{ @include opacity(1); }
          padding: 10px 0;
          color: #000;
          overflow: hidden;
