@@ -20,7 +20,12 @@ TXE.Views.Project = Backbone.View.extend({
   },
 
   showTasks: function() {
-      
+    this.tasksCollection.forEach(this.renderTask);
+  },
+
+  renderTask: function(model) {
+    var task = new TXE.Views.TaskItem({model: model});
+    this.$('.fn-taskList').append(task.el);
   },
 
   showGames: function(){
