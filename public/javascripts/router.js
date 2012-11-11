@@ -1,10 +1,7 @@
 TXE.Router = Backbone.Router.extend({
   routes: {
     "" : "index",
-    "/projects/:id" : "showProject"
-  },
-
-  initialize: function(){
+    "projects/:id" : "showProject"
   },
 
   index: function(){
@@ -12,11 +9,12 @@ TXE.Router = Backbone.Router.extend({
   },
 
   showProject: function(id) {
-    var model = new TXE.Models.Project({id: id});
+    var model = new TXE.Models.Project({id: id}),
+        self = this;
 
-    model.on('reset', function(){
-      this.projectView = new TXE.Views.Project({model: model});
-    }, this);
+    model.fetch().done(function(data) {
+      self.projectView = new TXE.Views.Project({model: model});
+    });
   }
 
 });
