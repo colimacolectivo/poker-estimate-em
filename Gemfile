@@ -1,4 +1,4 @@
 source 'http://rubygems.org'
 
-gem "zurb-foundation", :git => "git@github.com:zurb/foundation.git"
+gem "zurb-foundation"
 gem 'compass'
