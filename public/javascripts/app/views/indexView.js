@@ -6,9 +6,11 @@ TXE.Views.indexView = Backbone.View.extend({
   collection: new TXE.Collections.projectsCollection(),
 
   events: {
-    "click .fn-project" : "displayForm",
-    "click .fn-createGame" : "createGame",
-    "keydown .fn-game-name " : "keyCreate"
+    "click .fn-project"      : "displayForm",
+    "click .fn-createGame"   : "createGame",
+    "keydown .fn-game-name " : "keyCreate",
+    "mouseover .steps li"    : "showInfo",
+    "mouseleave .steps li"   : "changeInfo"
   },
 
   initialize: function(){
@@ -66,6 +68,24 @@ TXE.Views.indexView = Backbone.View.extend({
       $(".fn-game-name").blur();
       $(".action-panel").attr("hidden", true);
     }
+  },
+
+  showInfo: function(e){
+    var element = e.currentTarget;
+    info = $(element).find('.info').show();
+    $(info).stop().animate({
+      opacity: 1,
+      height: 225
+    }, 500);
+  },
+
+  changeInfo: function(e){
+    var element = e.currentTarget;
+    info = $(element).find('.info').show();
+    $(info).stop().animate({
+      opacity: 0,
+      height: 0
+    }, 500);
   }
 
 });

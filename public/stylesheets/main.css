@@ -141,25 +141,30 @@ body .top-bar .row #navigator li .dropdown li.item a {
   float: left;
   margin: 1px;
   text-align: center;
+  position: relative;
 }
-/* line 146, ../sass/main.scss */
+/* line 147, ../sass/main.scss */
 #main-content.row .container .side-nav.steps li.one-sq {
   background: #b4bdad url("../images/landing-page/one.png") no-repeat 15px 10px;
 }
-/* line 149, ../sass/main.scss */
+/* line 150, ../sass/main.scss */
 #main-content.row .container .side-nav.steps li.two-sq {
   background: #faa83f url("../images/landing-page/two.png") no-repeat 15px 10px;
 }
-/* line 152, ../sass/main.scss */
+/* line 153, ../sass/main.scss */
 #main-content.row .container .side-nav.steps li.three-sq {
   background: #dfd4c9 url("../images/landing-page/three.png") no-repeat 15px 10px;
 }
 /* line 155, ../sass/main.scss */
+#main-content.row .container .side-nav.steps li.three-sq .info h3 {
+  margin-bottom: 10px;
+}
+/* line 159, ../sass/main.scss */
 #main-content.row .container .side-nav.steps li.four-sq {
   margin-bottom: 15px;
   background: #c70a2b url("../images/landing-page/four.png") no-repeat 15px 10px;
 }
-/* line 159, ../sass/main.scss */
+/* line 163, ../sass/main.scss */
 #main-content.row .container .side-nav.steps li span {
   margin: 0 auto;
   height: inherit;
@@ -173,44 +178,49 @@ body .top-bar .row #navigator li .dropdown li.item a {
   letter-spacing: 1px;
   font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
 }
-/* line 171, ../sass/main.scss */
+/* line 175, ../sass/main.scss */
 #main-content.row .container .side-nav.steps li span .small {
   display: block;
   height: auto;
   width: auto;
   font-size: 30px;
 }
-/* line 176, ../sass/main.scss */
+/* line 180, ../sass/main.scss */
 #main-content.row .container .side-nav.steps li span .small .more {
   font-size: 40px;
 }
-/* line 181, ../sass/main.scss */
+/* line 185, ../sass/main.scss */
 #main-content.row .container .side-nav.steps li .info {
   font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
   text-align: left;
   padding: 15px;
   color: #fff;
   font-size: 17px;
-  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.7);
+  height: 0;
+  opacity: 0;
 }
-/* line 188, ../sass/main.scss */
+/* line 197, ../sass/main.scss */
 #main-content.row .container .side-nav.steps li .info h3 {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
   margin: 0 0 24px 24px;
   color: #FFF;
 }
-/* line 194, ../sass/main.scss */
+/* line 203, ../sass/main.scss */
 #main-content.row .container .side-nav.steps li .info p {
   text-align: justify;
   padding: 10px;
 }
-/* line 197, ../sass/main.scss */
+/* line 206, ../sass/main.scss */
 #main-content.row .container .side-nav.steps li .info p span {
   font-size: 17px;
   font-weight: bold;
 }
-/* line 207, ../sass/main.scss */
+/* line 216, ../sass/main.scss */
 #main-content.row #work-area .title {
   color: #C01126;
   font-weight: 500;
@@ -219,23 +229,23 @@ body .top-bar .row #navigator li .dropdown li.item a {
   margin-top: 20px;
   border-bottom: 4px solid #000;
 }
-/* line 214, ../sass/main.scss */
+/* line 223, ../sass/main.scss */
 #main-content.row #work-area .title span {
   font-size: 13px;
 }
-/* line 218, ../sass/main.scss */
+/* line 227, ../sass/main.scss */
 #main-content.row #work-area #log-form {
   margin-top: 30px;
   padding: 15px;
 }
-/* line 221, ../sass/main.scss */
+/* line 230, ../sass/main.scss */
 #main-content.row #work-area #log-form input[type=text], #main-content.row #work-area #log-form input[type=password] {
   height: 55px;
   font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
   font-size: 24px;
   padding: 0 15px;
 }
-/* line 227, ../sass/main.scss */
+/* line 236, ../sass/main.scss */
 #main-content.row #work-area #log-form input.button {
   font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
   background: #FAA83F;
@@ -243,18 +253,18 @@ body .top-bar .row #navigator li .dropdown li.item a {
   margin-top: 20px;
   border: 1px solid #FCD39E;
 }
-/* line 233, ../sass/main.scss */
+/* line 242, ../sass/main.scss */
 #main-content.row #work-area #log-form input.button:hover {
   background: #E39737;
 }
-/* line 237, ../sass/main.scss */
+/* line 246, ../sass/main.scss */
 #main-content.row #work-area #log-form label {
   font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
   font-size: 30px;
   font-weight: 800;
   margin-bottom: 5px;
 }
-/* line 244, ../sass/main.scss */
+/* line 253, ../sass/main.scss */
 #main-content.row #work-area #log-form .sign a {
   font-size: 16px;
   color: #DFD3C7;
@@ -262,33 +272,33 @@ body .top-bar .row #navigator li .dropdown li.item a {
   font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
   float: right;
 }
-/* line 253, ../sass/main.scss */
+/* line 262, ../sass/main.scss */
 #main-content.row #work-area .fot {
   padding: 15px;
   padding-top: 10px;
   border-top: 4px solid #000;
   margin-top: 10px;
 }
-/* line 258, ../sass/main.scss */
+/* line 267, ../sass/main.scss */
 #main-content.row #work-area .fot .image-fot {
   background: transparent url("../images/landing-page/graph-footer.png") repeat-x;
   height: 50px;
 }
-/* line 264, ../sass/main.scss */
+/* line 273, ../sass/main.scss */
 #main-content.row #work-area #projects .titles, #main-content.row #work-area #projects .project {
   font-size: 16px;
   font-family: "helvetica neue",helvetica-neue , Helvetica, Arial, sans-serif;
   font-weight: 800;
 }
-/* line 268, ../sass/main.scss */
+/* line 277, ../sass/main.scss */
 #main-content.row #work-area #projects .titles .six, #main-content.row #work-area #projects .titles .three, #main-content.row #work-area #projects .titles .two, #main-content.row #work-area #projects .project .six, #main-content.row #work-area #projects .project .three, #main-content.row #work-area #projects .project .two {
   float: left;
 }
-/* line 272, ../sass/main.scss */
+/* line 281, ../sass/main.scss */
 #main-content.row #work-area #projects .titles {
   margin-left: 0px;
 }
-/* line 275, ../sass/main.scss */
+/* line 284, ../sass/main.scss */
 #main-content.row #work-area #projects .project {
   padding: 10px 0;
   color: #000;
@@ -297,36 +307,36 @@ body .top-bar .row #navigator li .dropdown li.item a {
   opacity: 0.3;
   cursor: pointer;
 }
-/* line 276, ../sass/main.scss */
+/* line 285, ../sass/main.scss */
 #main-content.row #work-area #projects .project.selected {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 282, ../sass/main.scss */
+/* line 291, ../sass/main.scss */
 #main-content.row #work-area #projects .project:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 285, ../sass/main.scss */
+/* line 294, ../sass/main.scss */
 #main-content.row #work-area #projects .project img {
   margin-right: 5px;
   float: left;
 }
-/* line 289, ../sass/main.scss */
+/* line 298, ../sass/main.scss */
 #main-content.row #work-area #projects .project .six {
   width: 250px;
 }
-/* line 292, ../sass/main.scss */
+/* line 301, ../sass/main.scss */
 #main-content.row #work-area #projects .project .four {
   width: 125px;
 }
-/* line 295, ../sass/main.scss */
+/* line 304, ../sass/main.scss */
 #main-content.row #work-area #projects .project .two {
   width: 60px;
   text-align: center;
 }
 
-/* line 304, ../sass/main.scss */
+/* line 313, ../sass/main.scss */
 .clear {
   clear: both;
 }
