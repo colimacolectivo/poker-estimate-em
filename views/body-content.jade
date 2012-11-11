@@ -1,5 +1,4 @@
 #main-content.row
-  #projects
   .action-panel(hidden='true')
     input(type="text", class='fn-game-name', placeholder="Name Game")
     input(class="fn-createGame", type="button", value="Create Game")
@@ -45,6 +44,7 @@
 
       .six.columns#work-area
         - if(user) 
+          input(id="user_logged_in", type="hidden", value="true")
           .row.title PROJECTS
           .row#projects
             // this content is for the projects template
@@ -52,16 +52,12 @@
               .six Project Name
               .three Account
               .two Games
-            .project
-              .six
-                img(src="images/landing-page/project-carts.png")
-                span name
-              .three acount
-              .two 44
+            .project-items
           .row.fot 
             .image-fot
 
         - else
+          input(id="user_logged_in", type="hidden", value="false")
           .row.title LOGIN 
             span WITH YOUR 
             r PIVOTAL TRACKER 
@@ -70,9 +66,3 @@
             include login-form
           .row.fot 
             .image-fot
-
-
-
-
-
-

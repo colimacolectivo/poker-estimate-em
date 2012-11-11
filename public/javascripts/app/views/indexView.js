@@ -3,8 +3,6 @@ TXE.Views.indexView = Backbone.View.extend({
 
   projectsTemplate: _.template(TXE.Templates.projectsTemplate),
 
-  userLoginTemplate: _.template(TXE.Templates.userLoginTemplate),
-
   collection: new TXE.Collections.projectsCollection(),
 
   events: {
@@ -20,12 +18,10 @@ TXE.Views.indexView = Backbone.View.extend({
   },
 
   render: function(){
-    //if (this.user_logged_in) {
-      //var context = this.collection.toJSON();
-      //this.$('#projects').html(this.projectsTemplate({context: context}));
-    //} else {
-      //this.$('#projects').html(this.userLoginTemplate);
-    //}
+    if (this.user_logged_in) {
+      var context = this.collection.toJSON();
+      this.$('.project-items').html(this.projectsTemplate({context: context}));
+    }
   },
 
   createGame: function(e){
