@@ -13,4 +13,10 @@ module.exports = function(app) {
     res.redirect('/');
   });
 
+  app.use(function(req, res) {
+    var newUrl = req.protocol + '://' + req.get('Host') + '/#' + req.url;
+
+    res.redirect(newUrl);
+  });
+
 };
