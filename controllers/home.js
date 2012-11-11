@@ -1,11 +1,9 @@
 module.exports = function(app) {
  
   app.get('/', function(req, res) {
-    var logged = req.user;
 
-    if(logged){
-      logged.password = null;
-    }
+    var logged = req.user || {};
+    logged.password = null;
 
     res.render('index', { user: logged, message: req.flash('info') });
   });
