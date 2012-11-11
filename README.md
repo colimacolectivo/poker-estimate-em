@@ -159,3 +159,6 @@ And the last thing is that before open your pull request resolve possible confli
   git push origin your_feature (-f if necessary)
 
 Happy versioning!
+
+to generate the assets 
+  compass watch public/
