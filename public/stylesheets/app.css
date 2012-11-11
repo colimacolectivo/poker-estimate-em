@@ -6150,19 +6150,20 @@ body .top-bar .row #navigator li .dropdown li.item a {
   overflow: hidden;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
   opacity: 0.3;
+  cursor: pointer;
 }
-/* line 252, ../sass/main.scss */
+/* line 253, ../sass/main.scss */
 #main-content.row #work-area #projects .project:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 255, ../sass/main.scss */
+/* line 256, ../sass/main.scss */
 #main-content.row #work-area #projects .project img {
   margin-right: 5px;
   float: left;
 }
 
-/* line 264, ../sass/main.scss */
+/* line 265, ../sass/main.scss */
 .clear {
   clear: both;
 }

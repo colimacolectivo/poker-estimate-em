@@ -249,6 +249,7 @@ body {
          color: #000;
          overflow: hidden;
          @include opacity(.3);
+         cursor: pointer;
          &:hover{
            @include opacity(1);
          }
