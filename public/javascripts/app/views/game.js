@@ -3,6 +3,7 @@ TXE.Views.Game = Backbone.View.extend({
   el: "#main-content",
 
   events:{
+    "click .ca" : "selectCard"
   },
 
   initialize: function(){
@@ -26,8 +27,13 @@ TXE.Views.Game = Backbone.View.extend({
 
     _.each(tasks, function(task){ 
       var id = task.id;
-      $list.prepend("<li class='item'>"+name+" - "+id+"<div class='description'></div></li>");
+      $list.prepend("<li class='item'>"+name+" - "+id+"<div class='fn-description description'></div></li>");
     });
 
+  },
+  
+  selectCard: function(el){
+    $(".ca").removeClass("selected");
+    $(el.target).addClass("selected");
   }
 });
