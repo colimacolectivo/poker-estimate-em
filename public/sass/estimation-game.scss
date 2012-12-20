@@ -152,6 +152,7 @@
     }
 
     .time{
+      //display: none;
 
       p{
         padding: 0 0 10px 30px;
@@ -177,6 +178,8 @@
          margin: 10px;
          &.selected{
            background: transparent url('../images/estimation-game/cart-sel.png') no-repeat center center;
+           color: #FFF;
+           text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #000, 0 0 7px #000, 0 0 8px #000, 0 0 10px #000, 0 0 15px #000;
          }
        }
     }
@@ -187,6 +190,11 @@
 
       h3{
         background: transparent url('../images/estimation-game/people.png') no-repeat left center;
+      }
+
+      input{
+        min-width: 123px; 
+        width: 80%;
       }
     }
   }
