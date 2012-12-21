@@ -2,7 +2,8 @@ TXE.Router = Backbone.Router.extend({
   routes: {
     "" : "index",
     "projects/:id"          : "showProject",
-    "projects/:proId/game/:gameId" : "playGame"
+    "projects/:proId/game/:gameId" : "playGame",
+    "projects/:proId/game/:gameId/:taskId" : "showInformation"
   },
 
   initialize: function(){
@@ -33,6 +34,32 @@ TXE.Router = Backbone.Router.extend({
     // model.on('reset', function(){
     //   this.projectView = new TXE.Views.Project({model: model});
     // }, this);
+  },
+
+  showInformation: function(projectId, taskId, gameId) {
+    console.log("Show information route");
+    console.log(projectId+" "+taskId+" "+gameId);
+    if(this.description){
+      this.description.undelegateEvents();
+      delete this.description;
+    }
+
+    if (TXE.user.email){
+
+      this.game = new TXE.Views.Description({
+        projectId: projectId,
+        gameId: gameId,
+        taskId: taskId,
+        model: new TXE.Models.Description({
+          project_id: projectId,
+          task_id: taskId,
+          _id: gameId
+        })
+      });
+
+    }else{
+      this.navigate("", true);
+    }
   },
 
   playGame: function(proId, gameId){
