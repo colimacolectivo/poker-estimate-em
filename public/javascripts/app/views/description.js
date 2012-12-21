@@ -53,7 +53,7 @@ TXE.Views.Description = Backbone.View.extend({
 
     _.each(tasks, function(task){ 
       var id = task.id;
-      $list.prepend("<li class='item'>"+id+"<input type='hidden' class='id_task' value='"+id+"'/></li>");
+      $list.prepend("<li class='item'>"+id+"<input type='hidden' class='id_task' value='"+id+"'/><a class='user'>ER</a><a class='delete'></a></li>");
     });
 
     $('li:contains("'+this.model.get('task_id')+'")').addClass('pointer').removeClass('item');
@@ -62,6 +62,7 @@ TXE.Views.Description = Backbone.View.extend({
   selectCard: function(el){
     $(".ca").removeClass("selected");
     $(el.target).addClass("selected");
+    $(".displayed").text($(el.target).text());
   },
 
   displayInformation: function(el) {
@@ -73,6 +74,7 @@ TXE.Views.Description = Backbone.View.extend({
     $(".pointer").removeClass("pointer").addClass("item");
     $(".description-information").hide();
     $(".time").show();
+    $(".timer").text("3");
     setInterval(function(){
       var currentTime = $(".timer").text();
       if(currentTime!="0"){
@@ -80,10 +82,8 @@ TXE.Views.Description = Backbone.View.extend({
       }
       else{
         clearInterval(this);
-        this.view.stopListening();
       }
-    }, 1000);
-//TXE.router.navigate('projects/'+ this.model.get('project_id') +'/game/'+this.model.get('game_id')+'/tasks/'+this.model.get('task_id'), true);
+    }, 2000);
 
   }
 
