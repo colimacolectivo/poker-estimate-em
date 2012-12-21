@@ -151,8 +151,21 @@
       }
     }
 
+    .description-information{
+      .play{
+        float: right;
+        margin-bottom: 5px;
+      }
+
+      .display-description{
+        background: #fff;
+        min-height: 300px; 
+        width: 100%;
+      }
+    }
+
     .time{
-      //display: none;
+      display: none;
 
       p{
         padding: 0 0 10px 30px;
