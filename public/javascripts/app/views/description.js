@@ -15,22 +15,28 @@ TXE.Views.Description = Backbone.View.extend({
     this.model.bind('change', this.render, this);
     this.model.fetch();
 
+    this.options.model2.bind('change', this.render2, this);
+    this.options.model2.fetch();
   },
 
   render: function(){
-    var tasks = this.model.get('tasks') || [];
-    var name = this.model.get('name');
-    //var description= this.model.get('description');
-    //console.log(description);
+    console.log(this.model.attributes);
+    var titles = this.model.get('title');
+    var description= this.model.get('description');
+  },
+
+  render2: function(){
+    console.log(this.options.model2.attributes);
+    var tasks = this.options.model2.get('tasks')|| [];
+    var name = this.options.model2.get('name');
     var $list = this.$(".list");
 
     this.$('.results .three').text(name);
 
     _.each(tasks, function(task){ 
       var id = task.id;
-      $list.prepend("<li class='item'>"+name+" - "+id+"<div class='fn-description description'></div></li>");
+      $list.prepend("<li class='item'>"+id+"</li>");
     });
-
   },
   
   selectCard: function(el){
