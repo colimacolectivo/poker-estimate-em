@@ -4,7 +4,8 @@ TXE.Views.Description = Backbone.View.extend({
 
   events:{
     "click .ca" : "selectCard",
-    "click .item" : "displayInformation"
+    "click .item" : "displayInformation",
+    "click .play" : "playPoker"
   },
 
   initialize: function(){
@@ -66,6 +67,24 @@ TXE.Views.Description = Backbone.View.extend({
   displayInformation: function(el) {
     var selected = $(el.target).find('.id_task').val();
     TXE.router.navigate('projects/'+ this.model.get('project_id') +'/game/'+this.model.get('game_id')+'/tasks/'+selected, true);
+  },
+
+  playPoker: function() {
+    $(".pointer").removeClass("pointer").addClass("item");
+    $(".description-information").hide();
+    $(".time").show();
+    setInterval(function(){
+      var currentTime = $(".timer").text();
+      if(currentTime!="0"){
+        $(".timer").text(parseInt(currentTime)-1)
+      }
+      else{
+        clearInterval(this);
+        this.view.stopListening();
+      }
+    }, 1000);
+//TXE.router.navigate('projects/'+ this.model.get('project_id') +'/game/'+this.model.get('game_id')+'/tasks/'+this.model.get('task_id'), true);
+
   }
 
 });
