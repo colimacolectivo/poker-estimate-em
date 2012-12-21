@@ -17,6 +17,7 @@ TXE.Views.Game = Backbone.View.extend({
   },
 
   render: function(){
+    console.log(this.model.attributes);
     var tasks = this.model.get('tasks') || [];
     var name = this.model.get('name');
     //var description= this.model.get('description');
