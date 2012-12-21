@@ -147,11 +147,27 @@
             background: #B5BDAB;
             color: #000;
           }
+
+        }
+        .pointer{
+          background: #FFF;
+          padding: 10px 350px 10px 10px;
+          border: solid 1px #DFD4C7;
+          margin: 5px 0;
+          @include global_font;
+          font-size: 12px;
+          color: #999;
+          z-index: 10000;
+          a{
+            border: none;
+          }
         }
       }
     }
 
     .description-information{
+      @include global_font;
+      
       .play{
         float: right;
         margin-bottom: 5px;
@@ -159,12 +175,20 @@
 
       .display-description{
         background: #fff;
+        height: auto;
         min-height: 300px; 
+        padding: 1.5em;
         width: 100%;
+      }
+
+      .bold-text{
+        font-weight: bold;
+        text-align: right;
       }
     }
 
     .time{
+
       display: none;
 
       p{

@@ -57,7 +57,8 @@ TXE.Router = Backbone.Router.extend({
         taskId: taskId,
         model: new TXE.Models.Description({
           project_id: projectId,
-          task_id: taskId
+          task_id: taskId,
+          game_id: gameId
         }),
         model2: new TXE.Models.Game({
           project_id: projectId,
