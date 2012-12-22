@@ -3,7 +3,7 @@ TXE.Views.Game = Backbone.View.extend({
   el: "#main-content",
 
   events:{
-    "click .ca" : "selectCard"
+    "click .item" : "displayInformation"
   },
 
   initialize: function(){
@@ -13,6 +13,8 @@ TXE.Views.Game = Backbone.View.extend({
 
     this.model.bind('change', this.render, this);
     this.model.fetch();
+    $(".description-information").hide();
+    $(".chat-information").removeClass("three").addClass("eight");
 
   },
 
@@ -28,13 +30,13 @@ TXE.Views.Game = Backbone.View.extend({
 
     _.each(tasks, function(task){ 
       var id = task.id;
-      $list.prepend("<li class='item'>"+name+" - "+id+"<div class='fn-description description'></div></li>");
+      $list.prepend("<li class='item'>"+id+"<input type='hidden' class='id_task' value='"+id+"'/><a class='user'>ER</a><a class='delete'></a></li>");
     });
 
   },
   
-  selectCard: function(el){
-    $(".ca").removeClass("selected");
-    $(el.target).addClass("selected");
+  displayInformation: function(el) {
+    var selected = $(el.target).find('.id_task').val();
+    TXE.router.navigate('projects/'+ this.model.get('project_id') +'/game/'+this.model.get('_id')+'/tasks/'+selected, true);
   }
 });
