@@ -6598,6 +6598,8 @@ li.ca {
 #poker-game #play-place .time #arena
 li.ca.selected {
   background: transparent url("../images/estimation-game/cart-sel.png") no-repeat center center;
+  color: #FFF;
+ text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #000, 0 0 7px #000, 0 0 8px #000, 0 0 10px #000, 0 0 15px #000;
 }
 /* line 184, ../sass/estimation-game.scss */
 #poker-game #play-place .chat-information {

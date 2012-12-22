@@ -147,11 +147,55 @@
             background: #B5BDAB;
             color: #000;
           }
+
+        }
+        .pointer{
+          background: #FFF;
+          padding: 10px 350px 10px 10px;
+          border: solid 1px #DFD4C7;
+          margin: 5px 0;
+          @include global_font;
+          font-size: 12px;
+          color: #999;
+          z-index: 10000;
+          a{
+            border: none;
+          }
         }
       }
     }
 
+    .description-information{
+      @include global_font;
+      
+      .play{
+        float: right;
+        margin-bottom: 5px;
+      }
+
+      .display-description{
+        border: 1px solid #E3DACE;
+        background: #fff;
+        height: auto;
+        min-height: 300px; 
+        padding: 1.5em;
+        width: 100%;
+
+        tr td{
+          background: #FFF;
+          color: #757676;
+        }
+      }
+
+      .bold-text{
+        font-weight: bold;
+        text-align: right;
+      }
+    }
+
     .time{
+
+      display: none;
 
       p{
         padding: 0 0 10px 30px;
@@ -177,6 +221,8 @@
          margin: 10px;
          &.selected{
            background: transparent url('../images/estimation-game/cart-sel.png') no-repeat center center;
+           color: #FFF;
+           text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #000, 0 0 7px #000, 0 0 8px #000, 0 0 10px #000, 0 0 15px #000;
          }
        }
     }
@@ -187,6 +233,11 @@
 
       h3{
         background: transparent url('../images/estimation-game/people.png') no-repeat left center;
+      }
+
+      input{
+        min-width: 123px; 
+        width: 80%;
       }
     }
   }
