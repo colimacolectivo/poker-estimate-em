@@ -175,7 +175,8 @@
 
       .display-description{
         border: 1px solid #E3DACE;
-        background: #fff;
+        border-left: none;
+        background:  url(../images/detail_mark.png) no-repeat left, url(../images/border.png) repeat-y, #fff;
         height: auto;
         min-height: 300px; 
         padding: 1.5em;

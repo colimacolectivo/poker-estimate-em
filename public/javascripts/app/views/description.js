@@ -68,6 +68,8 @@ TXE.Views.Description = Backbone.View.extend({
   displayInformation: function(el) {
     var selected = $(el.target).find('.id_task').val();
     TXE.router.navigate('projects/'+ this.model.get('project_id') +'/game/'+this.model.get('game_id')+'/tasks/'+selected, true);
+    var itemIndex = $(el.target).index();
+    $('.display-description').css('background-position-y',(39*itemIndex)+15+'px');
   },
 
   playPoker: function() {
