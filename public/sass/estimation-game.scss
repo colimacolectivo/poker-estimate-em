@@ -133,6 +133,23 @@
             padding-top: 10px;
             font-size: 12px;
           }
+          .repeat{
+            float: right;
+            height: 34px;
+            width: 34px;
+            float:right;
+            display: block;
+            background: url('../images/games/repeat.png') no-repeat center center, #000;
+            border: none;
+            margin-top: -8px;
+            cursor: pointer;
+            color: #fff;
+            margin-top: -11px;
+            margin-right: -10px;
+            text-align: center;
+            padding-top: 10px;
+            font-size: 12px;
+          }
           .user{
             float: right;
             display: block;
@@ -148,10 +165,55 @@
             color: #000;
           }
         }
+        .pointer{
+          background: #FFF;
+          width: 400px;
+          padding-right: 88px;
+          border: solid 1px #DFD4C7;
+          margin: 5px 0;
+          @include global_font;
+          font-size: 12px;
+          color: #999;
+          z-index: 10000;
+          a{
+            border: none;
+          }
+        }
+      }
+    }
+
+    .description-information{
+      @include global_font;
+      
+      .play{
+        float: right;
+        margin-bottom: 5px;
+      }
+
+      .display-description{
+        border: 1px solid #E3DACE;
+        border-left: none;
+        background:  url(../images/detail_mark.png) no-repeat left, url(../images/border.png) repeat-y, #fff;
+        height: auto;
+        min-height: 300px; 
+        padding: 1.5em;
+        width: 100%;
+
+        tr td{
+          background: #FFF;
+          color: #757676;
+        }
+      }
+
+      .bold-text{
+        font-weight: bold;
+        text-align: right;
       }
     }
 
     .time{
+
+      display: none;
 
       p{
         padding: 0 0 10px 30px;
@@ -177,6 +239,8 @@
          margin: 10px;
          &.selected{
            background: transparent url('../images/estimation-game/cart-sel.png') no-repeat center center;
+           color: #FFF;
+           text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #000, 0 0 7px #000, 0 0 8px #000, 0 0 10px #000, 0 0 15px #000;
          }
        }
     }
@@ -187,6 +251,11 @@
 
       h3{
         background: transparent url('../images/estimation-game/people.png') no-repeat left center;
+      }
+
+      input{
+        min-width: 123px; 
+        width: 80%;
       }
     }
   }

@@ -31,29 +31,30 @@ script(type="text/html", id="pokerGameTemplate")
             .points 3
             a.delete
             a.user ER
-          li.item Story two
+          li.item.finished Story two
+            .repeat
             a.delete
             a.user JR
           li.item Story three
             a.delete
             a.user JG
-          li.item Story four
-            a.delete
-            a.user JVC
-          li.item Story five
-            a.delete
-            a.user NG
 
+      .description-information.five.columns
+        a.tiny.button.alert.play Play poker!
+
+        .clear
+
+        .display-description
 
       .time.five.columns 
-        p 3
+        p.timer 3
 
         .clear
 
         ul#arena
           li.ca 0
           li.ca 1
-          li.ca.selected 2
+          li.ca 2
           li.ca 3
           li.ca 5
           li.ca 8
