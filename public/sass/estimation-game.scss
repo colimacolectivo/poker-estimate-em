@@ -133,6 +133,23 @@
             padding-top: 10px;
             font-size: 12px;
           }
+          .repeat{
+            float: right;
+            height: 34px;
+            width: 34px;
+            float:right;
+            display: block;
+            background: url('../images/games/repeat.png') no-repeat center center, #000;
+            border: none;
+            margin-top: -8px;
+            cursor: pointer;
+            color: #fff;
+            margin-top: -11px;
+            margin-right: -10px;
+            text-align: center;
+            padding-top: 10px;
+            font-size: 12px;
+          }
           .user{
             float: right;
             display: block;
@@ -147,11 +164,11 @@
             background: #B5BDAB;
             color: #000;
           }
-
         }
         .pointer{
           background: #FFF;
-          padding: 10px 350px 10px 10px;
+          width: 400px;
+          padding-right: 88px;
           border: solid 1px #DFD4C7;
           margin: 5px 0;
           @include global_font;

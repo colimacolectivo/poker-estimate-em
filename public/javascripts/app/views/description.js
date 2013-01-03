@@ -56,7 +56,7 @@ TXE.Views.Description = Backbone.View.extend({
       $list.prepend("<li class='item'>"+id+"<input type='hidden' class='id_task' value='"+id+"'/><a class='user'>ER</a><a class='delete'></a></li>");
     });
 
-    $('li:contains("'+this.model.get('task_id')+'")').addClass('pointer').removeClass('item');
+    $('li:contains("'+this.model.get('task_id')+'")').addClass('pointer');
   },
   
   selectCard: function(el){
@@ -73,7 +73,7 @@ TXE.Views.Description = Backbone.View.extend({
   },
 
   playPoker: function() {
-    $(".pointer").removeClass("pointer").addClass("item");
+    $(".pointer").removeClass("pointer");
     $(".description-information").hide();
     $(".time").show();
     $(".timer").text("3");
